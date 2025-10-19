@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color: #5f4d53;
+    background-color: #f7c6d7;
+  }
+
+  body {
+    @apply min-h-screen bg-beige font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-ink;
+  }
+
+  p,
+  li {
+    @apply text-base leading-relaxed;
+  }
+
+  blockquote {
+    @apply font-quote italic text-lg text-ink/80;
+  }
+
+  a {
+    @apply font-medium text-sky;
+  }
+
+  a:hover {
+    @apply text-lavender;
+  }
+}
+
+@layer components {
+  .btn.btn-primary {
+    border: 0;
+    color: #ffffff;
+    background-image: linear-gradient(135deg, #5734a0 0%, #7a55d8 100%);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 150ms ease-out;
+  }
+
+  .btn.btn-primary:hover,
+  .btn.btn-primary:focus-visible {
+    background-image: linear-gradient(135deg, #4b2d8d 0%, #6c4ac5 100%);
+  }
+
+  .btn.btn-primary.btn-soft {
+    border: 0;
+    color: #ffffff;
+    background-image: linear-gradient(135deg, #5734a0 0%, #7a55d8 100%);
+  }
+
+  .btn.btn-primary.btn-soft:hover,
+  .btn.btn-primary.btn-soft:focus-visible {
+    background-image: linear-gradient(135deg, #4b2d8d 0%, #6c4ac5 100%);
+  }
+
+  .btn.btn-soft.btn-outline {
+    border-width: 1px;
+    border-color: #f77fa766;
+    background-color: rgba(247, 127, 167, 0.1);
+    background-image: none;
+    color: #f77fa7;
+    transition: all 150ms ease-in-out;
+  }
+
+  .btn.btn-soft.btn-outline:hover,
+  .btn.btn-soft.btn-outline:focus-visible {
+    border-color: #7a55d8;
+    background-color: rgba(122, 85, 216, 0.15);
+    color: #7a55d8;
+  }
+
+  .card-soft {
+    @apply rounded-2xl border border-white/60 bg-base-100 shadow-xl shadow-ink/5;
+  }
+
+  .section-padding {
+    @apply px-4 py-16 md:px-8 lg:px-12;
+  }
+}
+
+@layer utilities {
+  .bg-beige-gradient {
+    background:
+      radial-gradient(circle at top left, #f77fa720 0%, transparent 45%),
+      radial-gradient(circle at 85% 20%, #cfe8cf20 0%, transparent 40%),
+      radial-gradient(circle at 15% 80%, #7a55d820 0%, transparent 55%),
+      #f7c6d7;
+  }
+
+  .bg-hero-muted {
+    background-color: #ffdce3;
+  }
+}
+
+html,
+body {
+  min-height: 100%;
+  background: linear-gradient(to bottom, #FFDCE3, #F7C6D7);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+}
