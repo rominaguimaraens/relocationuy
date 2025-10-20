@@ -6,6 +6,10 @@ const reviews = [
     name: "Aubree & Mike (USA)",
     text: "My wife and I were running desperately low on essential medications while here in Uruguay. Our Spanish language skills and understanding of the local systems are pretty subpar. Romi quickly and efficiently identified solutions and without hesitation took action to ensure my wife’s health was a priority.  She not only facilitated a local doctor visit for us but came with us to see that office visit and subsequent medication pickup at a local pharmacy went smoothly. Her ability to anticipate things that we needed and work behind the scenes coordinating her local contacts and using her extensive knowledge of the Uruguayan  practices was comforting and reassuring. We knew we were being taken care of. When we do come back to Uruguay, Romi will be the first one we contact to coordinate our return.  Thank you again for all that you did for us.",
   },
+  {
+    name: "Bryn & Tyger Pliska Girard (USA)",
+    text: "We recently had the pleasure of working with Ro, and we couldn’t be more impressed with her professionalism and skill. She communicated fluently and naturally in both English and Spanish, switching effortlessly between the two languages to ensure clear understanding for everyone involved. Beyond her linguistic ability, she provided thoughtful guidance and cultural context that helped the conversation flow smoothly and appropriately. She also had an easy, personable manner that helped put everyone at ease and built genuine rapport with the interviewers. Her calm confidence and adaptability made what could have been a stressful experience feel comfortable and collaborative. We’re deeply grateful for her support and would enthusiastically recommend her to anyone seeking a capable translator.",
+  },
 ];
 
 export default function About() {
