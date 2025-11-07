@@ -6,7 +6,6 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Pricing from './routes/Pricing';
 import Resources from './routes/Resources';
-import ResourcesLogin from './routes/ResourcesLogin';
 import Contact from './routes/Contact';
 import ResourceArticle from './routes/ResourceArticle';
 
@@ -21,7 +20,6 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/:slug" element={<ResourceArticle />} />
-          <Route path="/resources-login" element={<ResourcesLogin />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
         </Routes>
