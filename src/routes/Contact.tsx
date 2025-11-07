@@ -2,21 +2,22 @@ import type { FormEvent } from 'react';
 import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Section from '../components/Section';
-import { useI18n } from '../i18n';
+import { siteCopy } from '../content/siteCopy';
+import { sanitizeText } from '../utils/sanitize';
 
 function encode(data: Record<string, FormDataEntryValue>) {
   return new URLSearchParams(data as Record<string, string>).toString();
 }
 
 export default function Contact() {
-  const { t } = useI18n();
+  const { contact, site } = siteCopy;
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitting, setSubmitting] = useState(false);
 
   const whatsappHref = useMemo(() => {
-    const text = encodeURIComponent(t.contact.whatsappText);
+    const text = encodeURIComponent(contact.whatsappText);
     return `https://wa.me/59896337408?text=${text}`;
-  }, [t.contact.whatsappText]);
+  }, [contact.whatsappText]);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -46,31 +47,33 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>{`${t.contact.heroTitle} - ${t.site.title}`}</title>
-        <meta name="description" content={t.contact.intro} />
+        <title>{`${contact.heroTitle} - ${site.title}`}</title>
+        <meta name="description" content={contact.intro} />
       </Helmet>
 
       <Section className="bg-hero-muted pt-24 md:pt-28">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl md:text-5xl">{t.contact.heroTitle}</h1>
-          <p className="mt-5 text-lg text-ink/80 md:text-xl">{t.contact.intro}</p>
-          <p className="mt-3 text-sm uppercase tracking-widest text-ink/60">{t.contact.responseNote}</p>
+          <h1 className="text-4xl md:text-5xl">{contact.heroTitle}</h1>
+          <p className="mt-5 text-lg text-ink/80 md:text-xl">{sanitizeText(contact.intro)}</p>
+          <p className="mt-3 text-sm uppercase tracking-widest text-ink/60">
+            {sanitizeText(contact.responseNote)}
+          </p>
         </div>
       </Section>
 
       <Section className="bg-beige-gradient">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1fr]">
           <div className="space-y-6 rounded-3xl border border-sky/15 bg-base-100 p-8 shadow-xl shadow-sky/10">
-            <h2 className="text-2xl font-display text-ink">{t.contact.quickLinksTitle}</h2>
+            <h2 className="text-2xl font-display text-ink">{sanitizeText(contact.quickLinksTitle)}</h2>
             <div className="space-y-3 text-sm text-ink/80">
               <a
-                href={`mailto:${t.site.email}`}
+                href={`mailto:${site.email}`}
                 className="flex items-center gap-3 rounded-xl border border-transparent bg-sky/10 px-4 py-3 font-medium text-sky transition hover:border-sky/30 hover:text-lavender"
               >
                 <span aria-hidden="true" className="text-lg font-semibold">
                   Mail
                 </span>
-                {t.site.email}
+                {site.email}
               </a>
               <a
                 href={whatsappHref}
@@ -82,7 +85,7 @@ export default function Contact() {
                 WhatsApp
               </a>
             </div>
-            <p className="text-xs text-ink/60">EN / ES - {t.contact.responseNote}</p>
+            <p className="text-xs text-ink/60">EN / ES - {sanitizeText(contact.responseNote)}</p>
           </div>
 
           <form
@@ -102,14 +105,14 @@ export default function Contact() {
 
             {status === 'success' && (
               <div role="status" className="alert alert-success">
-                <span className="font-semibold">{t.contact.form.successTitle}</span>
-                <span>{t.contact.form.successMessage}</span>
+                <span className="font-semibold">{sanitizeText(contact.form.successTitle)}</span>
+                <span>{sanitizeText(contact.form.successMessage)}</span>
               </div>
             )}
 
             {status === 'error' && (
               <div role="alert" className="alert alert-error">
-                <span>{t.contact.form.error}</span>
+                <span>{sanitizeText(contact.form.error)}</span>
               </div>
             )}
 
@@ -117,7 +120,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="flex flex-col">
                 <label htmlFor="name" className="mb-1 text-ink font-semibold">
-                  {t.contact.form.name}
+                  {sanitizeText(contact.form.name)}
                 </label>
                 <input
                   id="name"
@@ -130,7 +133,7 @@ export default function Contact() {
               </div>
               <div className="flex flex-col">
                 <label htmlFor="email" className="mb-1 text-ink font-semibold">
-                  {t.contact.form.email}
+                  {sanitizeText(contact.form.email)}
                 </label>
                 <input
                   id="email"
@@ -146,7 +149,7 @@ export default function Contact() {
             {/* WhatsApp number */}
             <div className="flex flex-col">
               <label htmlFor="whatsapp" className="mb-1 text-ink font-semibold">
-                {t.contact.form.whatsapp}
+                {sanitizeText(contact.form.whatsapp)}
               </label>
               <input
                 id="whatsapp"
@@ -161,7 +164,7 @@ export default function Contact() {
             {/* Package interest */}
             <div className="flex flex-col">
               <label htmlFor="package" className="mb-1 text-ink font-semibold">
-                {t.contact.form.packageInterest}
+                {sanitizeText(contact.form.packageInterest)}
               </label>
               <select
                 id="package"
@@ -171,11 +174,11 @@ export default function Contact() {
                 required
               >
                 <option value="" disabled>
-                  {t.contact.form.packagePlaceholder}
+                  {sanitizeText(contact.form.packagePlaceholder)}
                 </option>
-                {t.contact.packages.map((option) => (
+                {contact.packages.map((option) => (
                   <option value={option.value} key={option.value}>
-                    {option.label}
+                    {sanitizeText(option.label)}
                   </option>
                 ))}
               </select>
@@ -184,7 +187,7 @@ export default function Contact() {
             {/* Message */}
             <div className="flex flex-col">
               <label htmlFor="message" className="mb-1 text-ink font-semibold">
-                {t.contact.form.message}
+                {sanitizeText(contact.form.message)}
               </label>
               <textarea
                 id="message"
@@ -203,7 +206,7 @@ export default function Contact() {
                 className="btn btn-primary px-8 text-white"
                 disabled={submitting}
               >
-                {submitting ? t.contact.form.sending : t.contact.form.submit}
+                {submitting ? sanitizeText(contact.form.sending) : sanitizeText(contact.form.submit)}
               </button>
             </div>
           </form>

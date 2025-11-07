@@ -1,24 +1,19 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useI18n } from '../i18n';
+import { siteCopy } from '../content/siteCopy';
 
 const NAV_LINKS = [
-  { to: '/', key: 'home' },
-  { to: '/about', key: 'about' },
-  { to: '/pricing', key: 'pricing' },
-  { to: '/resources', key: 'resources' },
-  { to: '/contact', key: 'contact' },
+  { to: '/', label: siteCopy.nav.home },
+  { to: '/about', label: siteCopy.nav.about },
+  { to: '/pricing', label: siteCopy.nav.pricing },
+  { to: '/resources', label: siteCopy.nav.resources },
+  { to: '/contact', label: siteCopy.nav.contact },
 ] as const;
 
 export function SiteHeader() {
-  const { t, toggleLanguage } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleToggleLanguage = () => {
-    toggleLanguage();
-    setMenuOpen(false);
-  };
+  const { site } = siteCopy;
 
   return (
     <header className="sticky top-0 z-40 border-b border-sky/15 bg-[#ffdce3]/90 backdrop-blur">
@@ -30,15 +25,15 @@ export function SiteHeader() {
             className="h-12 w-auto rounded-full border border-blush/40 bg-base-100 object-contain p-1 shadow-sm"
           />
           <div className="hidden flex-col leading-tight text-sm text-ink md:flex">
-            <span className="font-display text-lg">{t.site.title}</span>
-            <span className="text-ink/70">{t.site.tagline}</span>
+            <span className="font-display text-lg">{site.title}</span>
+            <span className="text-ink/70">{site.tagline}</span>
           </div>
         </NavLink>
 
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          {NAV_LINKS.map(({ to, key }) => (
+          {NAV_LINKS.map(({ to, label }) => (
             <NavLink
-              key={key}
+              key={label}
               to={to}
               className={({ isActive }) =>
                 clsx(
@@ -47,20 +42,12 @@ export function SiteHeader() {
                 )
               }
             >
-              {t.nav[key]}
+              {label}
             </NavLink>
           ))}
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
-          <button
-            type="button"
-            onClick={toggleLanguage}
-            className="btn btn-primary btn-soft btn-sm hidden uppercase tracking-wide md:inline-flex"
-            aria-label={t.languageToggle.ariaLabel}
-          >
-            {t.languageToggle.next}
-          </button>
           <button
             type="button"
             className="btn btn-sm btn-ghost md:hidden"
@@ -88,9 +75,9 @@ export function SiteHeader() {
       {menuOpen && (
         <div className="border-t border-sky/15 bg-base-100 md:hidden">
           <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4">
-            {NAV_LINKS.map(({ to, key }) => (
+            {NAV_LINKS.map(({ to, label }) => (
               <NavLink
-                key={key}
+                key={label}
                 to={to}
                 className={({ isActive }) =>
                   clsx(
@@ -100,17 +87,9 @@ export function SiteHeader() {
                 }
                 onClick={() => setMenuOpen(false)}
               >
-                {t.nav[key]}
+                {label}
               </NavLink>
             ))}
-            <button
-              type="button"
-              onClick={handleToggleLanguage}
-              className="btn btn-primary btn-soft w-full justify-center uppercase tracking-wide"
-              aria-label={t.languageToggle.ariaLabel}
-            >
-              {t.languageToggle.next}
-            </button>
           </div>
         </div>
       )}

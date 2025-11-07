@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import { useI18n } from '../i18n';
+import { siteCopy } from '../content/siteCopy';
 
 export function FloatingCTA() {
-  const { t } = useI18n();
+  const { cta } = siteCopy;
 
   return (
     <div
@@ -12,7 +12,7 @@ export function FloatingCTA() {
     >
       <Link
         to="/contact"
-        aria-label={t.cta.floating}
+        aria-label={cta.floating}
         className={clsx(
           'btn btn-primary pointer-events-auto flex h-auto w-full max-w-md items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wide shadow-xl transition-transform duration-200 ease-out md:max-w-xs md:text-base',
           'hover:-translate-y-1 focus-visible:-translate-y-1',
@@ -21,7 +21,7 @@ export function FloatingCTA() {
         <span role="img" aria-hidden="true">
           🌸
         </span>
-        {t.cta.floating}
+        {cta.floating}
       </Link>
     </div>
   );

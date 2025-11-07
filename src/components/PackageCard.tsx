@@ -40,7 +40,7 @@ export function PackageCard({
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-3">
               <span role="img" aria-hidden="true">
-                ✨
+                &#x2728;
               </span>
               <span>{feature}</span>
             </li>

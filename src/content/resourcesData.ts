@@ -84,14 +84,14 @@ export const residency: ResidencyData = {
     bullets: [
       'Prove legal, stable income generated outside Uruguay.',
       'Minimum USD 600/person/month (bare minimum).',
-      'Recommended USD 1,200â€“1,500/person/month; ~USD 3,000 for a couple.',
+      'Recommended USD 1,200–1,500/person/month; ~USD 3,000 for a couple.',
       'Accepted: pensions, social security, rentals, dividends, stable remote/self-employment.',
       'Income must be certified by a Uruguayan Notary (Escribano).',
       'Show foreign bank statements, transfers to a Uruguayan account, and 90 days of use in Uruguay.',
     ],
   },
-  presence: 'Plan 6â€“8 months per year in Uruguay during processing.',
-  timeline: 'Processing generally 6â€“18 months (often 8â€“18). Book DNM 1â€“2 months ahead.',
+  presence: 'Plan 6–8 months per year in Uruguay during processing.',
+  timeline: 'Processing generally 6–18 months (often 8–18). Book DNM 1–2 months ahead.',
 };
 
 export const docs: DocsData = {
@@ -109,13 +109,13 @@ export const docs: DocsData = {
     },
   ],
   after: [
-    { id: 'health', label: 'CarnÃ© de Salud + vaccinations (2 measles, 3 tetanus)' },
+    { id: 'health', label: 'Carné de Salud + vaccinations (2 measles, 3 tetanus)' },
     {
       id: 'translations',
       label: 'Official translations done in Uruguay by a certified translator',
     },
     { id: 'incomeCert', label: 'Income certificate from a Uruguayan Notary (Escribano)' },
-    { id: 'registro', label: 'Register foreign birth/marriage in Registro Civil (8â€“12 month backlog)' },
+    { id: 'registro', label: 'Register foreign birth/marriage in Registro Civil (8–12 month backlog)' },
   ],
 };
 
@@ -124,13 +124,13 @@ export const setup: PracticalSetupData = {
     search: ['Mercado Libre (Alquiler)', 'InfoCasas'],
     notes: [
       'First year: consider Montevideo (Pocitos, Punta Carretas). Closer to La Rambla is generally safer.',
-      'GarantÃ­a de Alquiler for 12+ month leases; landlords often prefer renterâ€™s insurance (e.g., Aseguros).',
-      'Income proof typically 3Ã— rent.',
-      'UTE & Antel require on-site visits; allow 1â€“2 weeks.',
+      'Garantía de Alquiler for 12+ month leases; landlords often prefer renter’s insurance (e.g., Aseguros).',
+      'Income proof typically 3× rent.',
+      'UTE & Antel require on-site visits; allow 1–2 weeks.',
     ],
   },
   banking: {
-    bank: 'ItaÃº (example)',
+    bank: 'Itaú (example)',
     bullets: [
       'Non-resident accounts possible but complex.',
       'Docs: passport, proof of income, foreign bank statements, tax statements, Uruguayan utility bill (address).',
@@ -154,7 +154,7 @@ export const logistics: LogisticsData = {
     'Quality kitchen knives.',
     'Buy laptops/phones before moving (high tariffs).',
     'Bring prescriptions; larger sizes of clothing/bras.',
-    'Niche spices (e.g., TajÃ­n, nutritional yeast).',
+    'Niche spices (e.g., Tajín, nutritional yeast).',
   ],
   voltage: 'Uruguay uses 220V; buy high-watt motorized appliances locally (blenders, dryers, consoles).',
   mail: [
@@ -163,7 +163,7 @@ export const logistics: LogisticsData = {
     'Expect ~2-month delays for simple mail.',
   ],
   containers: [
-    'USD 20,000â€“30,000; stressful.',
+    'USD 20,000–30,000; stressful.',
     'Must arrive within 6 months of your arrival or customs problems/fines (up to ~USD 30,000).',
     'Only worth it for high-value belongings.',
   ],
@@ -178,25 +178,25 @@ export const logistics: LogisticsData = {
 export const life: LifeData = {
   language: ['Spanish is necessary for local jobs; learn Uruguayan Spanish (vos, cadence).'],
   jobs: [
-    'Small market (~3M people). Minimum salary â‰ˆ USD 400/month.',
+    'Small market (~3M people). Minimum salary ≈ USD 400/month.',
     'Recommend securing remote income in USD/EUR.',
     'English-teaching wage often low (~USD 10/hour, ~10h/week).',
   ],
   culture: [
     "Progressive, very 'tranqui'. Expect slower services; 'ask culture'. Cheek-kiss greetings common.",
   ],
-  goods: ['Selection limited (Aldi-like). Imported goods â‰ˆ2Ã— price. Food generally not spicy.'],
+  goods: ['Selection limited (Aldi-like). Imported goods ≈2× price. Food generally not spicy.'],
   community: [
     'Expat scene growing but small; balance expat/Uruguayan friends; keep learning Spanish.',
   ],
 };
 
 export const contacts: GovernmentContact[] = [
-  { office: 'DNM â€” DirecciÃ³n Nacional de MigraciÃ³n', purpose: 'Residency, Digital Nomad Permit' },
-  { office: 'DNIC â€” National Civil Identification', purpose: 'CÃ©dula (ID)' },
+  { office: 'DNM — Dirección Nacional de Migración', purpose: 'Residency, Digital Nomad Permit' },
+  { office: 'DNIC — National Civil Identification', purpose: 'Cédula (ID)' },
   { office: 'Registro Civil', purpose: 'Register foreign birth/marriage certificates' },
-  { office: 'DGI â€” Tax Authority', purpose: 'Tax matters' },
-  { office: 'BPS â€” Social Security', purpose: 'Social security matters' },
+  { office: 'DGI — Tax Authority', purpose: 'Tax matters' },
+  { office: 'BPS — Social Security', purpose: 'Social security matters' },
   { office: 'Interpol Montevideo', purpose: 'FBI/RCMP background processes' },
 ];
 
@@ -204,10 +204,10 @@ export const glossary: GlossaryItem[] = [
   { term: 'vos', def: "Rioplatense 2nd-person singular form (informal 'you')." },
   { term: 'tranqui', def: 'Chill/relaxed; describes the local pace.' },
   {
-    term: 'garantÃ­a de alquiler',
+    term: 'garantía de alquiler',
     def: 'Rental guarantee required for long leases; often via insurer.',
   },
-  { term: 'carnÃ© de salud', def: 'Health card needed for various procedures and work.' },
+  { term: 'carné de salud', def: 'Health card needed for various procedures and work.' },
 ];
 
 export const faqs: FAQItem[] = [

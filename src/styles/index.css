@@ -112,3 +112,30 @@ body {
   background-size: cover;
   color: #333;
 }
+
+/* Global font fallback chain including emoji fonts */
+:root {
+  --heading-font: "Bogart", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  --body-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--heading-font) !important;
+}
+
+body,
+p,
+li,
+.prose,
+.font-sans {
+  font-family: var(--body-font);
+}
+
+/* Utility for any icon/emoji spans */
+.emoji-fallback {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", var(--body-font) !important;
+  font-variant-emoji: emoji;
+}

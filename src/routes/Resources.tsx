@@ -15,6 +15,7 @@ import {
   residency,
   setup,
 } from '../content/resourcesData';
+import { sanitizeText } from '../utils/sanitize';
 
 const NAV_ITEMS = [
   { href: '#residency', label: 'Residency' },
@@ -51,13 +52,14 @@ export default function Resources() {
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-display text-ink md:text-5xl">Move to Uruguay Guide</h1>
           <p className="mt-5 text-lg text-ink/80 md:text-xl">
-            Your personalized roadmap to navigate residency, paperwork, and everyday logistics with
-            confidence. Follow each block to stay on top of legal requirements while building your
-            new life in Uruguay.
+            {sanitizeText(
+              'Your personalized roadmap to navigate residency, paperwork, and everyday logistics with confidence. Follow each block to stay on top of legal requirements while building your new life in Uruguay.'
+            )}
           </p>
           <p className="mt-4 text-lg text-ink/70 md:text-xl">
-            Keep this page handy during your move - each section links to checklists, provider tips,
-            and the agencies you will work with.
+            {sanitizeText(
+              'Keep this page handy during your move - each section links to checklists, provider tips, and the agencies you will work with.'
+            )}
           </p>
         </div>
       </Section>
@@ -72,9 +74,9 @@ export default function Resources() {
               Legal Residency & Immigration
             </h2>
             <p className="mt-4 text-base text-ink/80">
-              Uruguay offers multiple entry points into residency. Begin by understanding which path
-              fits your profile, then coordinate income certification, presence requirements, and
-              the DNM timeline.
+              {sanitizeText(
+                'Uruguay offers multiple entry points into residency. Begin by understanding which path fits your profile, then coordinate income certification, presence requirements, and the DNM timeline.'
+              )}
             </p>
           </div>
 
