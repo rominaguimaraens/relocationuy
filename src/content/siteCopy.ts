@@ -93,7 +93,7 @@ export const siteCopy = {
         features: [
           'Step-by-step residency guidance',
           'DNM (residency appointment) booking + in-person support',
-          '2 certified translations',
+          'Direct contact with sworn translator',
           'Health card & ID guidance',
           '3-month WhatsApp/email support',
         ],
