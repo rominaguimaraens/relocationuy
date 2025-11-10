@@ -121,7 +121,6 @@ export const siteCopy = {
         summary: 'Everything in Full plus family, pet, and logistics support.',
         features: [
           'Includes everything in Full plus',
-          'Certified translations (2 per person)',
           'School or childcare support',
           'Pet relocation guidance',
           'Title revalidation',
