@@ -113,7 +113,7 @@ export default function Home() {
       <Section className="bg-hero-muted">
         <div className="flex flex-col gap-8 text-center md:flex-row md:items-center md:justify-between md:text-left">
           <div>
-            <h2 className="text-3xl md:text-4xl font-display">💬 “Is Uruguay Right for Me?” Consultation — $85</h2>
+            <h2 className="text-3xl md:text-4xl font-display">💬 “Is Uruguay Right for Me?” Consultation — $125</h2>
             <p className="mt-4 max-w-2xl text-ink/80">
               A one-hour video call to help you decide if life in Uruguay truly fits your goals, values, and lifestyle.
             </p>
