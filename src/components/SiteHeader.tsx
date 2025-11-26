@@ -7,7 +7,9 @@ const NAV_LINKS = [
   { to: '/', label: siteCopy.nav.home },
   { to: '/about', label: siteCopy.nav.about },
   { to: '/pricing', label: siteCopy.nav.pricing },
+  { to: '/scouting-trips', label: siteCopy.nav.scouting },
   { to: '/resources', label: siteCopy.nav.resources },
+  { to: '/blog', label: siteCopy.nav.blog },
   { to: '/contact', label: siteCopy.nav.contact },
 ] as const;
 

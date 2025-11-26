@@ -30,14 +30,20 @@ export default function Home() {
             </span>
             <h1 className="mt-6 text-4xl leading-tight md:text-5xl">{site.title}</h1>
             <p className="mt-5 max-w-xl text-lg text-ink/80 md:text-xl">
-              {sanitizeText(home.heroTagline)}
+              Moving to Uruguay shouldn't feel like solving a bureaucratic puzzle in a language you don't speak.
+            </p>
+            <p className="mt-3 max-w-xl text-ink/80">
+              We're Romina and Tomas — two Montevideo locals who handle the confusing parts (paperwork, appointments, translations, the "wait what document do they need?" moments) so you can actually breathe and start building your new life.
+            </p>
+            <p className="mt-3 max-w-xl text-ink/80">
+              Whether you're fleeing, exploring, or just ready for something new — you deserve support that feels human, not transactional.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/contact" className="btn btn-primary btn-soft btn-lg min-w-[200px]">
                 {cta.primary}
               </Link>
               <Link
-                to="/pricing"
+                to="/scouting-trips"
                 className="btn btn-soft btn-outline btn-lg min-w-[200px]"
               >
                 {home.heroSecondaryButton}
@@ -75,6 +81,7 @@ export default function Home() {
               summary={item.summary}
               features={item.features}
               supportLength={item.supportLength}
+              footer={item.footer ? sanitizeText(item.footer) : undefined}
               highlighted={index === 1}
             />
           ))}
@@ -82,15 +89,62 @@ export default function Home() {
       </Section>
 
       <Section className="bg-hero-muted">
-        <div className="grid gap-10 md:grid-cols-[0.65fr_1fr] md:items-center">
-          <div className="rounded-3xl bg-sage/15 p-8 shadow-lg shadow-sky/5">
-            <p className="text-lg leading-relaxed text-ink md:text-xl">
-              {sanitizeText(home.whyBody)}
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl md:text-4xl">{home.whyTitle}</h2>
+          <div className="mt-12 space-y-8 text-left">
+            <p className="text-ink/80 text-lg leading-relaxed font-medium">
+              <strong>
+                Because we're not just processing your paperwork — we're actually <em>with</em> you.
+              </strong>
             </p>
+
+            <p className="text-ink/80 leading-relaxed">
+              Most relocation services send you a checklist and wish you luck.
+              <br />
+              <strong>We show up.</strong>
+              <br />
+              We go to your appointments. We translate in real-time so you understand what’s being asked. We walk you
+              through neighborhoods and tell you which cafés have the best medialunas and which streets feel safest at
+              night.
+            </p>
+
+            <hr className="opacity-30" />
+
+            <div>
+              <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">
+                🗣️ We're bilingual locals who speak <em>your</em> language
+              </h3>
+              <p className="text-ink/80 leading-relaxed">
+                Fluent in English and Spanish, we translate not just words but culture — the unspoken rules, the
+                neighborhood personalities, and the <em>“why does it work this way?”</em> questions Google can’t answer.
+              </p>
+            </div>
+
+            <hr className="opacity-30" />
+
+            <div>
+              <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">
+                🏠 We're born-and-raised Montevideanos with deep roots here
+              </h3>
+              <p className="text-ink/80 leading-relaxed">
+                We're not expats who moved here recently. We grew up here. We know every shortcut, every government
+                office quirk, every <em>“this is how it actually works”</em> insider detail.
+              </p>
+            </div>
+
+            <hr className="opacity-30" />
+
+            <div>
+              <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">
+                💙 We treat you like a person, not a transaction
+              </h3>
+              <p className="text-ink/80 leading-relaxed">
+                You're not Client #247. You're someone making one of the biggest decisions of your life. We don't rush
+                you. We don't judge you. <strong>We just help.</strong>
+              </p>
+            </div>
           </div>
-          <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl">{home.whyTitle}</h2>
-            <p className="text-ink/80">{sanitizeText(site.tagline)}</p>
+          <div className="mt-8 flex justify-center">
             <Link to="/contact" className="btn btn-primary btn-soft">
               {cta.primary}
             </Link>
@@ -113,7 +167,7 @@ export default function Home() {
       <Section className="bg-hero-muted">
         <div className="flex flex-col gap-8 text-center md:flex-row md:items-center md:justify-between md:text-left">
           <div>
-            <h2 className="text-3xl md:text-4xl font-display">💬 “Is Uruguay Right for Me?” Consultation — $125</h2>
+            <h2 className="text-3xl md:text-4xl font-display">💬 “Is Uruguay Right for Me?” Consultation — $150</h2>
             <p className="mt-4 max-w-2xl text-ink/80">
               A one-hour video call to help you decide if life in Uruguay truly fits your goals, values, and lifestyle.
             </p>

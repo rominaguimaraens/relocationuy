@@ -6,6 +6,9 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Pricing from './routes/Pricing';
 import Resources from './routes/Resources';
+import Blog from './routes/Blog';
+import BlogPost from './routes/BlogPost';
+import ScoutingTrips from './routes/ScoutingTrips';
 import Contact from './routes/Contact';
 import ResourceArticle from './routes/ResourceArticle';
 
@@ -18,8 +21,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/scouting-trips" element={<ScoutingTrips />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/:slug" element={<ResourceArticle />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
         </Routes>
