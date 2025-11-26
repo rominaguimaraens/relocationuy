@@ -1,53 +1,52 @@
 import matter from 'gray-matter';
+import { Buffer } from 'buffer';
+
+const globalBuffer = globalThis as typeof globalThis & { Buffer?: typeof Buffer };
+if (!globalBuffer.Buffer) {
+  globalBuffer.Buffer = Buffer;
+}
 
 export type BlogPost = {
   slug: string;
   title: string;
   date: string;
-  author?: string;
-  excerpt?: string;
-  cover?: string;
-  tags?: string[];
-  published?: boolean;
-  body: string;
-  filename: string;
+  readingTime: string;
+  summary: string;
+  content: string;
 };
 
-const files = import.meta.glob('/src/content/posts/**/*.md', { as: 'raw', eager: true });
+const files = import.meta.glob('../content/blog/*.md', {
+  eager: true,
+  import: 'default',
+  query: '?raw',
+});
 
-function filenameToSlug(filename: string) {
-  const base = filename.split('/').pop()!.replace('.md', '');
-  return base.toLowerCase().replace(/^[0-9-]+/, '').replace(/[^a-z0-9-]+/g, '-');
+function pathToSlug(path: string) {
+  return path.split('/').pop()!.replace(/\.md$/, '');
 }
 
-export function getAllPosts(): BlogPost[] {
-  const posts: BlogPost[] = [];
+const posts: BlogPost[] = Object.entries(files).map(([path, raw]) => {
+  const { data, content } = matter(raw as string);
+  const slug = pathToSlug(path);
 
-  for (const [path, raw] of Object.entries(files)) {
-    const { data, content } = matter(raw as string);
-    const fm = data || {};
-    const slug = (fm.slug as string) || filenameToSlug(path);
-    const published = fm.published !== false;
+  return {
+    slug,
+    title: (data.title as string) ?? slug,
+    date: (data.date as string) ?? new Date().toISOString(),
+    readingTime: (data.readingTime as string) ?? '',
+    summary: (data.summary as string) ?? '',
+    content,
+  };
+});
 
-    posts.push({
-      slug,
-      title: (fm.title as string) || slug,
-      date: (fm.date as string) || new Date().toISOString(),
-      author: (fm.author as string) || 'Uruguay Relocation Companion',
-      excerpt: (fm.excerpt as string) || '',
-      cover: (fm.cover as string) || '',
-      tags: (fm.tags as string[]) || [],
-      published,
-      body: content,
-      filename: path,
-    });
-  }
+const sortedPosts = [...posts].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
 
-  return posts
-    .filter((post) => post.published)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export function getAllPosts() {
+  return sortedPosts;
 }
 
 export function getPostBySlug(slug: string) {
-  return getAllPosts().find((post) => post.slug === slug);
+  return posts.find((post) => post.slug === slug);
 }
