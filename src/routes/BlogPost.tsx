@@ -3,11 +3,11 @@ import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Section from '../components/Section';
-import { getPostBySlug } from '../lib/blog';
+import { categoryLabelToSlug, getCategorizedPost } from '../lib/blogCategories';
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const post = getPostBySlug(slug || '');
+  const post = slug ? getCategorizedPost(slug) : null;
 
   if (!post) {
     return (
@@ -32,8 +32,14 @@ export default function BlogPost() {
       <Section className="bg-hero-muted pt-24 md:pt-28">
         <article className="mx-auto max-w-3xl">
           <header className="text-center">
-            <h1 className="text-4xl md:text-5xl">{post.title}</h1>
-            <p className="mt-3 text-sm uppercase tracking-wide text-ink/60">
+            <Link
+              to={`/blog/categories/${categoryLabelToSlug(post.category)}`}
+              className="badge rounded-full border-none bg-sky/10 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-sky"
+            >
+              {post.category}
+            </Link>
+            <h1 className="mt-4 text-4xl md:text-5xl">{post.title}</h1>
+            <p className="mt-3 text-xs uppercase tracking-wide text-ink/60">
               {post.date} · {post.readingTime}
             </p>
           </header>

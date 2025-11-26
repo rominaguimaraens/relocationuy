@@ -1,6 +1,6 @@
 ---
 title: "Residency in Uruguay: What the Official Sites Don't Tell You"
-date: "2025-01-25"
+date: "2025-11-25"
 readingTime: "15 min read"
 summary: "We walk through the residency process step by step, highlighting the quiet details that make things smoother (or more stressful) in real life."
 ---

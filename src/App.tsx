@@ -7,6 +7,7 @@ import About from './routes/About';
 import Pricing from './routes/Pricing';
 import Resources from './routes/Resources';
 import Blog from './routes/Blog';
+import BlogCategory from './routes/BlogCategory';
 import BlogPost from './routes/BlogPost';
 import ScoutingTrips from './routes/ScoutingTrips';
 import Contact from './routes/Contact';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/:slug" element={<ResourceArticle />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/categories/:category" element={<BlogCategory />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
