@@ -27,7 +27,6 @@ const reviews = [
       "Tomas and Ro’s services were vital to setting up our new life in Uruguay.  When you need to open a bank account or other complicated process as a new immigrant to Uruguay, it can be very stressful without knowing the language well enough.  Tomas and Ro made it feel easy, and their prices for their assistance were very reasonable."
     ),
     },
-  },
 ];
 
 const introParagraphs = [
