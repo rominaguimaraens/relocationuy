@@ -14,14 +14,19 @@ const reviews = [
     text: sanitizeText(
       "We recently had the pleasure of working with Ro, and we couldn't be more impressed with her professionalism and skill. She communicated fluently and naturally in both English and Spanish, switching effortlessly between the two languages to ensure clear understanding for everyone involved. Beyond her linguistic ability, she provided thoughtful guidance and cultural context that helped the conversation flow smoothly and appropriately. She also had an easy, personable manner that helped put everyone at ease and built genuine rapport with the interviewers. Her calm confidence and adaptability made what could have been a stressful experience feel comfortable and collaborative. We're deeply grateful for her support and would enthusiastically recommend her to anyone seeking a capable translator."
     ),
-       name: "Tyler (USA)",
+  },
+  {
+    name: "Tyler (USA)",
     text: sanitizeText(
       "We had a great experience and much easier transition from the US to Uruguay—especially thanks to Ro and Tomas! They’re both kind and welcoming souls who will work at your own pace. Their interpretation help and knowledge in local processes were invaluable, especially when it came to opening a bank account. We highly recommend working with Ro and Tomas to ensure your journey to Uruguay is smooth!"
     ),
-       name: "Teddy (USA)",
+  },  
+  {
+      name: "Teddy (USA)",
     text: sanitizeText(
       "Tomas and Ro’s services were vital to setting up our new life in Uruguay.  When you need to open a bank account or other complicated process as a new immigrant to Uruguay, it can be very stressful without knowing the language well enough.  Tomas and Ro made it feel easy, and their prices for their assistance were very reasonable."
     ),
+    },
   },
 ];
 
