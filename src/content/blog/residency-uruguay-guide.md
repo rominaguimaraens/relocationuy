@@ -5,8 +5,7 @@ readingTime: "15 min read"
 summary: "We walk through the residency process step by step, highlighting the quiet details that make things smoother (or more stressful) in real life."
 ---
 
-Residency isn't just a checklist — it's the timing between appointments, the translation requirements that change mid-process, and the questions migration officers actually ask. 
-
+Residency isn't just a checklist — it's the timing between appointments, the translation requirements that change mid-process, and the questions migration officers actually ask.
 In this deep dive we outline the timeline we guide clients through, including document prep, health card visits, and cédula day.
 
 You'll find tips on organizing your apostilles, what to expect at DNM, and how to avoid the bottlenecks that make people feel stuck. Think of it as a calm friend walking beside you from "I'm thinking about it" to fixing your first mate on the rambla.
@@ -41,23 +40,26 @@ So let's walk through the actual process, step by step, with all the quiet detai
 Uruguay offers several residency pathways. Most expats use one of these:
 
 ### **Temporary Residency (Legal Residency)**
+
 - Requires proof of regular monthly income ($600+ USD for individuals)
 - Valid for 1 year, renewable
 - Can upgrade to permanent after living here continuously
 
 ### **Permanent Residency**
+
 - Requires proof of stable income
 - Immediately permanent (no renewal needed)
 
 ### **Rentista (Passive Income) Residency**
+
 - For retirees or people with investment income
 - Requires proof of pension, rental income, or investment returns
 - Must show stable monthly income
 
 ### **Mercosur Residency**
+
 - If you're from Argentina, Brazil, Paraguay, or other Mercosur countries
 - Easier process, different requirements
-
 
 ---
 
@@ -70,10 +72,12 @@ Here's what you actually need:
 ### **Required Documents:**
 
 **1. Passport**
+
 - Must be valid for at least 6 months
 - Bring the original + a photocopy
 
 **2. Birth Certificate**
+
 - Original or certified copy
 - **Must be apostilled** in your home country
 - **Must be translated** by a Uruguayan sworn translator once you're here

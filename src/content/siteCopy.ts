@@ -167,7 +167,7 @@ We don't rush you. We don?t judge you.
           'Title revalidation',
           'Shipping/import guidance',
           '9-month support',
-          'Extra person for $500',
+          'Extra person for $800',
         ],
         supportLength: '9-month support',
         footer: '',
