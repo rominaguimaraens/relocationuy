@@ -75,7 +75,7 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
           'Title revalidation',
           'Shipping/import guidance',
           '9-month support',
-          'Extra person for $500',
+          'Extra person for $800',
         ],
         supportLength: '9-month support',
       },
