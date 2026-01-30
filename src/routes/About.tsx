@@ -120,6 +120,7 @@ export default function About() {
                     <p key={paragraph}>{sanitizeText(paragraph)}</p>
                   ))}
                 </div>
+                </div>
             </div>
           </div>
         </Section>
