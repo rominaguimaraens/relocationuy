@@ -33,12 +33,7 @@ const introParagraphs = [
   "Moving to Uruguay can be exciting — the fresh start, the slower pace, the ocean breeze, the mate in the mornings, the promise of finally breathing.",
   "But we also know the other side: the 3am Google spiral trying to understand what documents you need. The anxiety walking into a government office where no one speaks English. The loneliness of being new in a place where you don't know who to ask for help. The weight of \"I just spent my life savings on this move — what if I mess something up?\"",
   "That's exactly why we started Uruguay Relocation Companion.",
-  "We're Romina and Tomas — and we bridge both worlds.",
-  "Romina was born and raised in Montevideo. She's fluent in English and Spanish, knows every neighborhood inside and out, and has spent years helping foreign friends navigate residency, translations, and the million small details that make settling here either smooth or stressful. She's the one who'll translate in real-time at your DNM appointment, walk you through apartment buildings and tell you which streets flood when it rains, and answer your panicked 9pm WhatsApp messages about document deadlines. She's calm, detail-oriented, and will not let you miss a step.",
-  "Tomas is Uruguayan but moved to the US at 19, lived there for 6 years, went through the entire immigration process, and became a US citizen. He knows what it's like to be the immigrant — the confusion, the fear, the cultural adjustment, the bureaucratic maze. He's been where you are. And now he uses that firsthand experience to make sure your integration into Uruguay is as smooth as possible.",
-  "Together, we're not just consultants — we're the support system we watched people desperately need.",
-  "What started as helping friends with paperwork turned into a full relocation service built around one belief: nobody should have to figure this out alone.",
-  "We're not a corporate team. We're not a law firm. We're the people who literally sit with you at appointments, translate everything so you actually understand what's happening, walk neighborhoods with you, connect you with trusted translators and landlords, and text you back when you're stressed.",
+  "We're not a law firm. We're the people who literally sit with you at appointments, translate everything so you actually understand what's happening, walk neighborhoods with you, connect you with trusted translators and landlords, and text you back when you're stressed.",
   "Our goal is simple: take the bureaucratic nightmare out of the process, so you can focus on building your new life instead of drowning in confusion.",
   "Because relocation isn't just about paperwork — it's about people, comfort, and feeling like you actually belong here. 🌿",
   "Whether you're moving alone, as a couple, with kids, with pets, fleeing something, or just ready for something new — we're here to make sure you always feel supported, understood, and at home.",
@@ -63,12 +58,6 @@ const rominaParagraphs = [
   "I'm fluent in English and Spanish, detail-oriented, and genuinely enjoy helping people feel cared for, informed, and supported as they settle into their new life in Uruguay. My approach is calm, organized, and personal — because moving to a new country should feel like a fresh start, not a mountain of paperwork.",
 ];
 
-const tomasParagraphs = [
-  "Hello my name is Tomas.",
-  "I'm an Uruguayan who at the age of 19 moved to the US. Throughout my 6 years in the US I was able to make friends, integrate, find employment, and ultimately become a citizen.",
-  "I have first hand experience of the immigration process, and I understand what a daunting experience it can be. It's full of surprises and challenges, but with the right support it can be the best experience of your life.",
-  "With my help I can assure your integration into Uruguay will be as smooth as possible.",
-];
 
 export default function About() {
   const [current, setCurrent] = useState(0);
@@ -131,21 +120,6 @@ export default function About() {
                     <p key={paragraph}>{sanitizeText(paragraph)}</p>
                   ))}
                 </div>
-              </div>
-
-              <div className="card flex flex-col items-center gap-4 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
-                <img
-                  src="/tomas.jpg"
-                  alt="Tomas Echenique headshot"
-                  className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
-                />
-                <h3 className="text-2xl font-display">Tomas Echenique</h3>
-                <div className="space-y-4 text-left text-lg leading-relaxed text-ink">
-                  {tomasParagraphs.map((paragraph) => (
-                    <p key={paragraph}>{sanitizeText(paragraph)}</p>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </Section>
