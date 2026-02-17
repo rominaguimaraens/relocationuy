@@ -133,7 +133,7 @@ You don't need to be fluent before you arrive, but you'll want to invest in lear
 More expensive than most. Uruguay has a higher cost of living than Mexico, Colombia, Ecuador, or most of Central America. It's comparable to some parts of Portugal. For people earning in US dollars or euros, it's generally manageable to comfortable. For people taking local employment, the salary levels align with the cost of living but feel low compared to the US or Western Europe.
 
 **What is Uruguay's healthcare system like for expats?**
-Uruguay has both a public system (ASSE) and a private cooperative system (mutualistas). Most expats use the mutualista system, which costs roughly $80-180 per month depending on the provider, and provides access to primary care, specialists, emergency care, and prescriptions. Quality is generally good and the system functions reliably.
+Uruguay has both a public system (ASSE) and a private cooperative system (mutualistas). Most expats use the mutualista system, which costs roughly $30-100 per month depending on the provider, and provides access to primary care, specialists, emergency care, and prescriptions. Quality is generally good and the system functions reliably.
 
 **Is Uruguay actually LGBTQ+ friendly or is it just legal on paper?**
 Both the legal protections and the social environment are genuine. Uruguay has had marriage equality since 2013, strong anti-discrimination laws, and a culture that is broadly accepting in Montevideo and most of the country. It's not a scene-heavy city, but it's a place where LGBTQ+ people can live openly without monitoring themselves constantly.
@@ -150,9 +150,9 @@ The bureaucracy, the grey winters, and how long it takes to build a real social 
 
 The most useful thing you can do before committing to a move is visit first. Spend enough time — ideally two to four weeks — in Montevideo during a regular season, not just during the summer when the energy is higher and everything feels more appealing. Walk the neighborhoods you'd actually live in. Go to a government office for something minor. Deal with a mundane errand in Spanish. Notice how it feels.
 
-If a trip isn't possible yet, we offer a free consultation where we go through your specific situation — your work setup, your family, your reasons for considering Uruguay, your honest concerns — and give you direct feedback about whether this is a good fit. Not a sales pitch, an actual conversation. If we think Uruguay isn't right for you, we'll say so.
+If a trip isn't possible yet, we offer a call where we go through your specific situation — your work setup, your family, your reasons for considering Uruguay, your honest concerns — and give you direct feedback about whether this is a good fit. Not a sales pitch, an actual conversation. If we think Uruguay isn't right for you, we'll say so.
 
-**[Book your free consultation.](/contact)**
+**[Book "Is Uruguay Right for Me?" Call.](/contact)**
 
 ---
 

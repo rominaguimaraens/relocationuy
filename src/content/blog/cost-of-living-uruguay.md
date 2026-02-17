@@ -17,7 +17,7 @@ This guide is based on what we see regularly with clients settling into Montevid
 
 ## Housing: What You'll Actually Pay in Each Neighborhood
 
-Rent in Montevideo is quoted in US dollars almost universally, which makes budgeting straightforward. Prices vary significantly by neighborhood, building age, and whether the apartment is furnished.
+Rent in Montevideo is quoted in US dollars a lot of the time, which makes budgeting straightforward. Prices vary significantly by neighborhood, building age, and whether the apartment is furnished.
 
 **Pocitos** is the most popular neighborhood for expats — beachfront access, good infrastructure, walkable, and well-served by transit. It's also not the cheapest option.
 
@@ -55,15 +55,16 @@ Furnished apartments run roughly 20-30% higher than the figures above across all
 
 This is the single most common surprise for people renting in Montevideo for the first time. If you rent in a building with amenities — doorman, elevator, gym, pool, or even just shared hallways and a garden — you'll pay gastos comunes on top of your rent. This is the monthly building maintenance fee and it covers staff salaries, elevator maintenance, cleaning of common areas, shared water, and sometimes gas for building-wide hot water.
 
-Depending on the building, gastos comunes runs anywhere from $80 to $250 per month. In a newer building with a gym and a doorman in Pocitos, expect the higher end of that range.
+Depending on the building, gastos comunes runs anywhere from $80 to $300 per month. In a newer building with a gym and a doorman in Pocitos, expect the higher end of that range.
 
 Landlords don't always volunteer this information. Before you sign anything, ask directly: *¿Cuánto son los gastos comunes?* Add that number to your monthly rent when you're comparing apartments.
 
 ### What You'll Need to Move In
 
-Moving into an apartment in Uruguay requires more upfront cash than people typically expect. You're looking at one to two months' rent as a refundable security deposit, plus your first month's rent. Some landlords also require a garantía — essentially a financial guarantee against default. This can come from a third party who owns property in Uruguay, or through a bank guarantee arranged through companies like Contaduría, which typically costs a one-time fee of around $500-800.
+Moving into an apartment in Uruguay requires more upfront cash than people typically expect. You're looking at three to six months' rent as a refundable security deposit, plus your first month's rent. Some landlords require a garantía instead of a deposit — essentially a financial guarantee against default. This can come from a third party who owns property in Uruguay, or through a bank guarantee arranged through companies like ANDA or Porto Seguro, which typically costs a one-time fee of one month's rent.
+You will most likely also have to pay one month's rent + VAT to the real estate agent.
 
-Total cash needed to move in: plan for the equivalent of two to three months' rent.
+Total cash needed to move in: plan for the equivalent of three to six months' rent.
 
 ---
 
@@ -105,12 +106,12 @@ Uruguay's healthcare system has two tracks: public and private. The public syste
 
 **Monthly mutualista costs:**
 
-- Individual under 40: $80-120/month
-- Individual 40-60: $120-180/month
-- Couple: $180-280/month
-- Family with two children: $300-450/month
+- Individual under 40: $30-100/month
+- Individual 40-60: $100-150/month
+- Couple: $150-250/month
+- Family with two children: $250-400/month
 
-Well-regarded providers include Médica Uruguaya, CASMU, Círculo Católico, and the British Hospital. Coverage includes general practitioner visits, specialists, prescriptions, hospital stays, and emergency care. Co-pays are minimal — $0-5 for a general appointment, $5-15 for a specialist, $2-20 for prescriptions depending on the medication.
+Well-regarded providers include Médica Uruguaya, CASMU, COSEM, and the British Hospital. Coverage includes general practitioner visits, specialists, prescriptions, hospital stays, and emergency care. Co-pays are minimal — $0-5 for a general appointment, $5-15 for a specialist, $2-20 for prescriptions depending on the medication.
 
 The one thing to know before you enroll: pre-existing conditions may have a waiting period before coverage kicks in, typically three to twelve months depending on the condition and provider. If you have ongoing medical needs, look into this before choosing your plan and provider.
 
@@ -124,7 +125,7 @@ Uruguay produces excellent quality beef, dairy, produce, and bread, and local fo
 
 - Supermarket only (Disco, Tienda Inglesa, Géant): $120-180/week, or roughly $480-720/month
 - Mix of feria and supermarket: $80-120/week, or $320-480/month
-- Mostly home cooking, vegetarian-leaning: $60-100/week, or $240-400/month
+- Mostly home cooking: $60-100/week, or $240-400/month
 
 The feria — the outdoor produce market that operates in most neighborhoods on a weekly schedule — is where you want to buy produce. Prices are lower than supermarkets and the quality is often better. Finding your neighborhood feria and building it into your weekly routine is one of the more immediate ways to reduce your grocery spending.
 
@@ -273,7 +274,7 @@ Compared to small-town America, Uruguay can feel comparable or even slightly mor
 
 The categories where Uruguay is clearly cheaper: healthcare, dining out, fresh produce, public transportation, and the overall tax and cost burden on daily life.
 
-The categories where Uruguay is not cheaper: imported goods, electronics and appliances (buying locally is expensive — most expats bring what they can or buy secondhand), private schooling, and furnished rental housing.
+The categories where Uruguay is not cheaper: imported goods, electronics and appliances (buying locally is expensive — most expats bring what they can or buy secondhand).
 
 Remote workers keeping US or European salaries live very comfortably here. Local employment means adapting your expectations because Uruguayan professional salaries are modest by US standards, typically $1,500-2,500 per month for established professionals, which is livable in Uruguay but a significant adjustment if you're used to more.
 
@@ -288,10 +289,10 @@ A comfortable lifestyle in a central neighborhood with regular dining out, a pri
 It's comparable, and in some categories more expensive. Buenos Aires has much lower prices at the moment due to economic conditions, but financial volatility there creates its own costs. For stable, predictable budgeting, Uruguay is the more reliable option.
 
 **How much does private health insurance cost in Uruguay for a foreigner?**
-Mutualista plans for individuals under 40 typically run $80-120 per month. For people 40-60, expect $120-180. Couples pay $180-280 and families of four around $300-450. These cover the vast majority of medical needs with low co-pays.
+Mutualista plans for individuals under 40 typically run $30-100 per month. For people 40-60, expect $120-180. Couples pay $180-280 and families of four around $300-450. These cover the vast majority of medical needs with low co-pays.
 
 **What is a gastos comunes fee in Uruguay?**
-It's the monthly building maintenance fee paid by residents of apartment buildings. It covers shared staff, elevator maintenance, common area cleaning, and sometimes building-wide utilities. It ranges from $80-250 per month depending on the building and is paid in addition to rent. Always ask about this before signing a lease.
+It's the monthly building maintenance fee paid by residents of apartment buildings. It covers shared staff, elevator maintenance, common area cleaning, and sometimes building-wide utilities. It ranges from $80-300 per month depending on the building and is paid in addition to rent. Always ask about this before signing a lease.
 
 **Do I need a car to live in Montevideo?**
 In the central expat neighborhoods (Pocitos, Punta Carretas, Buceo), no. The bus system is reliable, walking is practical, and Uber covers longer distances. Families in outer neighborhoods or with school-age children often find a car more practical, but it's not essential in the city center.
