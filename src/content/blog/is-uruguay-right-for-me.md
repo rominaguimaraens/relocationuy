@@ -1,7 +1,7 @@
 ---
 title: "Is Uruguay Right for Me?"
 date: "2025-11-25"
-readingTime: "12 min read"
+readingTime: "10 min read"
 summary: "A grounded look at who tends to thrive in Uruguay, who struggles, and what to consider before starting the residency process."
 author: "Romina Guimaraens"
 tags: ["lifestyle", "decision-making"]

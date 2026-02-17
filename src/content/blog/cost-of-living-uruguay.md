@@ -1,7 +1,7 @@
 ---
 title: "What Moving to Uruguay Really Costs (Beyond the Visa Fees)"
 date: "2025-11-25"
-readingTime: "8 min read"
+readingTime: "11 min read"
 summary: "From rentals and utilities to health plans and everyday groceries — a realistic breakdown of monthly life costs in Montevideo."
 author: "Romina Guimaraens"
 tags: ["cost-of-living", "budget"]
