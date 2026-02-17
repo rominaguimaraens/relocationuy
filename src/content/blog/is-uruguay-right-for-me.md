@@ -3,330 +3,157 @@ title: "Is Uruguay Right for Me?"
 date: "2025-11-25"
 readingTime: "12 min read"
 summary: "A grounded look at who tends to thrive in Uruguay, who struggles, and what to consider before starting the residency process."
+author: "Romina Guimaraens"
+tags: ["lifestyle", "decision-making"]
 ---
 
-Making an international move is equal parts hopeful and terrifying. 
+# Is Uruguay Right for Me? An Honest Answer Before You Book the Flight
 
-In this article we explore what daily life in Uruguay actually feels like, the kinds of people who tend to fall in love with the rhythm here, and the personalities that often struggle with the bureaucracy or quieter lifestyle.
+Most people researching Uruguay are asking the wrong question. "Is Uruguay a good place to live?" gets you a list of pros and cons that applies to everyone and tells you nothing useful about your own situation. The question that actually matters is whether Uruguay is right for you specifically — your personality, your work situation, your tolerance for bureaucracy, your relationship with slowness.
 
-We break down the conversations we have with clients every week — covering everything from work options and social life to how long the residency timeline really takes. Use it as a gut-check before you start apostilling documents or booking flights.
-
----
-
-## **The Question Everyone Asks (But Shouldn't Ask First)**
-
-"Is Uruguay a good place to live?"
-
-Wrong question.
-
-The better question is: **"Is Uruguay right for ME?"**
-
-Because Uruguay isn't objectively "good" or "bad" — it's a specific kind of place that suits specific kinds of people. Some people land here and feel like they've finally found home. Others arrive excited and leave within six months feeling frustrated and disappointed.
-
-The difference isn't Uruguay. It's fit.
-
-So let's talk about who thrives here, who struggles, and what you need to know about yourself before you commit to this move.
+We have this conversation with potential clients every week. Some people are a clear fit. Some people are clearly not, and the kindest thing we can do is tell them that before they sell their house and ship their furniture. This post is that conversation, written out.
 
 ---
 
-## **Who Tends to Thrive in Uruguay**
+## What Kind of Place Is Uruguay, Actually?
 
-### **1. People Who Value Stability Over Excitement**
+Before getting into who fits and who doesn't, it helps to understand what Uruguay actually is — not the TikTok version, not the expat Facebook group version, but the real thing.
 
-If you're someone who finds peace in predictability — where the government isn't constantly lurching between extremes, where your rights aren't being legislated away, where you can plan for the future without existential dread — Uruguay will feel like a deep exhale.
+Montevideo is a city of about 1.3 million people. It's calm, walkable, genuinely safe by regional standards, and culturally rich in a way that takes time to appreciate. It is not loud. It is not fast. It does not have the relentless energy of Buenos Aires or the digital nomad scene density of Lisbon or Medellín. The beaches outside the city are beautiful and accessible. The food is good if you like meat and simple cooking. The winters are mild but grey and damp and longer than people expect.
 
-Uruguay is politically stable. Boring stable. "The most dramatic thing that happened this year was a debate about tax policy" stable.
+Bureaucracy is real and slow and sometimes absurd. Things close for lunch. Government offices operate on their own logic. Rules occasionally change mid-process. The wifi is fine. Healthcare works. The political system is stable in a way that most countries in the region — and increasingly, countries outside the region — are not.
 
-For people fleeing chaos — whether that's political instability, LGBTQ+ persecution, threats to bodily autonomy, or just the exhausting 24-hour news cycle — that boring stability feels like a gift.
-
-**You'll love Uruguay if:**
-- You're tired of feeling unsafe in your own country
-- You want a government that functions without constant drama
-- You value long-term planning over constant crisis mode
-
-**You'll struggle if:**
-- You thrive on high-energy, fast-paced environments
-- You get bored easily without constant stimulation
-- You need "things happening" all the time to feel alive
+That's Uruguay. Whether that's your kind of place depends entirely on you.
 
 ---
 
-### **2. Remote Workers & Digital Nomads Who Actually Want to Settle**
+## Who Tends to Do Well Here
 
-Uruguay is paradise for remote workers who are done with the "perpetual tourist" hustle and want to actually build a life somewhere.
+### People who are genuinely done with chaos
 
-You can work legally as a remote employee or freelancer. The cost of living is reasonable. The wifi is solid. The time zone overlaps well with the US East Coast. The beaches are 20 minutes away.
+There's a specific type of person who lands in Montevideo and exhales for the first time in years. They moved because the political situation back home was exhausting them, or because they were scared for their safety, or because they were tired of every news cycle feeling like a crisis. Uruguay's stability — its boring, unglamorous, undramatic political stability — is exactly what they needed.
 
-And unlike other popular digital nomad destinations (Bali, Medellín, Lisbon), Uruguay isn't overrun with Instagram influencers and people constantly asking "so like, what do you DO?"
+If you've spent the last several years feeling like the ground keeps shifting under you, Uruguay offers something that's genuinely hard to find: a place where the government functions, the institutions hold, and nothing catastrophic is happening. That's not a small thing. For a lot of people, it's the whole point.
 
-It's quieter. More grounded. Less performative.
+### Remote workers who want to actually settle somewhere
 
-**You'll love Uruguay if:**
-- You want residency, not just tourist visas
-- You prefer a slower pace over a party scene
-- You value stability and healthcare over "adventure"
-- You like the idea of living somewhere vs. constantly traveling
+Uruguay works extremely well for people who earn in US dollars or euros and are ready to stop moving. The cost of living is reasonable relative to what remote workers in tech or professional services typically earn. The time zone aligns with the US East Coast for most of the workday. The internet is reliable. The residency pathway is accessible. And unlike cities that have been completely overtaken by the digital nomad scene, Montevideo still feels like a real city where real people live rather than a backdrop for content creation.
 
-**You'll struggle if:**
-- You need a big expat/nomad community for socializing
-- You want coworking spaces on every corner with "networking events"
-- You thrive in hustle culture and need that energy around you
+What Uruguay doesn't offer is a coworking space on every corner or a constant calendar of expat networking events. If you need that social infrastructure to feel at home, it's going to feel thin here. But if you want to actually build a life somewhere — settle into a neighborhood, find your café, make friends over time — Uruguay is set up for that.
 
----
+### LGBTQ+ people looking for legal recognition and actual safety
 
-### **3. LGBTQ+ People Seeking Legal Recognition & Safety**
+Uruguay legalized same-sex marriage in 2013 and has some of the strongest LGBTQ+ legal protections in Latin America, including the ability for trans people to legally change their gender without requiring medical intervention. Anti-discrimination protections exist and are enforced.
 
-Uruguay legalized same-sex marriage in 2013. It has strong anti-discrimination laws. It allows trans people to legally change their gender without medical intervention. It consistently ranks as one of the safest countries in Latin America for LGBTQ+ people.
+The thing we hear most from LGBTQ+ clients after they've been here for a few months is some version of "I didn't realize how much energy I was spending just existing until I stopped spending it." Legal recognition and basic safety are not the ceiling here, they're the floor. For people coming from places where those things are actively under attack, that shift is significant.
 
-If you're tired of being treated like a second-class citizen — or worse, actively targeted by legislation — Uruguay offers legal recognition, cultural acceptance, and the profound relief of just being able to exist.
+The Montevideo LGBTQ+ scene is small relative to major cities. If you need a large, visible community with a packed events calendar, you might feel the absence of that. But if what you're looking for is legal protection, social acceptance, and the ability to live your life without monitoring what you say or who you're seen with, Uruguay delivers that consistently.
 
-We've worked with dozens of LGBTQ+ clients. The most common thing we hear is: "I didn't realize how much energy I was spending on just existing until I got here and didn't have to anymore."
+### Families prioritizing safety and quality of life over convenience
 
-**You'll love Uruguay if:**
-- You're exhausted by fighting for basic rights
-- You want your marriage/identity legally recognized
-- You need safety and stability to heal from trauma
-- You want to raise kids in a place that won't legislate their existence
+Parents moving to Uruguay usually come for one reason above all others: they want their kids to grow up without the particular anxieties that have become normalized in a lot of places. Schools in Uruguay — both public and private — are generally good. Healthcare is universal and includes children. Neighborhoods that are safe enough for kids to actually be outside exist and aren't rare. The culture takes childhood seriously in a way that's increasingly hard to find.
 
-**You'll struggle if:**
-- You need a big, visible LGBTQ+ scene (Montevideo's scene is small but supportive)
-- You're looking for activism/organizing opportunities (things are stable here, not revolutionary)
+The adjustment period is real, especially if your kids don't speak Spanish. Private international schools exist but are expensive. There are fewer organized youth activities than you'd find in a major US suburb. These are real tradeoffs and worth thinking through honestly.
+
+But for families who value safety, healthcare access, and a slower pace over convenience and variety, the tradeoff usually lands on Uruguay's side.
+
+### People who can make peace with "Uruguayan time"
+
+Slowness here is not a malfunction. It's a feature of how the culture is organized. Appointments run late. Government offices close for lunch and that lunch is non-negotiable. Bureaucratic processes take as long as they take and do not respond to urgency. Businesses close on Sundays. People stop to actually talk to each other.
+
+If you can genuinely adapt to this — not just tolerate it, but actually change your internal clock around it — you'll find Uruguay comfortable in a way that surprises you. If you cannot, if your blood pressure rises every time something doesn't happen on your expected timeline, you're going to find daily life here genuinely difficult.
+
+This one is worth being honest with yourself about before you move.
 
 ---
 
-### **4. Families Who Want Safety & Sanity**
+## Who Tends to Struggle Here
 
-Parents moving to Uruguay often say the same thing: "I just want my kids to grow up without active shooter drills."
+### People who need a big city to feel alive
 
-Uruguay offers:
-- Excellent public and private schools
-- Universal healthcare (including kids)
-- Safe neighborhoods where kids can play outside
-- A culture that values childhood and family time
-- Affordable extracurriculars (sports, music, art)
+Montevideo has culture. It has theaters and museums and live music and good restaurants and a real food scene. But it's not a major metropolitan area in the way that some people need their city to be. It doesn't have the density of options, the endless variety, the feeling of infinite possibility that large cities provide. It will feel small to someone who needs that.
 
-It's not perfect — private international schools are expensive, and if your kids don't speak Spanish, there's an adjustment period. But the trade-off (safety, stability, quality of life) is worth it for most families.
+Buenos Aires is a three-hour ferry ride away and scratches that itch effectively for day trips or weekends. But if you're someone who measures your happiness by access to constant novelty and stimulation, Montevideo as a primary residence is probably going to underwhelm you.
 
-**You'll love Uruguay if:**
-- You value safety over convenience
-- You want your kids to have a childhood without constant fear
-- You're okay with a slower pace and fewer "opportunities"
-- You can handle the adjustment period (language, culture, schools)
+### People who genuinely cannot handle bureaucracy
 
-**You'll struggle if:**
-- You need tons of kid activities/programs (there are some, but fewer than in US suburbs)
-- Your kids are in critical high school years and don't speak Spanish (harder transition)
-- You expect American-style customer service and convenience
+This is the one that breaks people who weren't expecting it. The residency process takes months. Opening a bank account is complicated. Two officials at the same government office will sometimes tell you different things. Rules occasionally change between when you started a process and when you finish it. The systems are not designed around your convenience.
 
----
+This isn't something you can fully prepare for by reading about it in advance — you have to experience it and find out how you actually respond. Some people handle it fine by delegating the parts that frustrate them and developing a philosophical attitude toward the rest. Other people find it genuinely demoralizing, especially when they're already stressed from the move itself.
 
-### **5. People Who Can Adapt to "Uruguayan Time"**
+If you know yourself to be someone who takes bureaucratic chaos personally, either build in extra support (a relocation service, a lawyer, a local friend who can help) or factor the emotional cost into your decision.
 
-Things move slower here. Not in a frustrating "nothing ever gets done" way, but in a "we prioritize people over productivity" way.
+### People who expect to not need Spanish
 
-Appointments run late. Government offices close for lunch (and that lunch is sacred). People stop to chat. Businesses close on Sundays. The concept of "urgency" is different.
+You can survive in Montevideo without Spanish, especially in areas where expats tend to cluster. But surviving is different from living. Most Uruguayans don't speak functional English. Without Spanish, you don't make local friends, you miss most of the cultural texture of the place, and you remain a tourist in your own city indefinitely.
 
-If you're someone who can adjust your expectations — who can see the slower pace as a feature, not a bug — you'll be fine.
+Nobody expects you to arrive fluent. Making slow, imperfect progress in a language is fine and Uruguayans are generally patient with people who are trying. But if you have no interest in learning and you expect the environment to accommodate you rather than the other way around, the isolation is going to get to you.
 
-**You'll love Uruguay if:**
-- You're burnt out from hustle culture
-- You value relationships over efficiency
-- You can laugh when the bank is closed because it's someone's birthday
-- You want to stop optimizing every minute of your life
+### People taking local jobs expecting US-level salaries
 
-**You'll struggle if:**
-- You need everything done NOW
-- You get frustrated when systems don't work like they do "back home"
-- You can't handle bureaucracy without losing your mind
-- You measure success by productivity
+A professional salary in Uruguay, for local employment, is typically somewhere between $1,500 and $2,500 per month. That's livable here — the cost of living supports it — but it's a significant adjustment if you're accustomed to US or European wages. Remote workers keeping their foreign salaries are in an entirely different situation. But if you're planning to find local work and expecting income that reflects your professional level back home, the numbers are going to be disappointing.
+
+### People using relocation to solve a non-geographic problem
+
+This one is harder to say but it comes up enough that it's worth including. Moving doesn't fix debt. It doesn't fix a relationship that was already broken. It doesn't resolve depression or addiction or a deep sense of purposelessness. If you move to Uruguay carrying those things, you'll deal with them in Uruguay — in a different language, with less of your existing support network, and with the additional stress of adapting to a new country layered on top.
+
+Uruguay can genuinely offer safety, stability, legal recognition, better healthcare access, and a slower pace. Those are real things that make real differences for the right people. What it can't offer is a new internal life to replace the one you arrived with.
+
+The people who do best here are moving toward something concrete, not just away from something painful. Both motivations often coexist, and that's fine. But if the only thing driving the decision is wanting to escape, it's worth being honest with yourself about what you'll find when you get here and the escape wears off.
 
 ---
 
-## **Who Tends to Struggle in Uruguay**
+## Questions Worth Sitting With Before You Decide
 
-### **1. People Who Need Big City Energy**
+On pace and lifestyle: Can you genuinely enjoy a slower rhythm, or does slowness make you anxious? Are you okay with less variety and fewer options if the trade is more stability and less noise?
 
-Montevideo is a city of 1.3 million people. It's the capital, but it doesn't FEEL like a capital.
+On language: Are you willing to learn Spanish over time, even imperfectly? Can you handle the discomfort of being a functional adult who sometimes can't follow a conversation?
 
-There's culture (theaters, museums, live music), but it's not New York or LA. There are restaurants, but not the endless variety of a major US city. There's nightlife, but it's not Miami or São Paulo.
+On work: If you're not working remotely, have you looked at what local salaries actually are? If you are working remotely, does your visa situation allow that legally in Uruguay?
 
-If you need constant stimulation, endless options, and big city buzz, Montevideo will feel small and quiet.
+On social life: Are you someone who builds friendships slowly and doesn't need a large community immediately? Or do you need a dense social network quickly to feel okay?
 
-**You'll struggle if:**
-- You need a packed social calendar every weekend
-- You get bored without constant entertainment options
-- You miss having 47 restaurant choices within walking distance
-- You equate "vibrant city life" with happiness
+On bureaucracy: When systems don't work logically and timelines slip, do you adapt or do you spiral? Do you have the patience for a residency process that will take most of a year from start to finish?
 
-**Consider instead:** Buenos Aires (3-hour ferry), which has way more energy if you need that fix occasionally
+On your reasons: Are you moving toward something specific — a safer environment, legal protections, a better quality of life for your family — or are you primarily trying to get away from where you are right now?
+
+There are no right answers, only honest ones.
 
 ---
 
-### **2. People Who Can't Handle Bureaucracy**
+## Frequently Asked Questions About Moving to Uruguay
 
-Let's be honest: Uruguayan bureaucracy is SLOW. And confusing. And sometimes contradictory.
+**Is Uruguay safe compared to other Latin American countries?**
+Yes, consistently. Uruguay ranks as one of the safest countries in Latin America by most measures, and Montevideo's safety profile is notably better than most regional capitals. Petty crime exists, as it does everywhere, but violent crime rates are low and the political and social stability contributes to an overall sense of security that expats consistently describe as one of the things they appreciate most.
 
-Getting residency takes months. Opening a bank account requires five different documents. Sometimes the rules change mid-process. Sometimes two different government employees tell you two different things.
+**Do I need to speak Spanish to move to Uruguay?**
+You don't need to be fluent before you arrive, but you'll want to invest in learning. Daily life, healthcare, government processes, and social connection all happen in Spanish. Working with a relocation service helps bridge the gap during the process itself, but long-term integration requires language learning.
 
-If you're someone who can't handle that without spiraling into rage or frustration, Uruguay will break you.
+**Is Uruguay expensive compared to other countries in Latin America?**
+More expensive than most. Uruguay has a higher cost of living than Mexico, Colombia, Ecuador, or most of Central America. It's comparable to some parts of Portugal. For people earning in US dollars or euros, it's generally manageable to comfortable. For people taking local employment, the salary levels align with the cost of living but feel low compared to the US or Western Europe.
 
-**You'll struggle if:**
-- You expect efficiency and logic in government systems
-- You lose your patience when things don't make sense
-- You can't delegate tasks that frustrate you (like hiring us to handle the bureaucracy for you)
+**What is Uruguay's healthcare system like for expats?**
+Uruguay has both a public system (ASSE) and a private cooperative system (mutualistas). Most expats use the mutualista system, which costs roughly $80-180 per month depending on the provider, and provides access to primary care, specialists, emergency care, and prescriptions. Quality is generally good and the system functions reliably.
 
-**You'll be fine if:**
-- You can laugh at absurdity instead of fighting it
-- You're willing to pay someone to handle the annoying parts
-- You can detach your sense of worth from "getting things done quickly"
+**Is Uruguay actually LGBTQ+ friendly or is it just legal on paper?**
+Both the legal protections and the social environment are genuine. Uruguay has had marriage equality since 2013, strong anti-discrimination laws, and a culture that is broadly accepting in Montevideo and most of the country. It's not a scene-heavy city, but it's a place where LGBTQ+ people can live openly without monitoring themselves constantly.
 
----
+**How long does it take to feel at home in Uruguay?**
+This varies significantly by person. People who learn Spanish, make local friends (not just expat friends), and genuinely adapt to the pace tend to feel settled within one to two years. People who stay within the expat bubble, don't learn the language, and keep comparing things to how they worked back home often never quite feel at home regardless of how long they stay.
 
-### **3. People Who Don't Speak Spanish & Won't Learn**
-
-You don't NEED to speak Spanish to move here — especially if you work with us, because we translate everything. But if you refuse to learn ANY Spanish and expect everyone to accommodate you... you're going to have a bad time.
-
-Most Uruguayans don't speak fluent English. You can survive without Spanish (especially in expat-heavy neighborhoods), but you'll be isolated. You won't make local friends. You'll miss cultural nuance. You'll feel like a perpetual tourist.
-
-**You'll struggle if:**
-- You have no interest in learning the language
-- You get frustrated when people don't speak English
-- You expect everything to be available in English
-
-**You'll be fine if:**
-- You're willing to learn (even slowly, even badly)
-- You're okay with feeling awkward and making mistakes
-- You understand that you're the immigrant, and adaptation is your responsibility
+**What do people most commonly underestimate about moving to Uruguay?**
+The bureaucracy, the grey winters, and how long it takes to build a real social life. All three catch people off guard consistently.
 
 ---
 
-### **4. People Who Need High Salaries**
+## How to Figure Out If This Is Actually Right for You
 
-If you're planning to work locally (not remotely), know this: **Uruguayan salaries are LOW compared to the US.**
+The most useful thing you can do before committing to a move is visit first. Spend enough time — ideally two to four weeks — in Montevideo during a regular season, not just during the summer when the energy is higher and everything feels more appealing. Walk the neighborhoods you'd actually live in. Go to a government office for something minor. Deal with a mundane errand in Spanish. Notice how it feels.
 
-A "good" professional salary here might be $1,500-2,500/month. That's livable in Uruguay, but it's a HUGE pay cut if you're used to US wages.
+If a trip isn't possible yet, we offer a free consultation where we go through your specific situation — your work setup, your family, your reasons for considering Uruguay, your honest concerns — and give you direct feedback about whether this is a good fit. Not a sales pitch, an actual conversation. If we think Uruguay isn't right for you, we'll say so.
 
-Remote workers keeping their US salaries? You'll live like royalty. Local employees? You'll live modestly.
-
-**You'll struggle if:**
-- You're taking a local job and expecting US-level income
-- You can't adjust your lifestyle expectations downward
-- You equate salary with self-worth
-
-**You'll be fine if:**
-- You're working remotely for US/international wages
-- You're retired with stable income
-- You value quality of life over salary size
+**[Book your free consultation.](/contact)**
 
 ---
 
-### **5. People Fleeing Problems They're Bringing With Them**
-
-This is hard to hear, but important: **Geography won't fix your internal issues.**
-
-If you're running from debt, relationship problems, addiction, depression, or existential dissatisfaction — moving to Uruguay won't solve those things. You'll just be dealing with them in a different location, in a different language, with less support.
-
-Uruguay can offer you safety, stability, and a slower pace. It CANNOT offer you a personality transplant or a fresh start from yourself.
-
-**You'll struggle if:**
-- You're using relocation as escapism
-- You haven't addressed underlying mental health issues
-- You're hoping a new place will magically make you happy
-- You're running FROM something instead of moving TOWARD something
-
-**You'll be fine if:**
-- You're moving for concrete reasons (safety, stability, legal recognition)
-- You have coping mechanisms and support systems in place
-- You know yourself well enough to know what you need
-
----
-
-## **The Honest Conversation We Have With Every Client**
-
-Before someone books with us, we ask:
-
-**"Why Uruguay? Why now?"**
-
-And we listen for red flags:
-- "I just need to GET OUT" (okay, but have you thought about where you're going?)
-- "I hate my job and my life" (moving won't fix that)
-- "Uruguay seems easy" (it's easier than some places, harder than others)
-- "I saw a TikTok and it looked nice" (...)
-
-The people who do well are the ones who say:
-- "I need safety and legal recognition" ✅
-- "I want stability for my kids" ✅
-- "I work remotely and want to settle somewhere affordable and safe" ✅
-- "I'm tired of the chaos and I want a quieter life" ✅
-- "I visited and it felt right" ✅
-
----
-
-## **Questions to Ask Yourself Before You Commit**
-
-### **Lifestyle Questions:**
-- Can I handle a slower pace without feeling bored or restless?
-- Am I willing to learn Spanish (even imperfectly)?
-- Do I need constant entertainment and variety, or am I okay with a quieter social life?
-- Can I adapt to systems that work differently than "back home"?
-
-### **Work Questions:**
-- Can I work remotely, or will I need a local job?
-- If I need a local job, can I live on Uruguayan wages?
-- Do I have stable income (remote job, pension, savings) to support myself?
-
-### **Social Questions:**
-- Am I okay making friends slowly in a new culture?
-- Do I need a big expat community, or am I fine with a smaller one?
-- Can I handle being "the foreigner" indefinitely?
-
-### **Practical Questions:**
-- Can I handle bureaucracy without losing my mind?
-- Am I willing to pay for help with things that frustrate me?
-- Do I have realistic expectations about timelines and systems?
-
-### **Emotional Questions:**
-- Am I running FROM something or moving TOWARD something?
-- Have I addressed my mental health before adding the stress of relocation?
-- Do I have support systems in place (therapy, friends, community)?
-
----
-
-## **The Bottom Line**
-
-**Uruguay is right for you if:**
-- You value stability, safety, and sanity over excitement and opportunity
-- You can adapt to a slower pace and different systems
-- You're fleeing something real (persecution, instability, danger) and moving toward something concrete (legal recognition, healthcare, quality of life)
-- You're willing to learn the language and culture
-- You have realistic expectations
-
-**Uruguay is NOT right for you if:**
-- You need big city energy and constant stimulation
-- You can't handle bureaucracy or inefficiency
-- You're using geography to escape internal problems
-- You expect everything to work like it does "back home"
-- You're not willing to adapt or learn Spanish
-
----
-
-## **Still Not Sure? Here's What to Do**
-
-### **Option 1: Book a Scouting Trip**
-Come see Uruguay for yourself before committing. We offer [1-day, 3-day, and 7-day scouting packages](/scouting-trips) that let you explore neighborhoods, experience daily life, and get honest answers to your questions.
-
-### **Option 2: Book a Free Consultation**
-Talk to us about your specific situation. We'll give you honest feedback about whether Uruguay is a good fit for YOU — not just whether it's a "good place" in the abstract.
-
-### **Option 3: Join Expat Groups & Lurk**
-Read what people are saying in Uruguay expat Facebook groups. Pay attention to who's thriving and who's complaining. See if the complaints are things you can handle.
-
----
-
-**Moving to Uruguay isn't for everyone. But if it's right for you, it might be the best decision you ever make.**
-
-**Want to talk through whether Uruguay is right for YOUR situation?** [Book a free consultation](/contact) and we'll help you figure it out.
-
----
-
-*Have questions we didn't cover? [send us a message](/contact).*
+*Uruguay Relocation Companion is a Montevideo-based relocation service run by people who actually live here. We help foreign nationals navigate the residency process, settle into daily life, and make informed decisions about whether and how to move to Uruguay.*

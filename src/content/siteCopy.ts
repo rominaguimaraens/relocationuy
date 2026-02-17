@@ -2,7 +2,7 @@ export const siteCopy = {
   site: {
     title: 'Uruguay Relocation Companion',
     tagline: 'Personalized bilingual support for a smooth, stress-free move to Uruguay.',
-    email: 'hello@relocationuy.com',
+    email: 'contact@relocationuy.com',
     domain: 'relocationuy.com',
   },
   nav: {
@@ -181,9 +181,7 @@ We don't rush you. We don?t judge you.
       { name: 'Pet Relocation Assistance', price: '$300' },
       { name: 'Banking Assistance', price: '$200' },
       { name: "Driver's License Conversion", price: '$125' },
-      { name: '“Is Uruguay Right for Me?” Consultation', price: '$150' },
-      { name: 'Coffee with Maddie', price: '$100' },
-      { name: 'Chat with Miles', price: '$80' },
+      { name: '“Is Uruguay Right for Me?” Call', price: '$100' },
     ],
   },
   resources: {

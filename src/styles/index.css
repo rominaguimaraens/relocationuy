@@ -139,3 +139,35 @@ li,
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", var(--body-font) !important;
   font-variant-emoji: emoji;
 }
+
+/* ── Blog-specific styles ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor offset for sticky header */
+.scroll-mt-24 {
+  scroll-margin-top: 6rem;
+}
+
+/* Blog prose enhancements */
+.prose h2,
+.prose h3 {
+  position: relative;
+}
+
+.prose h2:hover::before,
+.prose h3:hover::before {
+  content: '#';
+  position: absolute;
+  left: -1.5em;
+  color: #f77fa740;
+  font-weight: 300;
+}
+
+/* Blog cover image aspect ratio */
+.blog-cover-hero {
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+

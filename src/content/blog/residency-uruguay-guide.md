@@ -3,444 +3,228 @@ title: "Residency in Uruguay: What the Official Sites Don't Tell You"
 date: "2025-11-25"
 readingTime: "15 min read"
 summary: "We walk through the residency process step by step, highlighting the quiet details that make things smoother (or more stressful) in real life."
+author: "Romina Guimaraens"
+tags: ["residency", "paperwork"]
 ---
 
-Residency isn't just a checklist — it's the timing between appointments, the translation requirements that change mid-process, and the questions migration officers actually ask.
-In this deep dive we outline the timeline we guide clients through, including document prep, health card visits, and cédula day.
+# Residency in Uruguay: What the Official Sites Don't Tell You
 
-You'll find tips on organizing your apostilles, what to expect at DNM, and how to avoid the bottlenecks that make people feel stuck. Think of it as a calm friend walking beside you from "I'm thinking about it" to fixing your first mate on the rambla.
+The official government guide to Uruguay residency makes the process look like a four-step checklist. Gather your documents. Book your DNM appointment. Attend your appointment. Get residency. And technically, none of that is wrong. It's just that the checklist leaves out the part where you spend three weeks trying to figure out which documents need apostilles, the part where you learn mid-process that your criminal record needs to be more recent than the one you already paid to get certified, and the part where you sit in a government office and realize you have no idea what the officer just asked you.
 
----
-
-## **The Official Process vs. The Real Process**
-
-If you Google "how to get residency in Uruguay," you'll find official government sites that make it sound straightforward:
-
-1. Gather documents
-2. Book DNM appointment
-3. Attend appointment
-4. Get residency
-
-And technically, that's true. But here's what those sites don't tell you:
-
-- Which documents need apostilles (and which don't)
-- How long you'll actually wait between steps
-- What questions they ask at the DNM office (and how to answer them)
-- Why your translator matters more than you think
-- What happens when rules change mid-process (they do)
-- The difference between temporary and permanent residency
-- How long it REALLY takes (not the official timeline — the real one)
-
-So let's walk through the actual process, step by step, with all the quiet details that make the difference between "this was surprisingly smooth" and "I've been stuck for six months and I don't know why."
+This post fills in those gaps. The context behind the document list, the realistic timeline, the things that slow people down and why — the version of the guide that actually prepares you for what the process feels like on the ground.
 
 ---
 
-## **Step 1: Decide Which Residency Type You're Applying For**
+## The Residency Pathways: Which One Is Yours?
 
-Uruguay offers several residency pathways. Most expats use one of these:
+Before anything else, you need to know which type of residency you're applying for, because each pathway has different requirements and different processing dynamics.
 
-### **Temporary Residency (Legal Residency)**
+**Permanent Residency** is what most expats from the US, Canada, and Europe are applying for. It requires proof of stable income and grants indefinite legal residency without annual renewal. This is the pathway that makes the most practical sense for people planning to stay long-term.
 
-- Requires proof of regular monthly income ($600+ USD for individuals)
-- Valid for 1 year, renewable
-- Can upgrade to permanent after living here continuously
+**Temporary (Legal) Residency** is valid for one year and renewable. It requires proof of regular monthly income, generally around $600 USD or more. You can upgrade to permanent residency after a period of continuous residence if you start with this route.
 
-### **Permanent Residency**
+**Mercosur Residency** applies to nationals of Argentina, Brazil, Paraguay, Bolivia, Chile, Colombia, Ecuador, Peru, and other Mercosur or associated countries. The process is simpler and the document requirements are different from the general pathway. If this is you, make sure you're looking at the right requirements list, because the Mercosur pathway and the general permanent residency pathway are not the same thing.
 
-- Requires proof of stable income
-- Immediately permanent (no renewal needed)
-
-### **Rentista (Passive Income) Residency**
-
-- For retirees or people with investment income
-- Requires proof of pension, rental income, or investment returns
-- Must show stable monthly income
-
-### **Mercosur Residency**
-
-- If you're from Argentina, Brazil, Paraguay, or other Mercosur countries
-- Easier process, different requirements
+Getting your pathway right at the beginning is not a minor detail. The document requirements differ between pathways, and finding out after you've already apostilled everything that you were preparing for the wrong process is an expensive mistake.
 
 ---
 
-## **Step 2: Gather Your Documents (Before You Arrive)**
+## The Document List — With the Context You Actually Need
 
-This is where people get stuck because the requirements feel overwhelming and the official sites are vague.
+### Passport
 
-Here's what you actually need:
+Valid for at least six months. Bring the original to your appointment and have a photocopy with you. This one doesn't need an apostille because it's already an internationally recognized official document.
 
-### **Required Documents:**
+### Birth Certificate
 
-**1. Passport**
+Original or certified copy. This needs to be apostilled in your home country before you arrive, and once you're in Uruguay it needs to be translated by a certified Uruguayan translator (more on that below). Do not bring an uncertified copy or a document that says "informational purposes only" — those won't work.
 
-- Must be valid for at least 6 months
-- Bring the original + a photocopy
+### Criminal Background Check
 
-**2. Birth Certificate**
+This is where people lose the most time if they leave it to the last minute. You need a police clearance from every country where you've lived for more than six months in the last five years. For US citizens, this means an FBI background check. The FBI background check takes weeks. It needs to be apostilled after you receive it. And it needs to have been issued within the past six months at the time of your DNM appointment — not the time you ordered it.
 
-- Original or certified copy
-- **Must be apostilled** in your home country
-- **Must be translated** by a Uruguayan sworn translator once you're here
+The sequence matters: order it early, get it apostilled, then make sure it's still within its validity window by the time your appointment happens. If your application process runs long and your background check expires before your appointment, you're ordering a new one.
 
-**3. Marriage Certificate (if applicable)**
-- Original or certified copy
-- **Must be apostilled** in your home country
-- **Must be translated** by a Uruguayan sworn translator
+### Marriage Certificate
 
-**4. Police Clearance Certificate (Background Check)**
-- From your home country AND any country you've lived in for 180+ days in the past 5 years
-- **Must be apostilled**
-- Must be recent (issued within the past 6 months)
-- **Must be translated** by a Uruguayan sworn translator
+Only required if you're married and including your spouse in the application or applying through a vínculo pathway tied to a Uruguayan spouse. Needs to be apostilled. Needs to be translated once you're in Uruguay.
 
-**5. Proof of Income**
-- Employment contract (if working remotely)
-- Pension statements
-- Investment account statements
-- Rental income proof
-- Basically: anything showing you have regular monthly income of $600+ USD
+### Proof of Income (Medios de Vida)
 
-**6. Proof of Address in Uruguay**
-- Rental contract OR utility bill in your name
+This is the document category that generates the most confusion because "proof of income" means different things to different people. For immigration purposes, what you're providing is documentation that shows stable, regular income meeting the threshold for your residency type. Employment contracts for remote work, pension statements, investment account statements, rental income documentation — these are all valid depending on your situation. Bank statements alone are often not sufficient if they don't clearly show regular recurring income rather than a lump sum.
 
-**7. Health Certificate (Certificado de Salud)**
-- This is done IN Uruguay (not in your home country)
-- You'll get this at ASSE or a private clinic
-- Shows you don't have communicable diseases
-- Costs ~$30-50
+This does not need an apostille. It also does not need to be translated if it's already relatively clear from the document format what it's showing — though your translator can advise on this when you're going through your documents together.
 
-**8. Vaccination Record**
-- Can get any vaccines that are missing in Uruguay
+### Carné de Salud (Health Certificate)
+
+This is done in Uruguay, not your home country. You book an appointment at ASSE (the public health system) or a private clinic, they do a basic physical checkup, and they issue a certificate confirming you don't have communicable diseases. It costs around $30-50 at a private clinic and is usually same-day or next-day. It has a validity period, so get it close enough to your DNM appointment that it won't expire before you use it.
+
+### Vaccination Records
+
+You'll need to provide your vaccination history. If you don't have records from childhood, you can get vaccinated at a local clinic in Uruguay and get documentation from there.
+
+### Passport Photos
+
+3x4 cm format. Available at photo shops around Montevideo. Get a few extras.
 
 ---
 
-### **What Needs an Apostille? What Doesn't?**
+## What Needs an Apostille and What Doesn't
 
-**Needs apostille:**
-- Birth certificate
-- Marriage certificate (if applicable)
-- Police clearance certificate
+This is one of the most common points of confusion, so it's worth being direct about it.
 
-**Does NOT need apostille:**
-- Passport (it's already an official document)
-- Proof of income (bank statements, contracts)
-- Proof of address in Uruguay
+**Documents that need apostilles:** birth certificate, marriage certificate (if applicable), criminal background check.
 
-**What's an apostille?**
-It's an official certification that authenticates your document for international use. You get it from your home country's government (usually Secretary of State office or equivalent).
+**Documents that don't need apostilles:** passport, proof of income.
 
-**How long does it take?**
-- US: 1-3 weeks (varies by state)
-- Canada: 2-4 weeks
-- UK: 1-2 weeks
-- Plan ahead.
+An apostille is an official authentication that makes your document legally recognized internationally. In the United States, apostilles are issued by the Secretary of State in the state where the document was originally issued — not a federal authority, which means the process and timeline varies by state. Average turnaround in the US is one to three weeks, though some states are faster. Plan for this. If you're getting a federal document apostilled (like an FBI background check), that goes through the US Department of State and takes longer.
+
+Do not wait until you're about to book your flight to start the apostille process.
 
 ---
 
-### **The Translation Requirement (Everyone Forgets This)**
+## The Translation Requirement Nobody Warns You About
 
-All your foreign documents must be **translated by a Uruguayan sworn translator (traductor público).**
+Every document that is not in Spanish needs to be translated by a traductor público — a sworn translator registered with the Uruguayan government. Not a bilingual friend. Not a translator from your home country. Not Google Translate. A traductor público, specifically.
 
-**This means:**
-- You CANNOT translate them yourself
-- You CANNOT use a translator from your home country
-- You CANNOT use Google Translate (obviously)
+The way this works in practice: you arrive in Uruguay with your apostilled documents in their original language, you bring them to a certified Uruguayan translator, they translate them into Spanish and stamp and certify the translations, and you submit both the originals and the certified translations to the DNM.
 
-**How it works:**
-1. You arrive in Uruguay with your apostilled documents
-2. You hire a sworn translator (we connect clients with our trusted translator)
-3. They translate your documents into Spanish
-4. They stamp/certify the translations
-5. You submit the originals + translations to immigration
+Translation typically costs $100-200 per document depending on length and complexity. Turnaround is usually three to seven days, sometimes faster if you communicate that you have a deadline.
 
-**Cost:** ~$50-100 per document depending on length
-
-**Timeline:** 3-7 days (sometimes faster if urgent)
-
-We connect you directly with our trusted translator so you don't have to hunt for one.
+The reason this trips people up is that they read "get your documents translated" and assume they can handle this before arriving, or that any translation will do. Neither is true. The traductor público certification has to come from a registered Uruguayan professional, and that professional has to physically stamp the document. It's an in-country step.
 
 ---
 
-## **Step 3: Arrive in Uruguay & Get Settled**
+## Arriving in Uruguay: What to Do Before Your DNM Appointment
 
-You can enter Uruguay as a tourist (most nationalities get 90 days visa-free).
+Most nationalities enter Uruguay visa-free for 90 days as a tourist. Your residency application can be in process during this time — you do not need to be a legal resident to start the process, you just need to be in the country.
 
-**What to do first:**
+When you first arrive, your practical priorities are: finding stable housing so you have a real address for your application, getting a local phone number (any provider — Antel, Movistar, Claro — will sell you a prepaid SIM with just your passport), and booking your carné de salud appointment so that's done and ready before your DNM appointment.
 
-### **1. Find Housing**
-Options:
-- Short-term rental (Airbnb)
-- Sign a lease 
-- Stay with a friend
-
-### **2. Get a Local Phone Number**
-You'll need it for appointments and communication. Options:
-- Antel (national provider)
-- Movistar
-- Claro
-
-Prepaid SIM cards are easy — walk into any provider store with your passport.
-
-### **3. Get Your Health Certificate (Certificado de Salud)**
-Book an appointment at ASSE (public health) or a private clinic. They'll:
-- Check your vitals
-- Do a basic health screening
-- Issue a certificate confirming you don't have communicable diseases
-
-**Cost:** $30-50
-**Timeline:** Same day or next day
+Once your documents are translated and your carné de salud is in hand, you're ready to book.
 
 ---
 
-## **Step 4: Book Your DNM Appointment**
+## Booking Your DNM Appointment
 
-DNM = Dirección Nacional de Migración (National Migration Office)
+The DNM (Dirección Nacional de Migración) is Uruguay's national immigration authority. Appointments are booked through gub.uy — the official government portal — and you'll need to create a government user account first.
 
-**How to book:**
-1. Go to the government website: [gub.uy/tramites/residencia-legal](https://www.gub.uy/tramites/residencia-legal)
-2. Create a government user account (usuario de gobierno)
-3. Select "Residencia Legal"
-4. Upload your documents
-5. Pay the fee (~$100 USD, varies by residency type)
-6. Choose an available appointment date
+The interface is in Spanish only. The terminology is administrative and legal rather than plain language, and the pathway options don't always map cleanly to how most people think about their situation. Take your time with this step and make sure you're selecting the right residency type before proceeding.
 
-**How long you'll wait for an appointment:**
-- Montevideo: 2-8 weeks (varies by season)
-- Punta del Este: 1-4 weeks (usually faster)
+You'll upload your documents as part of the booking process and pay the application fee (approximately $100 USD). Then you'll select an available appointment date.
 
-**This is included in our packages** — we book the appointment for you and make sure everything is uploaded correctly.
+Wait times for appointments vary — typically a couple of months in Montevideo — so this is generally not a major bottleneck. Start the document gathering process well before you're ready to book so that when an appointment is available, you're actually ready for it.
+
+Each person needs their own individual appointment. There is no family unit booking, no shared slot for couples, and no joint appointment for parents and children. If you're moving with your spouse, you each book separately. If you have children, each child needs their own appointment. You can schedule them on the same day or on different days — the applications don't depend on each other procedurally.
 
 ---
 
-## **Step 5: Attend Your DNM Appointment**
+## What Happens at Your DNM Appointment
 
-This is the big one. The appointment where they review your documents, ask you questions, and decide whether to approve your residency.
+The appointment itself is a document review. The migration officer goes through everything you've brought, verifies that apostilles are valid, checks that translations are certified, confirms your proof of income is sufficient, and verifies that your information is internally consistent. They'll ask you some questions in Spanish to confirm your basic details — your name, your address in Uruguay, the type of residency you're applying for.
 
-### **What to Bring:**
+It is not an intensive interview. But it does happen in Spanish, and officers are not required to accommodate you in English. If your Spanish is not functional, you have two options: bring a certified translator with you to the appointment (this is legally accepted and recommended if you genuinely can't communicate in Spanish), or spend time before your appointment preparing specifically for the questions and phrases you'll encounter. Showing up with poor Spanish and no translator and hoping for the best is how people get turned away and have to rebook.
 
-- **All original documents** (passport, birth certificate, marriage certificate, police clearance)
-- **Translated copies** of all documents
-- **Proof of income** (bank statements, contracts)
-- **Proof of address** (rental contract or utility bill)
-- **Health certificate**
-- **Passport photos** (3x4 cm size — you can get these at any photo shop)
+Most appointments end with one of three outcomes: approved, pending because additional documentation is needed, or denied. Both approved and pending grant you the "en trámite" status until it goes through a review. Denial is rare when your documents are complete and correctly formatted. The more common issue is being asked to come back with something additional, which you have up to two years to do so.
 
-### **What Happens at the Appointment:**
-
-**Document Review**
-The migration officer will review all your documents. They'll check:
-- Are the apostilles valid?
-- Are the translations certified?
-- Is your proof of income sufficient?
-- Is everything consistent and complete?
-
-Most appointments end with one of these outcomes:
-- ✅ **Approved on the spot** — they mark your application "in process" and you move to the next step
-- ⏸️ **Pending (need more documents)** — they ask for additional proof or clarification
-- ❌ **Denied** (rare if your documents are correct)
+Bring all original documents, all certified translations, your proof of income, your proof of address, your carné de salud, and your passport photos. Have everything organized before you walk in.
 
 ---
 
-### **What If You Don't Speak Spanish?**
+## After the Appointment: Waiting for Approval
 
-**Option 1:** Bring a friend who speaks Spanish
+Once your appointment is done and your status is en trámite, the immigration department reviews your file internally. The official timeline is 90-120 days. The real timeline is often longer — three to six months is common, sometimes more depending on background check processing times and caseload.
 
-**Option 2:** Hire a professional interpreter (you'll need to find one yourself)
+During this period, you can stay in Uruguay legally and get an "en trámite" cédula. Your en trámite status allows you to remain in the country while your application is being processed. You can travel in and out, but you need to get a re-entry permit.
 
-**Option 3:** Book our Essential or Full package — **we go WITH you and translate everything in real-time.** You'll understand exactly what's being asked and what you need to say. No confusion, no panic, no surprises.
-
----
-
-## **Step 6: Wait for Approval**
-
-After your DNM appointment, your application status changes to **"en trámite"** (in process).
-
-**What happens next:**
-- Your documents are reviewed by the immigration department
-- Background checks are processed
-- Your file is approved internally
-
-**How long this takes:**
-- **Official timeline:** 90-120 days
-- **Real timeline:** 3-6 months (sometimes faster, sometimes slower)
-
-**During this time:**
-- You can stay in Uruguay legally (your "in process" status allows you to remain)
-- You can get a provisional ID
-- You CAN travel in and out of Uruguay (but bring your DNM receipt as proof of pending residency)
-
-**You'll receive updates via:**
-- Email notifications
-- The government website (check your status with your DNM number)
+You'll receive updates via email and can check your status on the government website using your DNM case number. The process is not something you can push or accelerate by following up — it moves at its own pace.
 
 ---
 
-## **Step 7: Get Your Cédula (Uruguayan ID Card)**
+## Getting Your Cédula
 
-Once your residency is approved, you'll receive a notification to schedule your **cédula appointment** at DNIC (National Civilian Identification Agency).
+Once your residency is approved, you'll receive a notification to schedule your permanent resident cédula appointment at the DNIC (Dirección Nacional de Identificación Civil). Your cédula is Uruguay's national identity document, and it is the key to daily life here in a way that's hard to understand until you're living it. Banking, healthcare enrollment, rental contracts, supermarket loyalty programs, Mercado Libre — the cédula unlocks all of it.
 
-
-**Your cédula is your official Uruguayan ID.** You'll use it for:
-- Opening bank accounts
-- Signing contracts
-- Healthcare enrollment
-- Proof of residency
+One thing to understand about the cédula: the version you receive and whether it comes with an expiration date depends on where you are in your documentation status. Most people who have completed their residency through the DNM will get their cédula without issues. However, having your foreign birth certificate formally registered with Uruguay's Registro Civil — converting it into the Uruguayan civil registry system — is what makes your cédula fully permanent. This is a separate post-residency step that sits outside the DNM process entirely, and the Registro Civil appointment is genuinely harder to get than a DNM appointment. It's not required to complete your residency, but it matters for long-term status.
 
 ---
 
-## **Step 8: Get Your Health Care set up**
+## Healthcare Setup
 
-Even before you have your cédula, you can enroll in Uruguay's healthcare system.
+Uruguay has a solid healthcare system and getting enrolled doesn't have to wait until your residency is fully finalized.
 
-**Options:**
-- **Public healthcare (ASSE):** Free but slower
-- **Private healthcare (Mutualista):** Affordable ($80-180/month) and fast
+The public option is ASSE — free but with longer wait times and a more complex system to navigate as a newcomer. The private option is a mutualista, which is a cooperative healthcare model that costs roughly $30-100 per month depending on the provider and your profile. The mutualista system gives you access to a primary care physician, specialists, emergency care, and prescription coverage. Most expats go the mutualista route for the practical convenience.
 
-**How to enroll:**
-1. Choose a provider (Médica Uruguaya, Casmu, British Hospital, etc.)
-2. Bring your cédula or passport + proof of address
-3. Fill out enrollment forms
-4. Pay your first month
-
-**Timeline:** Same day or within a week
+Well-regarded private providers in Montevideo include Médica Uruguaya, CASMU, and the British Hospital. Enrollment requires your cédula or passport and proof of address, and can usually be completed same-day or within a week.
 
 ---
 
-## **The Real Timeline (End to End)**
+## The Real Timeline, End to End
 
-**Official government estimate:** 90-120 days
+The official government estimate for residency processing is 90-120 days. Here's what it actually looks like from the moment you start gathering documents to the moment you have your cédula in hand:
 
-**Real average timeline (from document gathering to cédula in hand):**
-- **Fast track:** 4-6 months
-- **Typical:** 6-9 months 
-- **Slow track:** 9-12+ months (if you hit delays or mistakes)
+Document gathering and apostilles (before arriving): six to twelve weeks depending on how long your background check takes and your state's apostille processing time.
 
-**What slows people down:**
-- Missing or incorrect apostilles
-- Insufficient proof of income
-- Translation delays
-- DNM appointment backlog
-- Not understanding what's being asked at appointments
-- Waiting for background checks from other countries
+Translation once you're in Uruguay: one to two weeks.
 
-**What speeds things up:**
-- Having all documents ready before you arrive
-- Being flexible with appointment availability
-- Having clear, organized proof of income
+DNM appointment wait: a few weeks to a couple months.
+
+Residency processing (en trámite): three to six months, sometimes more.
+
+Cédula scheduling and issuance: a few weeks after approval.
+
+Total, for someone who starts organized and has no major complications: five to nine months is realistic. Delays happen when apostilles expire before the appointment, when proof of income documentation is unclear or insufficient, when background checks from multiple countries take different amounts of time, or when something at the appointment requires rebooking.
 
 ---
 
-## **Common Bottlenecks & How to Avoid Them**
+## Common Mistakes and How to Avoid Them
 
-### **Bottleneck 1: Apostille Delays**
-**Solution:** Start this process 2-3 months before you plan to move. Don't wait until the last minute.
+**Starting too late.** The background check is the longest single document to obtain. If you're from the US, order your FBI check the moment you decide you're moving. Everything else can follow, but that one has to come first. Keep in mind it expires within six months.
 
-### **Bottleneck 2: Proof of Income Confusion**
-**Problem:** People don't know what counts as "proof"
-**Solution:** Employment contracts. Pension statements. Investment account statements. If you're not sure, ask us in a free consultation.
+**Apostilling the wrong documents.** Apostille your birth certificate, marriage certificate if applicable, and your criminal background check. Don't apostille your passport or your bank statements — it's not wrong, it just wastes money.
 
-### **Bottleneck 3: Translation Delays**
-**Problem:** Not knowing you need a Uruguayan sworn translator, or hiring one who's slow
-**Solution:** We connect you with our trusted translator who works fast and knows exactly what immigration needs.
+**Using an uncertified translator.** A translated document that isn't stamped by a registered Uruguayan traductor público will not be accepted. Make sure the person you're using is properly credentialed.
 
-### **Bottleneck 4: Not Understanding the DNM Interview**
-**Problem:** Showing up without a translator, panicking when asked questions in Spanish
-**Solution:** Hire us. We go WITH you and translate everything in real-time. No surprises, no panic.
+**Letting documents expire before the appointment.** Your criminal background check has a six-month validity window. Your carné de salud has a validity period too. If your timeline stretches longer than expected, check that your documents are still within their valid dates before your appointment.
 
-### **Bottleneck 5: Incomplete Applications**
-**Problem:** Missing one small document and having to reschedule
-**Solution:** We review everything before your appointment so you show up with exactly what you need.
+**Showing up without enough Spanish.** You don't need to be fluent. But you need to be able to confirm your own information and understand basic questions. If you can't, bring a translator with you. It's worth the cost.
 
 ---
 
-## **Temporary vs. Permanent Residency: What's the Difference?**
+## Frequently Asked Questions
 
-### **Temporary Residency:**
-- Valid for 1 year
-- Renewable annually
+**Can I start the residency process before I arrive in Uruguay?**
+You can prepare your documents — get them apostilled, gather your proof of income — before you arrive. But the DNM appointment and the carné de salud both happen in Uruguay, so the process isn't completable from abroad.
 
-### **Permanent Residency:**
-- No renewal needed
-- Immediate permanent status
+**Can my whole family share one DNM appointment?**
+No. Each person needs their own individual appointment. Married couples each need their own appointment. Each child needs their own appointment. The applications are separate processes even if the family members' situations are connected.
 
----
+**What if I don't speak Spanish?**
+You can bring a translator to your DNM appointment. This is legally accepted. Plan for it in advance rather than hoping the officer will accommodate you in English.
 
-## **Can You Do This Yourself?**
+**How recent does my criminal background check need to be?**
+It needs to have been issued within the past six months at the time of your appointment — not when you ordered it. This is the document most likely to expire before your appointment if your timeline stretches, so keep an eye on the date.
 
-Yes. Technically.
+**What happens if I get turned away at my appointment?**
+If a document is missing or incorrectly formatted, the officer will ask you to rebook. You'll need to correct whatever the issue was and then get back into the appointment queue. This is why document preparation matters.
 
-But here's what that looks like:
-- Spending hours Googling in broken Spanish
-- Joining expat Facebook groups and getting conflicting advice
-- Emailing government offices that never respond
-- Showing up to appointments confused about what's being asked
-- Making mistakes that delay your process by months
-- Stressing about whether you're doing it right
-
-**Or you can work with us and:**
-- Know exactly what documents you need
-- Have someone book your DNM appointment correctly
-- Get connected with a trusted sworn translator
-- Have us GO WITH YOU to your appointment and translate everything
-- Get clear answers to your questions in English
-- Avoid delays and mistakes
-- Actually enjoy the process instead of drowning in stress
-
-**Our Essential package ($850) includes all of this.** It's the difference between "I've been trying to figure this out for 8 months and I'm so frustrated" and "I got my residency in 5 months and it was surprisingly smooth."
+**Does getting residency automatically give me a permanent cédula?**
+Not necessarily. A fully permanent cédula requires having your foreign birth certificate registered with the Registro Civil. This is a separate step from the DNM residency process and has its own appointment system.
 
 ---
 
-## **What Happens After You Get Residency?**
+## Working With a Relocation Service: What It Actually Gets You
 
-Congrats — you're now a legal resident of Uruguay. 🎉
+The residency process is doable independently for someone who is organized, speaks functional Spanish, and has time to research carefully. That's genuinely true.
 
-**What you can do now:**
-- Live in Uruguay indefinitely
-- Open bank accounts
-- Enroll in healthcare
-- Sign rental contracts easily
-- Work legally (if you have a work permit or are self-employed)
-- Travel in and out of Uruguay freely
+What working with Uruguay Relocation Companion gives you is someone who has done this enough times to know the failure points before they become your problem. Document review before your appointment catches the issues that would get you turned away. Having a direct connection to a trusted traductor público means your translations happen fast and correctly. Going to your DNM appointment with someone who can translate in real time means you understand what you're being asked and what you're agreeing to.
 
-**What's next:**
-- **After 5 years of continuous residence:** You can apply for citizenship if you want
-- **Annual renewals (for temporary residency):** Simple process, usually just updating proof of income
-- **Upgrade to permanent residency:** After 1-2 years if you want to skip annual renewals
+We connect you with our certified translator, handle the appointment booking, and make sure you're not walking into your DNM appointment with something missing.
+
+If you want to talk through your specific situation — your nationality, your income documentation, your timeline — the free consultation is the place to start. We'll tell you exactly what your process looks like, not the generic version.
+
+**[Book your free consultation](/contact).**
 
 ---
 
-## **Final Thoughts: It's Not Complicated, But It IS Confusing**
-
-The residency process isn't *hard* — it's just confusing because:
-- Official sites are vague
-- Rules change without warning
-- Every person tells you something different
-- Documents need apostilles and translations in specific ways
-- Immigration officers ask questions in Spanish
-
-**But with the right guidance, it's actually straightforward.**
-
-**You can:**
-- ✅ Do it yourself (if you speak Spanish, have time, and don't mind trial and error)
-- ✅ Hire a lawyer ($3,000-5,000+ and you still have to do most of the legwork)
-- ✅ Work with us ($850-1,800 depending on package, we handle everything and go WITH you)
-
----
-
-## **Ready to Start Your Residency Process?**
-
-**Option 1:** [Book a free 30-minute consultation](/contact) and we'll walk you through exactly what you need for YOUR situation
-
-**Option 2:** [Explore our packages](/pricing) — from Essential (residency guidance + DNM support) to Full (everything including housing, banking, and 6-month support)
-
-**Option 3:** [Book a scouting trip](/scouting-trips) if you want to visit Uruguay first and see if it's right for you before committing
-
----
-
-**Moving to Uruguay doesn't have to be stressful. With the right support, it can actually be exciting.**
-
-**Let us handle the confusing parts so you can focus on building your new life.** 🌸
-
----
-
-*Have questions about the residency process? [send us a message](/contact).*
+*Uruguay Relocation Companion is a Montevideo-based relocation service helping foreign nationals navigate the residency process from document preparation through cédula day. We accompany clients to their DNM appointments, work with certified Uruguayan translators, and provide bilingual support throughout the entire process.*

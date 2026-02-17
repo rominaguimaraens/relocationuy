@@ -12,8 +12,13 @@ export type BlogPost = {
   date: string;
   readingTime: string;
   summary: string;
+  author: string;
+  tags: string[];
+  cover: string;
   content: string;
 };
+
+const DEFAULT_AUTHOR = 'Romina Guimaraens';
 
 const files = import.meta.glob('../content/blog/*.md', {
   eager: true,
@@ -35,6 +40,9 @@ const posts: BlogPost[] = Object.entries(files).map(([path, raw]) => {
     date: (data.date as string) ?? new Date().toISOString(),
     readingTime: (data.readingTime as string) ?? '',
     summary: (data.summary as string) ?? '',
+    author: (data.author as string) ?? DEFAULT_AUTHOR,
+    tags: Array.isArray(data.tags) ? (data.tags as string[]) : [],
+    cover: (data.cover as string) ?? '',
     content,
   };
 });

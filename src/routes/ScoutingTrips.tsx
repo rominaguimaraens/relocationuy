@@ -101,65 +101,6 @@ export default function ScoutingTrips() {
             supportLength="Designed for people seriously considering relocation and wanting to “test-drive” life here before making the move."
           />
         </div>
-
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="card bg-base-100 shadow-xl border border-sky/10">
-            <div className="card-body">
-              <h3 className="text-2xl font-display text-ink">💡 Add-Ons</h3>
-              <ul className="mt-4 space-y-2 text-ink/80">
-                <li>• Extra hours — +$30/hour</li>
-                <li>
-                  • ☕ Coffee with Maddie — $100 · Honest chat with an Australian expat and content creator about real life
-                  in Uruguay (all proceeds go to Maddie)
-                </li>
-                <li>
-                  • ✈️ Virtual Chat with Miles — $80 · Open, genuine conversation with an American who’s experienced Uruguay
-                  through real connections (all proceeds go to Miles)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="card bg-base-100 shadow-xl border border-sky/10">
-            <div className="card-body">
-              <h3 className="text-2xl font-display text-ink">☕ Coffee with Maddie — $100</h3>
-              <p className="mt-2 text-ink/80">Optional experience — limited availability</p>
-              <p className="mt-3 text-ink/80">
-                Meet Maddie Luca, an Australian expat and content creator who’s been living in Montevideo for over five
-                years. She’s built a life, a marriage, and a business here — and she loves sharing what life in Uruguay is
-                really like beyond the headlines.
-              </p>
-              <h4 className="mt-4 font-semibold text-ink">Includes:</h4>
-              <ul className="mt-2 list-disc pl-5 space-y-1 text-ink/80">
-                <li>1–2 hour casual chat over coffee or dinner</li>
-                <li>Real, firsthand insight into the expat experience — the good, the challenging, and the genuinely wonderful</li>
-                <li>Friendly, honest conversation about integrating into local culture, finding community, and building a life here</li>
-                <li>Personalized answers to your questions about moving, living, or working in Uruguay</li>
-              </ul>
-              <p className="mt-3 text-ink/80">All proceeds go directly to Maddie. Booking in advance is recommended.</p>
-            </div>
-          </div>
-
-          <div className="card bg-base-100 shadow-xl border border-sky/10">
-            <div className="card-body">
-              <h3 className="text-2xl font-display text-ink">✈️ Chat with Miles — $80</h3>
-              <p className="mt-2 text-ink/80">Optional experience — available virtually</p>
-              <p className="mt-3 text-ink/80">
-                Talk with Miles, an American who’s spent significant time in Uruguay and built deep personal connections
-                here. He offers a grounded, first-hand perspective on what it’s really like to adapt from U.S. life to
-                Uruguay’s culture and rhythm — both the emotional and the practical sides of the move.
-              </p>
-              <h4 className="mt-4 font-semibold text-ink">Includes:</h4>
-              <ul className="mt-2 list-disc pl-5 space-y-1 text-ink/80">
-                <li>1-hour virtual video call (Zoom or Meet)</li>
-                <li>Honest, relatable conversation about adjusting expectations and mindset</li>
-                <li>Insight into cultural differences, daily life, and finding your footing as an expat</li>
-                <li>A safe space to ask questions freely and get perspective from someone who truly gets it</li>
-              </ul>
-              <p className="mt-3 text-ink/80">All proceeds go directly to Miles. Available by appointment only.</p>
-            </div>
-          </div>
-        </div>
       </Section>
     </>
   );
