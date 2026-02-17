@@ -12,6 +12,9 @@ import BlogPost from './routes/BlogPost';
 import ScoutingTrips from './routes/ScoutingTrips';
 import Contact from './routes/Contact';
 import ResourceArticle from './routes/ResourceArticle';
+import Tracking from './routes/Tracking';
+import AdminTracking from './routes/AdminTracking';
+import AdminClientEditor from './routes/AdminClientEditor';
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
           <Route path="/blog/categories/:category" element={<BlogCategory />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/tracking" element={<Tracking />} />
+          <Route path="/admin/tracking" element={<AdminTracking />} />
+          <Route path="/admin/tracking/:refNumber" element={<AdminClientEditor />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
