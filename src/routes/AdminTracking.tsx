@@ -7,7 +7,6 @@ import {
     getClients,
     createClient,
     deleteClient,
-    migrateFromLocalStorage,
 } from '../lib/trackingData';
 import type { TrackedClient } from '../lib/trackingTypes';
 
@@ -63,6 +62,7 @@ export default function AdminTracking() {
 function ClientList() {
     const [clients, setClients] = useState<TrackedClient[]>([]);
     const [loading, setLoading] = useState(true);
+    const [fetchError, setFetchError] = useState('');
     const [newRef, setNewRef] = useState('');
     const [newName, setNewName] = useState('');
     const [createError, setCreateError] = useState('');
@@ -70,20 +70,21 @@ function ClientList() {
 
     const refresh = useCallback(async () => {
         setLoading(true);
+        setFetchError('');
         try {
             const data = await getClients();
             setClients(data);
+        } catch (err) {
+            console.error('Failed to fetch clients:', err);
+            setFetchError(err instanceof Error ? err.message : 'Failed to load clients from database.');
         } finally {
             setLoading(false);
         }
     }, []);
 
-    /* first load: migrate localStorage → Firestore, then fetch */
+    /* first load: fetch clients */
     useEffect(() => {
-        (async () => {
-            await migrateFromLocalStorage();
-            await refresh();
-        })();
+        refresh();
     }, [refresh]);
 
     const handleCreate = async (e: React.FormEvent) => {
@@ -171,6 +172,11 @@ function ClientList() {
                     {loading ? (
                         <div className="flex justify-center py-12">
                             <span className="loading loading-spinner loading-lg text-lavender" />
+                        </div>
+                    ) : fetchError ? (
+                        <div className="rounded-2xl border border-error/20 bg-error/5 p-6 text-center">
+                            <p className="text-sm text-error">{fetchError}</p>
+                            <button onClick={refresh} className="btn btn-sm mt-3 bg-error/10 text-error hover:bg-error/20 border-none">Retry</button>
                         </div>
                     ) : clients.length === 0 ? (
                         <p className="text-center text-ink/40 py-12">No clients yet. Create one above.</p>
