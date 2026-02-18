@@ -1,13 +1,4 @@
-import {
-    collection,
-    doc,
-    getDocs,
-    getDoc,
-    setDoc,
-    updateDoc,
-    deleteDoc,
-} from 'firebase/firestore';
-import { db } from './firebase';
+import { FIREBASE_PROJECT_ID, FIREBASE_API_KEY } from './firebase';
 import type { TrackedClient, TrackedStep } from './trackingTypes';
 
 /* ─────────── default 8-step template ─────────── */
@@ -85,9 +76,9 @@ export const DEFAULT_STEPS: TrackedStep[] = [
     },
 ];
 
-/* ─────────── Firestore helpers ─────────── */
+/* ─────────── Firestore REST API helpers ─────────── */
 
-const CLIENTS_COLLECTION = 'clients';
+const BASE_URL = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents`;
 
 /** Normalise refNumber into a safe Firestore document ID */
 function toDocId(refNumber: string): string {
@@ -98,26 +89,88 @@ function deepCloneSteps(): TrackedStep[] {
     return JSON.parse(JSON.stringify(DEFAULT_STEPS));
 }
 
-/* ─────────── Firestore CRUD ─────────── */
+/* ── Firestore REST value converters ── */
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function toFirestoreValue(val: any): any {
+    if (val === null || val === undefined) return { nullValue: null };
+    if (typeof val === 'string') return { stringValue: val };
+    if (typeof val === 'number') return Number.isInteger(val) ? { integerValue: String(val) } : { doubleValue: val };
+    if (typeof val === 'boolean') return { booleanValue: val };
+    if (Array.isArray(val)) return { arrayValue: { values: val.map(toFirestoreValue) } };
+    if (typeof val === 'object') {
+        const fields: Record<string, unknown> = {};
+        for (const [k, v] of Object.entries(val)) {
+            fields[k] = toFirestoreValue(v);
+        }
+        return { mapValue: { fields } };
+    }
+    return { stringValue: String(val) };
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function fromFirestoreValue(val: any): any {
+    if ('stringValue' in val) return val.stringValue;
+    if ('integerValue' in val) return Number(val.integerValue);
+    if ('doubleValue' in val) return val.doubleValue;
+    if ('booleanValue' in val) return val.booleanValue;
+    if ('nullValue' in val) return null;
+    if ('arrayValue' in val) return (val.arrayValue.values || []).map(fromFirestoreValue);
+    if ('mapValue' in val) {
+        const obj: Record<string, unknown> = {};
+        for (const [k, v] of Object.entries(val.mapValue.fields || {})) {
+            obj[k] = fromFirestoreValue(v);
+        }
+        return obj;
+    }
+    return null;
+}
+
+function clientToFields(client: TrackedClient): Record<string, unknown> {
+    const fields: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(client)) {
+        fields[k] = toFirestoreValue(v);
+    }
+    return fields;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function fieldsToClient(fields: Record<string, any>): TrackedClient {
+    const obj: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(fields)) {
+        obj[k] = fromFirestoreValue(v);
+    }
+    return obj as unknown as TrackedClient;
+}
+
+/* ─────────── Firestore REST CRUD ─────────── */
 
 export async function getClients(): Promise<TrackedClient[]> {
-    const snap = await getDocs(collection(db, CLIENTS_COLLECTION));
-    return snap.docs.map((d) => d.data() as TrackedClient);
+    const res = await fetch(`${BASE_URL}/clients?key=${FIREBASE_API_KEY}`);
+    if (!res.ok) {
+        const err = await res.text();
+        throw new Error(`Failed to fetch clients: ${err}`);
+    }
+    const data = await res.json();
+    if (!data.documents) return []; // empty collection
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return data.documents.map((doc: any) => fieldsToClient(doc.fields));
 }
 
 export async function getClientByRef(refNumber: string): Promise<TrackedClient | null> {
-    const docRef = doc(db, CLIENTS_COLLECTION, toDocId(refNumber));
-    const snap = await getDoc(docRef);
-    if (!snap.exists()) return null;
-    return snap.data() as TrackedClient;
+    const id = toDocId(refNumber);
+    const res = await fetch(`${BASE_URL}/clients/${encodeURIComponent(id)}?key=${FIREBASE_API_KEY}`);
+    if (res.status === 404) return null;
+    if (!res.ok) {
+        const err = await res.text();
+        throw new Error(`Failed to fetch client: ${err}`);
+    }
+    const data = await res.json();
+    return fieldsToClient(data.fields);
 }
 
 export async function createClient(refNumber: string, name: string): Promise<TrackedClient> {
     const id = toDocId(refNumber);
-    const existing = await getDoc(doc(db, CLIENTS_COLLECTION, id));
-    if (existing.exists()) {
-        throw new Error(`Client with reference "${refNumber}" already exists.`);
-    }
     const newClient: TrackedClient = {
         refNumber,
         name,
@@ -125,59 +178,51 @@ export async function createClient(refNumber: string, name: string): Promise<Tra
         statusNote: '',
         steps: deepCloneSteps(),
     };
-    await setDoc(doc(db, CLIENTS_COLLECTION, id), newClient);
+    const res = await fetch(
+        `${BASE_URL}/clients?documentId=${encodeURIComponent(id)}&key=${FIREBASE_API_KEY}`,
+        {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fields: clientToFields(newClient) }),
+        },
+    );
+    if (!res.ok) {
+        const err = await res.text();
+        if (err.includes('ALREADY_EXISTS')) {
+            throw new Error(`Client with reference "${refNumber}" already exists.`);
+        }
+        throw new Error(`Failed to create client: ${err}`);
+    }
     return newClient;
 }
 
 export async function updateClient(updated: TrackedClient): Promise<void> {
     const id = toDocId(updated.refNumber);
-    await updateDoc(doc(db, CLIENTS_COLLECTION, id), { ...updated });
+    const res = await fetch(
+        `${BASE_URL}/clients/${encodeURIComponent(id)}?key=${FIREBASE_API_KEY}`,
+        {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fields: clientToFields(updated) }),
+        },
+    );
+    if (!res.ok) {
+        const err = await res.text();
+        throw new Error(`Failed to update client: ${err}`);
+    }
 }
 
 export async function deleteClient(refNumber: string): Promise<void> {
     const id = toDocId(refNumber);
-    await deleteDoc(doc(db, CLIENTS_COLLECTION, id));
+    const res = await fetch(
+        `${BASE_URL}/clients/${encodeURIComponent(id)}?key=${FIREBASE_API_KEY}`,
+        { method: 'DELETE' },
+    );
+    if (!res.ok) {
+        const err = await res.text();
+        throw new Error(`Failed to delete client: ${err}`);
+    }
 }
 
 /* ─────────── admin password ─────────── */
 export const ADMIN_PASSWORD = 'uyrelocate2025';
-
-/* ─────────── one-time localStorage → Firestore migration ─────────── */
-
-const LEGACY_KEY = 'uy_tracking_clients';
-const MIGRATED_KEY = 'uy_tracking_migrated';
-
-/**
- * Call once on app boot. If old localStorage data exists and hasn't been
- * migrated yet, push every client into Firestore, then mark as done.
- */
-export async function migrateFromLocalStorage(): Promise<number> {
-    if (localStorage.getItem(MIGRATED_KEY)) return 0;
-
-    const raw = localStorage.getItem(LEGACY_KEY);
-    if (!raw) {
-        localStorage.setItem(MIGRATED_KEY, '1');
-        return 0;
-    }
-
-    let clients: TrackedClient[];
-    try {
-        clients = JSON.parse(raw) as TrackedClient[];
-    } catch {
-        localStorage.setItem(MIGRATED_KEY, '1');
-        return 0;
-    }
-
-    let migrated = 0;
-    for (const c of clients) {
-        const id = toDocId(c.refNumber);
-        const existing = await getDoc(doc(db, CLIENTS_COLLECTION, id));
-        if (!existing.exists()) {
-            await setDoc(doc(db, CLIENTS_COLLECTION, id), c);
-            migrated++;
-        }
-    }
-
-    localStorage.setItem(MIGRATED_KEY, '1');
-    return migrated;
-}
