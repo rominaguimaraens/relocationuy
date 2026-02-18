@@ -15,16 +15,28 @@ export default function AdminClientEditor() {
     }, [navigate]);
 
     const [client, setClient] = useState<TrackedClient | null>(null);
+    const [loading, setLoading] = useState(true);
     const [saved, setSaved] = useState(false);
+    const [saving, setSaving] = useState(false);
 
     useEffect(() => {
         if (!refNumber) return;
-        const c = getClientByRef(decodeURIComponent(refNumber));
-        if (!c) { navigate('/admin/tracking'); return; }
-        setClient(c);
+        (async () => {
+            setLoading(true);
+            const c = await getClientByRef(decodeURIComponent(refNumber));
+            if (!c) { navigate('/admin/tracking'); return; }
+            setClient(c);
+            setLoading(false);
+        })();
     }, [refNumber, navigate]);
 
-    if (!client) return null;
+    if (loading || !client) {
+        return (
+            <div className="flex min-h-[60vh] items-center justify-center">
+                <span className="loading loading-spinner loading-lg text-lavender" />
+            </div>
+        );
+    }
 
     /* ── helpers ── */
     const toggleDoc = (stepIdx: number, docIdx: number) => {
@@ -65,11 +77,18 @@ export default function AdminClientEditor() {
         setSaved(false);
     };
 
-    const handleSave = () => {
-        if (!client) return;
-        updateClient(client);
-        setSaved(true);
-        setTimeout(() => setSaved(false), 2500);
+    const handleSave = async () => {
+        if (!client || saving) return;
+        setSaving(true);
+        try {
+            await updateClient(client);
+            setSaved(true);
+            setTimeout(() => setSaved(false), 2500);
+        } catch {
+            alert('Failed to save. Please try again.');
+        } finally {
+            setSaving(false);
+        }
     };
 
     return (
@@ -89,9 +108,10 @@ export default function AdminClientEditor() {
                         </div>
                         <button
                             onClick={handleSave}
+                            disabled={saving}
                             className={`btn border-none text-white transition-colors ${saved ? 'bg-emerald-500' : 'bg-lavender hover:bg-lavender/90'}`}
                         >
-                            {saved ? '✓ Saved' : 'Save Changes'}
+                            {saving ? <span className="loading loading-spinner loading-sm" /> : saved ? '✓ Saved' : 'Save Changes'}
                         </button>
                     </div>
                 </Section>
@@ -218,10 +238,11 @@ export default function AdminClientEditor() {
                 <div className="fixed bottom-6 right-6 z-50">
                     <button
                         onClick={handleSave}
+                        disabled={saving}
                         className={`btn btn-lg rounded-full shadow-xl border-none text-white transition-colors ${saved ? 'bg-emerald-500' : 'bg-lavender hover:bg-lavender/90'
                             }`}
                     >
-                        {saved ? '✓ Saved' : '💾 Save'}
+                        {saving ? <span className="loading loading-spinner loading-sm" /> : saved ? '✓ Saved' : '💾 Save'}
                     </button>
                 </div>
             </Section>

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Section from '../components/Section';
@@ -7,6 +7,7 @@ import {
     getClients,
     createClient,
     deleteClient,
+    migrateFromLocalStorage,
 } from '../lib/trackingData';
 import type { TrackedClient } from '../lib/trackingTypes';
 
@@ -60,33 +61,54 @@ export default function AdminTracking() {
 
 /* ───────── client list ───────── */
 function ClientList() {
-    const [clients, setClients] = useState<TrackedClient[]>(() => getClients());
+    const [clients, setClients] = useState<TrackedClient[]>([]);
+    const [loading, setLoading] = useState(true);
     const [newRef, setNewRef] = useState('');
     const [newName, setNewName] = useState('');
     const [createError, setCreateError] = useState('');
+    const [creating, setCreating] = useState(false);
 
-    const refresh = useCallback(() => setClients(getClients()), []);
+    const refresh = useCallback(async () => {
+        setLoading(true);
+        try {
+            const data = await getClients();
+            setClients(data);
+        } finally {
+            setLoading(false);
+        }
+    }, []);
 
-    const handleCreate = (e: React.FormEvent) => {
+    /* first load: migrate localStorage → Firestore, then fetch */
+    useEffect(() => {
+        (async () => {
+            await migrateFromLocalStorage();
+            await refresh();
+        })();
+    }, [refresh]);
+
+    const handleCreate = async (e: React.FormEvent) => {
         e.preventDefault();
         const ref = newRef.trim();
         const name = newName.trim();
         if (!ref || !name) { setCreateError('Both fields are required.'); return; }
+        setCreating(true);
         try {
-            createClient(ref, name);
+            await createClient(ref, name);
             setNewRef('');
             setNewName('');
             setCreateError('');
-            refresh();
+            await refresh();
         } catch (err: unknown) {
             setCreateError(err instanceof Error ? err.message : 'Error creating client.');
+        } finally {
+            setCreating(false);
         }
     };
 
-    const handleDelete = (refNumber: string) => {
+    const handleDelete = async (refNumber: string) => {
         if (!confirm(`Delete client ${refNumber}? This cannot be undone.`)) return;
-        deleteClient(refNumber);
-        refresh();
+        await deleteClient(refNumber);
+        await refresh();
     };
 
     const handleLogout = () => {
@@ -137,8 +159,8 @@ function ClientList() {
                             placeholder="Client name"
                             className="input input-bordered flex-1 border-ink/15 bg-white text-sm focus:border-sky focus:outline-none"
                         />
-                        <button type="submit" className="btn bg-lavender text-white hover:bg-lavender/90 border-none">
-                            + Add
+                        <button type="submit" className="btn bg-lavender text-white hover:bg-lavender/90 border-none" disabled={creating}>
+                            {creating ? <span className="loading loading-spinner loading-sm" /> : '+ Add'}
                         </button>
                     </form>
                     {createError && <p className="mt-2 text-sm text-error">{createError}</p>}
@@ -146,7 +168,11 @@ function ClientList() {
 
                 {/* ── client table ── */}
                 <div className="mx-auto mt-8 max-w-2xl">
-                    {clients.length === 0 ? (
+                    {loading ? (
+                        <div className="flex justify-center py-12">
+                            <span className="loading loading-spinner loading-lg text-lavender" />
+                        </div>
+                    ) : clients.length === 0 ? (
                         <p className="text-center text-ink/40 py-12">No clients yet. Create one above.</p>
                     ) : (
                         <div className="space-y-3">

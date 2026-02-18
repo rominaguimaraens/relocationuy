@@ -1,3 +1,13 @@
+import {
+    collection,
+    doc,
+    getDocs,
+    getDoc,
+    setDoc,
+    updateDoc,
+    deleteDoc,
+} from 'firebase/firestore';
+import { db } from './firebase';
 import type { TrackedClient, TrackedStep } from './trackingTypes';
 
 /* ─────────── default 8-step template ─────────── */
@@ -75,36 +85,37 @@ export const DEFAULT_STEPS: TrackedStep[] = [
     },
 ];
 
-/* ─────────── localStorage CRUD ─────────── */
+/* ─────────── Firestore helpers ─────────── */
 
-const STORAGE_KEY = 'uy_tracking_clients';
+const CLIENTS_COLLECTION = 'clients';
+
+/** Normalise refNumber into a safe Firestore document ID */
+function toDocId(refNumber: string): string {
+    return refNumber.trim().toLowerCase();
+}
 
 function deepCloneSteps(): TrackedStep[] {
     return JSON.parse(JSON.stringify(DEFAULT_STEPS));
 }
 
-export function getClients(): TrackedClient[] {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return [];
-        return JSON.parse(raw) as TrackedClient[];
-    } catch {
-        return [];
-    }
+/* ─────────── Firestore CRUD ─────────── */
+
+export async function getClients(): Promise<TrackedClient[]> {
+    const snap = await getDocs(collection(db, CLIENTS_COLLECTION));
+    return snap.docs.map((d) => d.data() as TrackedClient);
 }
 
-export function saveClients(clients: TrackedClient[]): void {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(clients));
+export async function getClientByRef(refNumber: string): Promise<TrackedClient | null> {
+    const docRef = doc(db, CLIENTS_COLLECTION, toDocId(refNumber));
+    const snap = await getDoc(docRef);
+    if (!snap.exists()) return null;
+    return snap.data() as TrackedClient;
 }
 
-export function getClientByRef(refNumber: string): TrackedClient | null {
-    const clients = getClients();
-    return clients.find((c) => c.refNumber.toLowerCase() === refNumber.toLowerCase()) ?? null;
-}
-
-export function createClient(refNumber: string, name: string): TrackedClient {
-    const clients = getClients();
-    if (clients.some((c) => c.refNumber.toLowerCase() === refNumber.toLowerCase())) {
+export async function createClient(refNumber: string, name: string): Promise<TrackedClient> {
+    const id = toDocId(refNumber);
+    const existing = await getDoc(doc(db, CLIENTS_COLLECTION, id));
+    if (existing.exists()) {
         throw new Error(`Client with reference "${refNumber}" already exists.`);
     }
     const newClient: TrackedClient = {
@@ -114,27 +125,59 @@ export function createClient(refNumber: string, name: string): TrackedClient {
         statusNote: '',
         steps: deepCloneSteps(),
     };
-    clients.push(newClient);
-    saveClients(clients);
+    await setDoc(doc(db, CLIENTS_COLLECTION, id), newClient);
     return newClient;
 }
 
-export function updateClient(updated: TrackedClient): void {
-    const clients = getClients();
-    const idx = clients.findIndex(
-        (c) => c.refNumber.toLowerCase() === updated.refNumber.toLowerCase(),
-    );
-    if (idx === -1) throw new Error(`Client "${updated.refNumber}" not found.`);
-    clients[idx] = updated;
-    saveClients(clients);
+export async function updateClient(updated: TrackedClient): Promise<void> {
+    const id = toDocId(updated.refNumber);
+    await updateDoc(doc(db, CLIENTS_COLLECTION, id), { ...updated });
 }
 
-export function deleteClient(refNumber: string): void {
-    const clients = getClients().filter(
-        (c) => c.refNumber.toLowerCase() !== refNumber.toLowerCase(),
-    );
-    saveClients(clients);
+export async function deleteClient(refNumber: string): Promise<void> {
+    const id = toDocId(refNumber);
+    await deleteDoc(doc(db, CLIENTS_COLLECTION, id));
 }
 
 /* ─────────── admin password ─────────── */
 export const ADMIN_PASSWORD = 'uyrelocate2025';
+
+/* ─────────── one-time localStorage → Firestore migration ─────────── */
+
+const LEGACY_KEY = 'uy_tracking_clients';
+const MIGRATED_KEY = 'uy_tracking_migrated';
+
+/**
+ * Call once on app boot. If old localStorage data exists and hasn't been
+ * migrated yet, push every client into Firestore, then mark as done.
+ */
+export async function migrateFromLocalStorage(): Promise<number> {
+    if (localStorage.getItem(MIGRATED_KEY)) return 0;
+
+    const raw = localStorage.getItem(LEGACY_KEY);
+    if (!raw) {
+        localStorage.setItem(MIGRATED_KEY, '1');
+        return 0;
+    }
+
+    let clients: TrackedClient[];
+    try {
+        clients = JSON.parse(raw) as TrackedClient[];
+    } catch {
+        localStorage.setItem(MIGRATED_KEY, '1');
+        return 0;
+    }
+
+    let migrated = 0;
+    for (const c of clients) {
+        const id = toDocId(c.refNumber);
+        const existing = await getDoc(doc(db, CLIENTS_COLLECTION, id));
+        if (!existing.exists()) {
+            await setDoc(doc(db, CLIENTS_COLLECTION, id), c);
+            migrated++;
+        }
+    }
+
+    localStorage.setItem(MIGRATED_KEY, '1');
+    return migrated;
+}

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Section from '../components/Section';
 import { getClientByRef } from '../lib/trackingData';
@@ -144,23 +144,28 @@ function StepCard({
 /* ───────── main component ───────── */
 export default function Tracking() {
     const [refInput, setRefInput] = useState('');
-    const [searchedRef, setSearchedRef] = useState('');
+    const [client, setClient] = useState<TrackedClient | null>(null);
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
-    const client: TrackedClient | null = useMemo(() => {
-        if (!searchedRef) return null;
-        return getClientByRef(searchedRef);
-    }, [searchedRef]);
-
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const trimmed = refInput.trim();
         if (!trimmed) return;
         setError('');
-        setSearchedRef(trimmed);
-        const found = getClientByRef(trimmed);
-        if (!found) {
-            setError('No application found with that reference number. Please double-check and try again.');
+        setClient(null);
+        setLoading(true);
+        try {
+            const found = await getClientByRef(trimmed);
+            if (!found) {
+                setError('No application found with that reference number. Please double-check and try again.');
+            } else {
+                setClient(found);
+            }
+        } catch {
+            setError('Something went wrong. Please try again.');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -196,8 +201,12 @@ export default function Tracking() {
                         placeholder="e.g. URC-2025-001"
                         className="input input-bordered flex-1 border-ink/15 bg-white focus:border-sky focus:outline-none"
                     />
-                    <button type="submit" className="btn bg-sky text-white hover:bg-sky/90 border-none">
-                        Look up
+                    <button type="submit" className="btn bg-sky text-white hover:bg-sky/90 border-none" disabled={loading}>
+                        {loading ? (
+                            <span className="loading loading-spinner loading-sm" />
+                        ) : (
+                            'Look up'
+                        )}
                     </button>
                 </form>
 
