@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
 
@@ -6,10 +7,10 @@ export default function ScoutingTrips() {
   return (
     <>
       <Helmet>
-        <title>Scouting Trips | Uruguay Relocation Companion</title>
+        <title>Scouting Trips in Montevideo | Uruguay Relocation Companion</title>
         <meta
           name="description"
-          content="Hands-on scouting trips in Montevideo to help you decide if Uruguay is truly right for you."
+          content="Experience daily life in Uruguay before you commit. Guided scouting trips in Montevideo — visit neighborhoods, ride buses, shop at ferias, and get honest local insight."
         />
       </Helmet>
 
@@ -100,6 +101,16 @@ export default function ScoutingTrips() {
             ]}
             supportLength="Designed for people seriously considering relocation and wanting to “test-drive” life here before making the move."
           />
+        </div>
+
+        <div className="mt-16 mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-display mb-4">Ready to See Uruguay for Yourself?</h2>
+          <p className="text-lg text-ink/80 mb-6">
+            Book a free 30-minute call to talk through your trip, ask questions, and start planning your scouting experience.
+          </p>
+          <Link to="/contact" className="btn btn-primary btn-soft btn-lg">
+            Book Your Free 30-Min Call
+          </Link>
         </div>
       </Section>
     </>

@@ -176,7 +176,7 @@ export default function Blog({ initialCategory = 'All' }: BlogProps) {
   return (
     <>
       <Helmet>
-        <title>Blog | Uruguay Relocation Companion</title>
+        <title>Uruguay Expat Blog | Relocation Guides & Tips | Uruguay Relocation Companion</title>
         <meta
           name="description"
           content="Articles and guides about moving to and living in Uruguay — written by locals who guide you through the real process."
@@ -207,7 +207,7 @@ export default function Blog({ initialCategory = 'All' }: BlogProps) {
             Our Blog
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl">
-            Guides & Insights
+            Uruguay Expat Guides & Relocation Tips
           </h1>
           <p className="mt-4 text-lg text-ink/70">
             Deep dives, honest guides, and practical advice about moving to

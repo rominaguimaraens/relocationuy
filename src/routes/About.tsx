@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Section from "../components/Section";
 import { sanitizeText } from "../utils/sanitize";
 
@@ -18,15 +20,15 @@ const reviews = [
   {
     name: "Tyler (USA)",
     text: sanitizeText(
-      "We had a great experience and much easier transition from the US to Uruguay—especially thanks to Ro and Tomas! They’re both kind and welcoming souls who will work at your own pace. Their interpretation help and knowledge in local processes were invaluable, especially when it came to opening a bank account. We highly recommend working with Ro and Tomas to ensure your journey to Uruguay is smooth!"
+      "We had a great experience and much easier transition from the US to Uruguay—especially thanks to Ro and Tomas! They're both kind and welcoming souls who will work at your own pace. Their interpretation help and knowledge in local processes were invaluable, especially when it came to opening a bank account. We highly recommend working with Ro and Tomas to ensure your journey to Uruguay is smooth!"
     ),
-  },  
+  },
   {
-      name: "Teddy (USA)",
+    name: "Teddy (USA)",
     text: sanitizeText(
-      "Tomas and Ro’s services were vital to setting up our new life in Uruguay.  When you need to open a bank account or other complicated process as a new immigrant to Uruguay, it can be very stressful without knowing the language well enough.  Tomas and Ro made it feel easy, and their prices for their assistance were very reasonable."
+      "Tomas and Ro's services were vital to setting up our new life in Uruguay.  When you need to open a bank account or other complicated process as a new immigrant to Uruguay, it can be very stressful without knowing the language well enough.  Tomas and Ro made it feel easy, and their prices for their assistance were very reasonable."
     ),
-    },
+  },
 ];
 
 const introParagraphs = [
@@ -66,113 +68,131 @@ export default function About() {
   const prevReview = () => setCurrent((prev) => (prev - 1 + reviews.length) % reviews.length);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFDCE3] to-[#F7C6D7]">
-      <main className="space-y-24">
-        <Section>
-          <div className="mx-auto max-w-4xl px-4">
-            <div className="rounded-xl bg-white bg-opacity-95 p-10 shadow-lg">
-              <h1 className="mb-10 text-center text-4xl font-display">About Us</h1>
-              <div className="space-y-6 text-center text-lg leading-relaxed text-ink">
-                {introParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{sanitizeText(paragraph)}</p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Section>
+    <>
+      <Helmet>
+        <title>About Romina | Born & Raised in Montevideo | Uruguay Relocation Companion</title>
+        <meta
+          name="description"
+          content="Romina is a Montevideo-born relocation specialist who guides American expats through Uruguay's residency process — in-person, start to finish."
+        />
+      </Helmet>
 
-        <Section>
-          <div className="mx-auto max-w-4xl px-4">
-            <div className="rounded-xl bg-white bg-opacity-95 p-10 shadow-lg">
-              <h2 className="mb-8 text-center text-3xl font-display">Our Values</h2>
-              <div className="space-y-5 text-lg leading-relaxed text-ink">
-                {valuesParagraphs.map((paragraph) => {
-                  const sanitized = sanitizeText(paragraph);
-                  const emphasize = sanitized.startsWith(
-                    "If you're relocating due to safety concerns, political instability, or financial hardship",
-                  );
-                  return (
-                    <p key={paragraph}>{emphasize ? <strong>{sanitized}</strong> : sanitized}</p>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section>
-          <div className="mx-auto max-w-6xl px-4">
-            <h2 className="mb-12 text-center text-3xl font-display">Meet the Team</h2>
-            <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-ink">
-              {sanitizeText("We're locals who love guiding newcomers as they settle into Uruguayan life.")}
-            </p>
-
-            <div className="grid gap-12 md:grid-cols-2">
-              <div className="card flex flex-col items-center gap-4 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
-                <img
-                  src="/romina.jpg"
-                  alt="Romina Guimaraens headshot"
-                  className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
-                />
-                <h3 className="text-2xl font-display">Romina Guimaraens</h3>
-                <div className="space-y-4 text-left text-lg leading-relaxed text-ink">
-                  {rominaParagraphs.map((paragraph) => (
+      <div className="min-h-screen bg-gradient-to-b from-[#FFDCE3] to-[#F7C6D7]">
+        <main className="space-y-24">
+          <Section>
+            <div className="mx-auto max-w-4xl px-4">
+              <div className="rounded-xl bg-white bg-opacity-95 p-10 shadow-lg">
+                <h1 className="mb-10 text-center text-4xl font-display">Born in Montevideo. Here to Walk You Through Every Step.</h1>
+                <div className="space-y-6 text-center text-lg leading-relaxed text-ink">
+                  {introParagraphs.map((paragraph) => (
                     <p key={paragraph}>{sanitizeText(paragraph)}</p>
                   ))}
                 </div>
-                </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section>
-          <div className="mx-auto max-w-3xl px-4">
-            <h2 className="mb-10 text-center text-3xl font-display">Client Experiences</h2>
-            <p className="mb-10 text-center text-lg text-ink">
-              {sanitizeText("A few words from people we've helped make Uruguay home 🌿")}
-            </p>
-
-            <div className="flex flex-col items-center justify-center">
-              <div className="relative w-full">
-                <div className="card rounded-2xl bg-base-100 p-8 text-center shadow-lg transition-all duration-500 ease-in-out">
-                  <p className="mb-6 text-lg italic leading-relaxed text-ink">{reviews[current].text}</p>
-                  <h4 className="text-xl font-display text-lavender">&mdash; {reviews[current].name}</h4>
-                </div>
-
-                <button
-                  onClick={prevReview}
-                  className="btn btn-ghost absolute left-0 top-1/2 -translate-y-1/2"
-                  aria-label="Previous review"
-                >
-                  &lsaquo;
-                </button>
-                <button
-                  onClick={nextReview}
-                  className="btn btn-ghost absolute right-0 top-1/2 -translate-y-1/2"
-                  aria-label="Next review"
-                >
-                  &rsaquo;
-                </button>
-              </div>
-
-              <div className="mt-6 flex gap-2">
-                {reviews.map((_, i) => (
-                  <span
-                    key={i}
-                    className={`h-3 w-3 rounded-full transition-all duration-300 ${
-                      i === current ? "bg-lavender" : "bg-sage/50"
-                    }`}
-                  ></span>
-                ))}
               </div>
             </div>
-          </div>
-        </Section>
-      </main>
-    </div>
+          </Section>
+
+          <Section>
+            <div className="mx-auto max-w-4xl px-4">
+              <div className="rounded-xl bg-white bg-opacity-95 p-10 shadow-lg">
+                <h2 className="mb-8 text-center text-3xl font-display">Our Values</h2>
+                <div className="space-y-5 text-lg leading-relaxed text-ink">
+                  {valuesParagraphs.map((paragraph) => {
+                    const sanitized = sanitizeText(paragraph);
+                    const emphasize = sanitized.startsWith(
+                      "If you're relocating due to safety concerns, political instability, or financial hardship",
+                    );
+                    return (
+                      <p key={paragraph}>{emphasize ? <strong>{sanitized}</strong> : sanitized}</p>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </Section>
+
+          <Section>
+            <div className="mx-auto max-w-6xl px-4">
+              <h2 className="mb-12 text-center text-3xl font-display">Meet the Team</h2>
+              <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-ink">
+                {sanitizeText("We're locals who love guiding newcomers as they settle into Uruguayan life.")}
+              </p>
+
+              <div className="grid gap-12 md:grid-cols-2">
+                <div className="card flex flex-col items-center gap-4 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
+                  <img
+                    src="/romina.jpg"
+                    alt="Romina, founder of Uruguay Relocation Companion, born and raised in Montevideo"
+                    className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
+                  />
+                  <h3 className="text-2xl font-display">Romina Guimaraens</h3>
+                  <div className="space-y-4 text-left text-lg leading-relaxed text-ink">
+                    {rominaParagraphs.map((paragraph) => (
+                      <p key={paragraph}>{sanitizeText(paragraph)}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Section>
+
+          <Section>
+            <div className="mx-auto max-w-3xl px-4">
+              <h2 className="mb-10 text-center text-3xl font-display">Client Experiences</h2>
+              <p className="mb-10 text-center text-lg text-ink">
+                {sanitizeText("A few words from people we've helped make Uruguay home 🌿")}
+              </p>
+
+              <div className="flex flex-col items-center justify-center">
+                <div className="relative w-full">
+                  <div className="card rounded-2xl bg-base-100 p-8 text-center shadow-lg transition-all duration-500 ease-in-out">
+                    <p className="mb-6 text-lg italic leading-relaxed text-ink">{reviews[current].text}</p>
+                    <h4 className="text-xl font-display text-lavender">&mdash; {reviews[current].name}</h4>
+                  </div>
+
+                  <button
+                    onClick={prevReview}
+                    className="btn btn-ghost absolute left-0 top-1/2 -translate-y-1/2"
+                    aria-label="Previous review"
+                  >
+                    &lsaquo;
+                  </button>
+                  <button
+                    onClick={nextReview}
+                    className="btn btn-ghost absolute right-0 top-1/2 -translate-y-1/2"
+                    aria-label="Next review"
+                  >
+                    &rsaquo;
+                  </button>
+                </div>
+
+                <div className="mt-6 flex gap-2">
+                  {reviews.map((_, i) => (
+                    <span
+                      key={i}
+                      className={`h-3 w-3 rounded-full transition-all duration-300 ${i === current ? "bg-lavender" : "bg-sage/50"
+                        }`}
+                    ></span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Section>
+
+          {/* CTA Section */}
+          <Section>
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-display mb-4">Ready to Start Your Uruguay Journey?</h2>
+              <p className="text-lg text-ink/80 mb-6">
+                Book a free 30-minute consultation to talk through your move, ask questions, and see if we're the right fit.
+              </p>
+              <Link to="/contact" className="btn btn-primary btn-soft btn-lg">
+                Book Your Free 30-Min Call
+              </Link>
+            </div>
+          </Section>
+        </main>
+      </div>
+    </>
   );
 }
-
-
-
-

@@ -47,13 +47,16 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>{`${contact.heroTitle} - ${site.title}`}</title>
-        <meta name="description" content={contact.intro} />
+        <title>Book a Free Consultation | Uruguay Relocation Companion</title>
+        <meta
+          name="description"
+          content="Ready to move to Uruguay? Book a free 30-minute consultation with Uruguay Relocation Companion. No pressure — just honest guidance and real answers."
+        />
       </Helmet>
 
       <Section className="bg-hero-muted pt-24 md:pt-28">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl md:text-5xl">{contact.heroTitle}</h1>
+          <h1 className="text-4xl md:text-5xl">Book Your Free 30-Minute Consultation</h1>
           <p className="mt-5 text-lg text-ink/80 md:text-xl">{sanitizeText(contact.intro)}</p>
           <p className="mt-3 text-sm uppercase tracking-widest text-ink/60">
             {sanitizeText(contact.responseNote)}

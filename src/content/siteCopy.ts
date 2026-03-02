@@ -17,7 +17,7 @@ export const siteCopy = {
   },
   cta: {
     primary: 'Book free consultation',
-    floating: 'Book your free consultation',
+    floating: 'Book your free 30-min call',
     mini: "Let's plan your move together",
     pricing: 'Talk to us',
   },
