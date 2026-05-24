@@ -1,18 +1,20 @@
 import type { FormEvent } from 'react';
-import { useMemo, useState } from 'react';
+import { useRef, useMemo, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Helmet } from 'react-helmet-async';
 import Section from '../components/Section';
 import { siteCopy } from '../content/siteCopy';
 import { sanitizeText } from '../utils/sanitize';
 
-function encode(data: Record<string, FormDataEntryValue>) {
-  return new URLSearchParams(data as Record<string, string>).toString();
-}
+const EMAILJS_SERVICE_ID = 'service_mzixmzh';
+const EMAILJS_TEMPLATE_ID = 'template_z393tcp';
+const EMAILJS_PUBLIC_KEY = 'UDBd2t1E1Lk6OOSiG';
 
 export default function Contact() {
   const { contact, site } = siteCopy;
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitting, setSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const whatsappHref = useMemo(() => {
     const text = encodeURIComponent(contact.whatsappText);
@@ -24,18 +26,16 @@ export default function Contact() {
     setSubmitting(true);
     setStatus('idle');
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
     try {
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode(Object.fromEntries(formData.entries())),
-      });
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        EMAILJS_PUBLIC_KEY,
+      );
 
       setStatus('success');
-      form.reset();
+      formRef.current?.reset();
     } catch (error) {
       console.error(error);
       setStatus('error');
@@ -92,19 +92,10 @@ export default function Contact() {
           </div>
 
           <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
+            ref={formRef}
             className="card space-y-6 rounded-2xl border border-sky/10 bg-white p-8 shadow-2xl shadow-sky/10"
             onSubmit={onSubmit}
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <p className="hidden">
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </p>
 
             {status === 'success' && (
               <div role="status" className="alert alert-success">
