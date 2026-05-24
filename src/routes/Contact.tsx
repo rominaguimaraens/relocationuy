@@ -161,7 +161,6 @@ export default function Contact() {
                 name="whatsapp"
                 type="tel"
                 autoComplete="tel"
-                required
                 className="input input-bordered w-full"
               />
             </div>
