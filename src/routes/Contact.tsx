@@ -10,6 +10,8 @@ const EMAILJS_SERVICE_ID = 'service_mzixmzh';
 const EMAILJS_TEMPLATE_ID = 'template_z393tcp';
 const EMAILJS_PUBLIC_KEY = 'UDBd2t1E1Lk6OOSiG';
 
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
 export default function Contact() {
   const { contact, site } = siteCopy;
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -26,18 +28,27 @@ export default function Contact() {
     setSubmitting(true);
     setStatus('idle');
 
+    const form = formRef.current!;
+    const templateParams = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      whatsapp: (form.elements.namedItem('whatsapp') as HTMLInputElement).value,
+      package: (form.elements.namedItem('package') as HTMLSelectElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    };
+
     try {
-      await emailjs.sendForm(
+      const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formRef.current!,
-        { publicKey: EMAILJS_PUBLIC_KEY },
+        templateParams,
       );
+      console.log('EmailJS response:', response.status, response.text);
 
       setStatus('success');
-      formRef.current?.reset();
+      form.reset();
     } catch (error) {
-      console.error(error);
+      console.error('EmailJS error:', error);
       setStatus('error');
     } finally {
       setSubmitting(false);
