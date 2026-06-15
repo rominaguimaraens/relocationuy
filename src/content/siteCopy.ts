@@ -54,7 +54,7 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
           'For people who want comprehensive support without the stress of coordinating everything themselves. Everything in Essential plus setup and orientation.',
         features: [
           'Includes everything in Essential plus',
-          'In-person accompaniment for health card & ID',
+          'In-person accompaniment for health card',
           'SIM and utilities setup',
           'Health insurance setup',
           'One-week and one-month check-ins after arrival',
