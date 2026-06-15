@@ -148,8 +148,8 @@ We don't rush you. We don?t judge you.
           'Includes everything in Essential plus',
           'In-person accompaniment for health card',
           'SIM and utilities setup',
-          'Health insurance setup'
-          'Banking setup'
+          'Health insurance setup',
+          'Banking setup',
           'Orientation walk',
           'One-week and one-month check-ins after arrival',
         ],
@@ -177,7 +177,7 @@ We don't rush you. We don?t judge you.
     otherServices: [
       { name: 'Hourly interpretation', price: '$80 base, $65 per extra hour' },
       { name: 'Rental search and accompaniment', price: 'half a month\'s rent (minimum $400)' },
-      { name: 'Property search and accompaniment', price: '5% commission' }
+      { name: 'Property search and accompaniment', price: '5% commission' },
       { name: 'School Placement Assistance', price: '$300' },
       { name: 'Pet Relocation Assistance', price: '$150' },
       { name: 'Banking Assistance', price: '$200' },
