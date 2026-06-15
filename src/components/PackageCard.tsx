@@ -45,10 +45,6 @@ export function PackageCard({
           ))}
         </ul>
 
-        <div className="rounded-xl bg-sage/20 px-4 py-3 text-sm font-semibold text-ink">
-          {supportLength}
-        </div>
-
         {footer && <div className="pt-4 text-sm text-ink/70">{footer}</div>}
       </div>
     </div>

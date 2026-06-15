@@ -69,7 +69,6 @@ export default function ScoutingTrips() {
               'Real-life orientation: where locals shop, how transportation works, safety norms, and social etiquette',
               'End-of-day sit-down Q&A about daily life, housing, and costs',
             ]}
-            supportLength="Best for short-term visitors or digital nomads exploring Uruguay for the first time."
           />
 
           <PackageCard
@@ -84,7 +83,6 @@ export default function ScoutingTrips() {
               'Tips on reading rental listings and estimating living expenses',
               'WhatsApp support during your stay',
             ]}
-            supportLength="Perfect for those comparing neighborhoods and lifestyles before applying for residency."
           />
 
           <PackageCard
@@ -99,7 +97,6 @@ export default function ScoutingTrips() {
               'Restaurant, café, and local activity recommendations',
               'One-week post-trip WhatsApp access for follow-up questions',
             ]}
-            supportLength="Designed for people seriously considering relocation and wanting to “test-drive” life here before making the move."
           />
         </div>
 

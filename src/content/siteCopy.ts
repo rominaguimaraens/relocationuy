@@ -43,7 +43,6 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
           'Health card & ID guidance',
           '3-month WhatsApp/email support',
         ],
-        supportLength: '3-month support',
         footer:
           "💙 This package is priced with accessibility in mind. If you're relocating due to safety concerns or financial hardship, please mention this during your free consultation. We offer flexible options and payment plans.",
       },
@@ -61,7 +60,6 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
           'Orientation walk',
           '6-month support',
         ],
-        supportLength: '6-month support',
       },
       {
         id: 'family',
@@ -78,7 +76,6 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
           '9-month support',
           'Extra person for $800',
         ],
-        supportLength: '9-month support',
       },
     ],
     whyTitle: 'Why work with Uruguay Relocation Companion?',
