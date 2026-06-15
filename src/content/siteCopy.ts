@@ -132,9 +132,9 @@ We don't rush you. We don?t judge you.
           'DNM (residency appointment) booking + in-person support',
           'Direct contact with sworn translator',
           'Health card & ID guidance',
-          '3-month WhatsApp/email support',
+          'Ongoing support throughout your process',
         ],
-        supportLength: '3-months extra of support',
+
         footer:
           "💙 This package is priced with accessibility in mind. If you're relocating due to safety concerns or financial hardship, please mention this during your free consultation. We offer flexible options and payment plans.",
       },
@@ -146,19 +146,20 @@ We don't rush you. We don?t judge you.
           'For people who want comprehensive support without the stress of coordinating everything themselves. Everything in Essential plus setup and orientation.',
         features: [
           'Includes everything in Essential plus',
-          'In-person accompaniment for health card & ID',
-          'SIM, utilities, banking setup',
-          'Rental search',
+          'In-person accompaniment for health card',
+          'SIM and utilities setup',
+          'Health insurance setup'
+          'Banking setup'
           'Orientation walk',
-          '6-months extra of support',
+          'One-week and one-month check-ins after arrival',
         ],
-        supportLength: '6-month support',
+
         footer: '',
       },
       {
         id: 'family',
-        name: 'Family / Premium Package',
-        price: '$5,000 (up to 4 people)',
+        name: 'Family Package',
+        price: '$6,500 (for 4 people)',
         summary:
           'For families who need everything handled — from school placement to pet paperwork to shipping logistics. Everything in Full plus family, pet, and logistics support.',
         features: [
@@ -166,20 +167,19 @@ We don't rush you. We don?t judge you.
           'School or childcare support',
           'Pet relocation guidance',
           'Title revalidation',
-          'Shipping/import guidance',
-          '9-month support',
-          'Extra person for $800',
+          'Extra person for $950',
         ],
-        supportLength: '9-months extra of support',
+
         footer: '',
       },
     ],
     otherServicesTitle: 'Other services',
     otherServices: [
-      { name: 'Hourly Interpretation', price: '$65/hr' },
-      { name: 'Housing / Lease Support', price: '$400' },
+      { name: 'Hourly interpretation', price: '$80 base, $65 per extra hour' },
+      { name: 'Rental search and accompaniment', price: 'half a month\'s rent (minimum $400)' },
+      { name: 'Property search and accompaniment', price: '5% commission' }
       { name: 'School Placement Assistance', price: '$300' },
-      { name: 'Pet Relocation Assistance', price: '$300' },
+      { name: 'Pet Relocation Assistance', price: '$150' },
       { name: 'Banking Assistance', price: '$200' },
       { name: "Driver's License Conversion", price: '$125' },
       { name: '“Is Uruguay Right for Me?” Call', price: '$150' },
