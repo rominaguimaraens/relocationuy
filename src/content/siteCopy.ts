@@ -41,7 +41,7 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
           'DNM (residency appointment) booking + in-person support',
           'Direct contact with sworn translator',
           'Health card & ID guidance',
-          '3-month WhatsApp/email support',
+          'Ongoing support throughout your process',
         ],
         footer:
           "💙 This package is priced with accessibility in mind. If you're relocating due to safety concerns or financial hardship, please mention this during your free consultation. We offer flexible options and payment plans.",
@@ -55,16 +55,16 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
         features: [
           'Includes everything in Essential plus',
           'In-person accompaniment for health card & ID',
-          'SIM, utilities, banking setup',
-          'Rental search',
+          'SIM and utilities setup',
+          'Health insurance setup',
+          'One-week and one-month check-ins after arrival',
           'Orientation walk',
-          '6-month support',
         ],
       },
       {
         id: 'family',
-        name: 'Family / Premium Package',
-        price: '$5,000 (up to 4 people)',
+        name: 'Family Package',
+        price: '$6,500 (for 4 people)',
         summary:
           'For families who need everything handled — from school placement to pet paperwork to shipping logistics. Everything in Full plus family, pet, and logistics support.',
         features: [
@@ -72,9 +72,7 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
           'School or childcare support',
           'Pet relocation guidance',
           'Title revalidation',
-          'Shipping/import guidance',
-          '9-month support',
-          'Extra person for $800',
+          'Extra person for $950',
         ],
       },
     ],
