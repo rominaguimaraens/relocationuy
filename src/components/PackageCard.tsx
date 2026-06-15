@@ -16,7 +16,6 @@ export function PackageCard({
   price,
   summary,
   features,
-  supportLength,
   footer,
   highlighted,
 }: PackageCardProps) {
