@@ -84,7 +84,6 @@ export default function Pricing() {
               price={item.price}
               summary={item.summary}
               features={item.features}
-              supportLength={item.supportLength}
               footer={item.footer ? sanitizeText(item.footer) : undefined}
               highlighted={index === 1}
             />
