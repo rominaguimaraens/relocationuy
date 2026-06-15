@@ -27,7 +27,7 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Essential Residency Companion',
           description:
-            'Step-by-step residency guidance, DNM appointment booking and in-person support, sworn translator contact, health card and ID guidance, 3-month WhatsApp and email support.',
+            'Step-by-step residency guidance, DNM appointment booking and in-person support, sworn translator contact, health card and ID guidance, Ongoing support throughout your process',
         },
         price: '850',
         priceCurrency: 'USD',
@@ -38,7 +38,7 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Full Relocation Support',
           description:
-            'Everything in Essential plus in-person accompaniment for health card and ID, SIM, utilities, health insurance, banking setup, rental search, orientation walk, and 6-month support.',
+            'Everything in Essential plus in-person accompaniment for health card, SIM and utilities setup, health insurance setup, banking setup, orientation walk',
         },
         price: '1800',
         priceCurrency: 'USD',
@@ -47,11 +47,11 @@ const serviceSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Family / Premium Package',
+          name: 'Family Package',
           description:
-            'Everything in Full Relocation Support plus school or childcare support, pet relocation guidance, title revalidation, shipping and import guidance, and 9-month support for up to 4 people.',
+            'Everything in Full Relocation Support plus school or childcare support, pet relocation guidance, title revalidation, $950 per extra person',
         },
-        price: '5000',
+        price: '6500',
         priceCurrency: 'USD',
       },
     ],
