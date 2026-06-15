@@ -6,7 +6,6 @@ interface PackageCardProps {
   price: string;
   summary: string;
   features: string[];
-  supportLength: string;
   footer?: ReactNode;
   highlighted?: boolean;
 }
