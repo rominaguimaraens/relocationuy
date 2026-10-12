@@ -13,6 +13,7 @@ import ScoutingTrips from './routes/ScoutingTrips';
 import Contact from './routes/Contact';
 import ResourceArticle from './routes/ResourceArticle';
 import Tracking from './routes/Tracking';
+import Privacy from './routes/Privacy';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tracking" element={<Tracking />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

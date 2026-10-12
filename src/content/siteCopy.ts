@@ -14,7 +14,6 @@ export const siteCopy = {
     scouting: 'Scouting Trips',
     resources: 'Resources',
     blog: 'Blog',
-    tracking: 'Tracking',
     contact: 'Contact',
   },
   cta: {
