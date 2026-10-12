@@ -1,3 +1,5 @@
+import { packages } from './packages';
+
 export const siteCopy = {
   site: {
     title: 'Uruguay Relocation Companion',
@@ -30,52 +32,7 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
     packagesIntro:
       'Choose the level of support that fits your relocation. Every package comes with bilingual guidance, clear timelines, and a calm, organized approach.',
     packagesNote: 'All prices shown in USD.',
-    packages: [
-      {
-        id: 'essential',
-        name: 'Essential Residency Companion',
-        price: '$850',
-        summary: 'Step-by-step residency guidance with in-person support and translations.',
-        features: [
-          'Step-by-step residency guidance',
-          'DNM (residency appointment) booking + in-person support',
-          'Direct contact with sworn translator',
-          'Health card & ID guidance',
-          'Ongoing support throughout your process',
-        ],
-        footer:
-          "💙 This package is priced with accessibility in mind. If you're relocating due to safety concerns or financial hardship, please mention this during your free consultation. We offer flexible options and payment plans.",
-      },
-      {
-        id: 'full',
-        name: 'Full Relocation Support',
-        price: '$1,800',
-        summary:
-          'For people who want comprehensive support without the stress of coordinating everything themselves. Everything in Essential plus setup and orientation.',
-        features: [
-          'Includes everything in Essential plus',
-          'In-person accompaniment for health card',
-          'SIM and utilities setup',
-          'Health insurance setup',
-          'One-week and one-month check-ins after arrival',
-          'Orientation walk',
-        ],
-      },
-      {
-        id: 'family',
-        name: 'Family Package',
-        price: '$6,500 (for 4 people)',
-        summary:
-          'For families who need everything handled — from school placement to pet paperwork to shipping logistics. Everything in Full plus family, pet, and logistics support.',
-        features: [
-          'Includes everything in Full plus',
-          'School or childcare support',
-          'Pet relocation guidance',
-          'Title revalidation',
-          'Extra person for $950',
-        ],
-      },
-    ],
+    packages,
     whyTitle: 'Why work with Uruguay Relocation Companion?',
     whyBody: `**Because we're not just processing your paperwork — we're actually *with* you.**
 
@@ -116,58 +73,7 @@ We don't rush you. We don?t judge you.
   pricing: {
     title: 'Packages & Services',
     note: 'All prices are in USD',
-    packages: [
-      {
-        id: 'essential',
-        name: 'Essential Residency Companion',
-        price: '$850',
-        summary: 'Step-by-step residency guidance with in-person support and translations.',
-        features: [
-          'Step-by-step residency guidance',
-          'DNM (residency appointment) booking + in-person support',
-          'Direct contact with sworn translator',
-          'Health card & ID guidance',
-          'Ongoing support throughout your process',
-        ],
-
-        footer:
-          "💙 This package is priced with accessibility in mind. If you're relocating due to safety concerns or financial hardship, please mention this during your free consultation. We offer flexible options and payment plans.",
-      },
-      {
-        id: 'full',
-        name: 'Full Relocation Support',
-        price: '$1,800',
-        summary:
-          'For people who want comprehensive support without the stress of coordinating everything themselves. Everything in Essential plus setup and orientation.',
-        features: [
-          'Includes everything in Essential plus',
-          'In-person accompaniment for health card',
-          'SIM and utilities setup',
-          'Health insurance setup',
-          'Banking setup',
-          'Orientation walk',
-          'One-week and one-month check-ins after arrival',
-        ],
-
-        footer: '',
-      },
-      {
-        id: 'family',
-        name: 'Family Package',
-        price: '$6,500 (for 4 people)',
-        summary:
-          'For families who need everything handled — from school placement to pet paperwork to shipping logistics. Everything in Full plus family, pet, and logistics support.',
-        features: [
-          'Includes everything in Full plus',
-          'School or childcare support',
-          'Pet relocation guidance',
-          'Title revalidation',
-          'Extra person for $950',
-        ],
-
-        footer: '',
-      },
-    ],
+    packages,
     otherServicesTitle: 'Other services',
     otherServices: [
       { name: 'Hourly interpretation', price: '$80 base, $65 per extra hour' },
@@ -228,13 +134,24 @@ We don't rush you. We don?t judge you.
     responseNote: 'We respond within 24\u201348 hours in English or Spanish.',
     quickLinksTitle: 'Reach out directly',
     whatsappText: "Hello! I'm interested in relocating to Uruguay and would love to talk.",
+    // Only shown when VITE_SCHEDULER_URL is set (see .env.example).
+    scheduler: {
+      title: 'Pick a time',
+      body: 'Choose a slot for a free 30-minute call. No form needed.',
+      button: 'See available times',
+    },
     form: {
       name: 'Name',
       email: 'Email',
       whatsapp: 'WhatsApp number',
-      message: 'How can we help?',
-      packageInterest: 'Package interest',
-      packagePlaceholder: 'Select an option',
+      detailsNote: 'A few quick details help us prepare. All optional.',
+      timeline: 'When are you planning to move?',
+      travelers: "Who's moving?",
+      stage: 'Where are you in the process?',
+      source: 'How did you find us?',
+      message: 'Anything else you want us to know? (optional)',
+      packageInterest: 'Package interest (optional)',
+      selectPlaceholder: 'Select an option',
       submit: 'Send message',
       sending: 'Sending…',
       successTitle: 'Message sent!',
@@ -243,10 +160,24 @@ We don't rush you. We don?t judge you.
       error: 'Something went wrong. Please try again or email us directly.',
     },
     packages: [
-      { value: 'essential', label: 'Essential Residency Companion' },
-      { value: 'full', label: 'Full Relocation Support' },
-      { value: 'family', label: 'Family / Premium Package' },
+      ...packages.map((item) => ({ value: item.id, label: item.name })),
       { value: 'other', label: 'Other / Not sure yet' },
+    ],
+    timelineOptions: [
+      'Within 3 months',
+      '3 to 6 months',
+      '6 to 12 months',
+      'More than a year away',
+      'I am already in Uruguay',
+      'Not sure yet',
+    ],
+    travelersOptions: ['Just me', 'Me and a partner', 'A family with children', 'Something else'],
+    stageOptions: [
+      'Still researching',
+      'Gathering documents',
+      'Documents mostly ready',
+      'Already in Uruguay',
+      'Not sure',
     ],
   },
 };

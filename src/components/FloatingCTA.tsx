@@ -1,9 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import { siteCopy } from '../content/siteCopy';
 
 export function FloatingCTA() {
   const { cta } = siteCopy;
+  const { pathname } = useLocation();
+
+  // The button links to /contact, so it has no job on the contact page itself,
+  // and the tracker is a client-only page.
+  if (pathname === '/contact' || pathname === '/tracking') return null;
 
   return (
     <div

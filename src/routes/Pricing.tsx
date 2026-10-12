@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
 import { siteCopy } from '../content/siteCopy';
+import { packagesNotIncluded } from '../content/packages';
 import { sanitizeText } from '../utils/sanitize';
 
 const serviceSchema = {
@@ -67,7 +68,7 @@ export default function Pricing() {
         <title>Relocation Packages & Pricing | Uruguay Relocation Companion</title>
         <meta
           name="description"
-          content="Three relocation packages for Americans moving to Uruguay — from Essential Residency support at $850 to full Family Relocation at $5,000. See what's included."
+          content="Three relocation packages for Americans moving to Uruguay — from Essential Residency support at $850 to full Family Relocation at $6,500. See what's included."
         />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
@@ -89,6 +90,10 @@ export default function Pricing() {
             />
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
+          {sanitizeText(packagesNotIncluded)}
+        </p>
 
         <div className="mt-12">
           <div className="card border border-sky/10 bg-base-100 shadow-xl">

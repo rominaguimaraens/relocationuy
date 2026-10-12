@@ -5,6 +5,7 @@ import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
 import Separator from '../components/Separator';
 import { siteCopy } from '../content/siteCopy';
+import { packagesNotIncluded } from '../content/packages';
 import { sanitizeText } from '../utils/sanitize';
 
 const faqItems = [
@@ -170,6 +171,10 @@ export default function Home() {
             />
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
+          {sanitizeText(packagesNotIncluded)}
+        </p>
       </Section>
 
       <Section className="bg-hero-muted">
