@@ -150,9 +150,9 @@ The bureaucracy, the grey winters, and how long it takes to build a real social 
 
 The most useful thing you can do before committing to a move is visit first. Spend enough time — ideally two to four weeks — in Montevideo during a regular season, not just during the summer when the energy is higher and everything feels more appealing. Walk the neighborhoods you'd actually live in. Go to a government office for something minor. Deal with a mundane errand in Spanish. Notice how it feels.
 
-If a trip isn't possible yet, we offer a call where we go through your specific situation — your work setup, your family, your reasons for considering Uruguay, your honest concerns — and give you direct feedback about whether this is a good fit. Not a sales pitch, an actual conversation. If we think Uruguay isn't right for you, we'll say so.
+If a trip isn't possible yet, you can book a free 30-minute call with us. We'll go through your specific situation — your work setup, your family, your reasons for considering Uruguay, your honest concerns — and give you direct feedback about whether this is a good fit. Not a sales pitch, an actual conversation. If we think Uruguay isn't right for you, we'll say so.
 
-**[Book "Is Uruguay Right for Me?" Call.](/contact)**
+**[Book a free 30-minute call.](/contact)**
 
 ---
 

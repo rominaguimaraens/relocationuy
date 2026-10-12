@@ -39,7 +39,7 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Full Relocation Support',
           description:
-            'Everything in Essential plus in-person accompaniment for health card, SIM and utilities setup, health insurance setup, banking setup, orientation walk',
+            'Everything in Essential plus in-person accompaniment for health card, SIM and utilities setup, health insurance setup, banking setup, rental search and accompaniment, orientation walk',
         },
         price: '1800',
         priceCurrency: 'USD',
@@ -50,7 +50,7 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Family Package',
           description:
-            'Everything in Full Relocation Support plus school or childcare support, pet relocation guidance, title revalidation, $950 per extra person',
+            'Everything in Full Relocation Support plus school or childcare support, pet relocation guidance, title revalidation (degree recognition for regulated professions), $950 per extra person',
         },
         price: '6500',
         priceCurrency: 'USD',

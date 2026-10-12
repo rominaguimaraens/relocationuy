@@ -83,7 +83,6 @@ We don't rush you. We don?t judge you.
       { name: 'Pet Relocation Assistance', price: '$150' },
       { name: 'Banking Assistance', price: '$200' },
       { name: "Driver's License Conversion", price: '$125' },
-      { name: '“Is Uruguay Right for Me?” Call', price: '$150' },
     ],
   },
   resources: {
