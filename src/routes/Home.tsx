@@ -5,6 +5,7 @@ import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
 import Separator from '../components/Separator';
 import { siteCopy } from '../content/siteCopy';
+import { packagesNotIncluded } from '../content/packages';
 import { sanitizeText } from '../utils/sanitize';
 
 const faqItems = [
@@ -170,6 +171,10 @@ export default function Home() {
             />
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
+          {sanitizeText(packagesNotIncluded)}
+        </p>
       </Section>
 
       <Section className="bg-hero-muted">
@@ -248,59 +253,8 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="bg-hero-muted">
-        <div className="flex flex-col gap-8 text-center md:flex-row md:items-center md:justify-between md:text-left">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-display">💬 "Is Uruguay Right for Me?" Consultation — $100</h2>
-            <p className="mt-4 max-w-2xl text-ink/80">
-              A one-hour video call to help you decide if life in Uruguay truly fits your goals, values, and lifestyle.
-            </p>
-          </div>
-          <span className="badge badge-lg rounded-full bg-base-100 px-4 py-4 text-sm text-ink/70">
-            All prices are in USD
-          </span>
-        </div>
-
-        {/* Card layout for consultation details */}
-        <div className="mt-12 grid gap-8 md:grid-cols-1 lg:grid-cols-1">
-          <div className="card bg-base-100 shadow-xl border border-sky/10">
-            <div className="card-body">
-              <p className="text-ink/80">
-                If you've been thinking about moving abroad but aren't sure whether Uruguay is the right destination, this consultation gives you a clear, honest overview before taking the leap.
-                We'll talk through what daily life here really looks like — not the polished version you see in travel blogs — so you can make an informed, confident decision.
-              </p>
-
-              <h4 className="mt-6 text-lg font-semibold text-ink">Includes:</h4>
-              <ul className="mt-3 list-disc pl-5 space-y-1 text-ink/80">
-                <li>1-hour video call (Zoom or Google Meet)</li>
-                <li>Personalized discussion tailored to your priorities — lifestyle, budget, work, safety, healthcare, community, etc.</li>
-                <li>Honest breakdown of pros and cons from a local perspective</li>
-                <li>Guidance on what kind of person thrives here (and who usually doesn't)</li>
-              </ul>
-
-              <h4 className="mt-6 text-lg font-semibold text-ink">Who It's For:</h4>
-              <ul className="mt-3 list-disc pl-5 space-y-1 text-ink/80">
-                <li>People comparing Uruguay with other destinations (like Portugal, Costa Rica, or Mexico)</li>
-                <li>Those wanting clarity before investing time or money into the residency process</li>
-                <li>Anyone curious about Uruguay's culture, pace of life, and long-term potential</li>
-              </ul>
-
-              <p className="mt-6 text-ink/80">
-                If you decide to move forward with our relocation services afterward, your consultation fee is credited toward your chosen package.
-              </p>
-
-              <div className="mt-8 flex justify-center">
-                <Link to="/contact" className="btn btn-primary btn-soft btn-lg">
-                  Book Your Consultation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
       {/* FAQ Section */}
-      <Section className="bg-beige-gradient">
+      <Section className="bg-hero-muted">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-10 text-center text-3xl font-display md:text-4xl">
             Frequently Asked Questions

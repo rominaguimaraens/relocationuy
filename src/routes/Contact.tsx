@@ -10,7 +10,37 @@ const EMAILJS_SERVICE_ID = 'service_mzixmzh';
 const EMAILJS_TEMPLATE_ID = 'template_z393tcp';
 const EMAILJS_PUBLIC_KEY = 'UDBd2t1E1Lk6OOSiG';
 
+// Link to your booking page (Cal.com, Calendly, a Google appointment schedule...).
+// Set VITE_SCHEDULER_URL in Netlify and the "Pick a time" card appears; leave it
+// empty and the card stays hidden. It is read at build time, so redeploy after changing it.
+const SCHEDULER_URL = (import.meta.env.VITE_SCHEDULER_URL as string | undefined)?.trim();
+
 emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+interface SelectFieldProps {
+  id: string;
+  label: string;
+  placeholder: string;
+  options: readonly string[];
+}
+
+function SelectField({ id, label, placeholder, options }: SelectFieldProps) {
+  return (
+    <div className="flex flex-col">
+      <label htmlFor={id} className="mb-1 text-ink font-semibold">
+        {sanitizeText(label)}
+      </label>
+      <select id={id} name={id} className="select select-bordered w-full" defaultValue="">
+        <option value="">{sanitizeText(placeholder)}</option>
+        {options.map((option) => (
+          <option value={option} key={option}>
+            {sanitizeText(option)}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
 
 export default function Contact() {
   const { contact, site } = siteCopy;
@@ -25,25 +55,55 @@ export default function Contact() {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const form = formRef.current!;
+    const data = new FormData(form);
+    const get = (key: string) => String(data.get(key) ?? '').trim();
+
+    // Spam trap: real visitors never see or fill this field. If it has a value,
+    // pretend it worked and send nothing.
+    if (get('bot_field')) {
+      setStatus('success');
+      form.reset();
+      return;
+    }
+
     setSubmitting(true);
     setStatus('idle');
 
-    const form = formRef.current!;
+    // The extra details are also folded into the message text, so they show up in
+    // the email even if the EmailJS template doesn't have fields for them yet.
+    const details: [string, string][] = [
+      ['Planning to move', get('timeline')],
+      ["Who's moving", get('travelers')],
+      ['Stage', get('stage')],
+      ['Heard about us from', get('source')],
+    ];
+    const detailLines = details
+      .filter(([, value]) => value)
+      .map(([label, value]) => `${label}: ${value}`);
+    const message =
+      [get('message'), detailLines.length ? `---\n${detailLines.join('\n')}` : '']
+        .filter(Boolean)
+        .join('\n\n') || '(No message left)';
+
+    const packageLabel =
+      contact.packages.find((option) => option.value === get('package'))?.label ?? 'Not specified';
+
     const templateParams = {
-      name: (form.elements.namedItem('name') as HTMLInputElement).value,
-      email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      whatsapp: (form.elements.namedItem('whatsapp') as HTMLInputElement).value,
-      package: (form.elements.namedItem('package') as HTMLSelectElement).value,
-      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      name: get('name'),
+      email: get('email'),
+      whatsapp: get('whatsapp'),
+      package: packageLabel,
+      timeline: get('timeline'),
+      travelers: get('travelers'),
+      stage: get('stage'),
+      source: get('source'),
+      message,
     };
 
     try {
-      const response = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-      );
-      console.log('EmailJS response:', response.status, response.text);
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
 
       setStatus('success');
       form.reset();
@@ -77,29 +137,48 @@ export default function Contact() {
 
       <Section className="bg-beige-gradient">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1fr]">
-          <div className="space-y-6 rounded-3xl border border-sky/15 bg-base-100 p-8 shadow-xl shadow-sky/10">
-            <h2 className="text-2xl font-display text-ink">{sanitizeText(contact.quickLinksTitle)}</h2>
-            <div className="space-y-3 text-sm text-ink/80">
-              <a
-                href={`mailto:${site.email}`}
-                className="flex items-center gap-3 rounded-xl border border-transparent bg-sky/10 px-4 py-3 font-medium text-sky transition hover:border-sky/30 hover:text-lavender"
-              >
-                <span aria-hidden="true" className="text-lg font-semibold">
-                  Mail
-                </span>
-                {site.email}
-              </a>
-              <a
-                href={whatsappHref}
-                className="flex items-center gap-3 rounded-xl border border-transparent bg-sage/20 px-4 py-3 font-medium text-ink transition hover:border-sage/40 hover:text-sky"
-              >
-                <span aria-hidden="true" className="text-lg font-semibold">
-                  Chat
-                </span>
-                WhatsApp
-              </a>
+          <div className="space-y-6">
+            {SCHEDULER_URL && (
+              <div className="space-y-4 rounded-3xl border border-lavender/30 bg-base-100 p-8 shadow-xl shadow-sky/10">
+                <h2 className="text-2xl font-display text-ink">
+                  {sanitizeText(contact.scheduler.title)}
+                </h2>
+                <p className="text-sm text-ink/80">{sanitizeText(contact.scheduler.body)}</p>
+                <a
+                  href={SCHEDULER_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary w-full text-white"
+                >
+                  {sanitizeText(contact.scheduler.button)}
+                </a>
+              </div>
+            )}
+
+            <div className="space-y-6 rounded-3xl border border-sky/15 bg-base-100 p-8 shadow-xl shadow-sky/10">
+              <h2 className="text-2xl font-display text-ink">{sanitizeText(contact.quickLinksTitle)}</h2>
+              <div className="space-y-3 text-sm text-ink/80">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="flex items-center gap-3 rounded-xl border border-transparent bg-sky/10 px-4 py-3 font-medium text-sky transition hover:border-sky/30 hover:text-lavender"
+                >
+                  <span aria-hidden="true" className="text-lg font-semibold">
+                    Mail
+                  </span>
+                  {site.email}
+                </a>
+                <a
+                  href={whatsappHref}
+                  className="flex items-center gap-3 rounded-xl border border-transparent bg-sage/20 px-4 py-3 font-medium text-ink transition hover:border-sage/40 hover:text-sky"
+                >
+                  <span aria-hidden="true" className="text-lg font-semibold">
+                    Chat
+                  </span>
+                  WhatsApp
+                </a>
+              </div>
+              <p className="text-xs text-ink/60">EN / ES - {sanitizeText(contact.responseNote)}</p>
             </div>
-            <p className="text-xs text-ink/60">EN / ES - {sanitizeText(contact.responseNote)}</p>
           </div>
 
           <form
@@ -107,7 +186,6 @@ export default function Contact() {
             className="card space-y-6 rounded-2xl border border-sky/10 bg-white p-8 shadow-2xl shadow-sky/10"
             onSubmit={onSubmit}
           >
-
             {status === 'success' && (
               <div role="status" className="alert alert-success">
                 <span className="font-semibold">{sanitizeText(contact.form.successTitle)}</span>
@@ -120,6 +198,12 @@ export default function Contact() {
                 <span>{sanitizeText(contact.form.error)}</span>
               </div>
             )}
+
+            {/* Spam trap, hidden from real visitors */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+              <label htmlFor="bot_field">Leave this field empty</label>
+              <input id="bot_field" name="bot_field" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
 
             {/* Row 1: Name + Email */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -165,7 +249,41 @@ export default function Contact() {
               />
             </div>
 
-            {/* Package interest */}
+            {/* Optional details that help prepare for the call */}
+            <p className="text-sm text-ink/60">{sanitizeText(contact.form.detailsNote)}</p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <SelectField
+                id="timeline"
+                label={contact.form.timeline}
+                placeholder={contact.form.selectPlaceholder}
+                options={contact.timelineOptions}
+              />
+              <SelectField
+                id="travelers"
+                label={contact.form.travelers}
+                placeholder={contact.form.selectPlaceholder}
+                options={contact.travelersOptions}
+              />
+              <SelectField
+                id="stage"
+                label={contact.form.stage}
+                placeholder={contact.form.selectPlaceholder}
+                options={contact.stageOptions}
+              />
+              <div className="flex flex-col">
+                <label htmlFor="source" className="mb-1 text-ink font-semibold">
+                  {sanitizeText(contact.form.source)}
+                </label>
+                <input
+                  id="source"
+                  name="source"
+                  type="text"
+                  className="input input-bordered w-full"
+                />
+              </div>
+            </div>
+
+            {/* Package interest (optional) */}
             <div className="flex flex-col">
               <label htmlFor="package" className="mb-1 text-ink font-semibold">
                 {sanitizeText(contact.form.packageInterest)}
@@ -175,11 +293,8 @@ export default function Contact() {
                 name="package"
                 className="select select-bordered w-full"
                 defaultValue=""
-                required
               >
-                <option value="" disabled>
-                  {sanitizeText(contact.form.packagePlaceholder)}
-                </option>
+                <option value="">{sanitizeText(contact.form.selectPlaceholder)}</option>
                 {contact.packages.map((option) => (
                   <option value={option.value} key={option.value}>
                     {sanitizeText(option.label)}
@@ -188,7 +303,7 @@ export default function Contact() {
               </select>
             </div>
 
-            {/* Message */}
+            {/* Message (optional) */}
             <div className="flex flex-col">
               <label htmlFor="message" className="mb-1 text-ink font-semibold">
                 {sanitizeText(contact.form.message)}
@@ -199,7 +314,6 @@ export default function Contact() {
                 rows={5}
                 className="textarea textarea-bordered w-full"
                 placeholder="Tell us a little about your move..."
-                required
               />
             </div>
 

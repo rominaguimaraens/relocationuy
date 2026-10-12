@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
 import { siteCopy } from '../content/siteCopy';
+import { packagesNotIncluded } from '../content/packages';
 import { sanitizeText } from '../utils/sanitize';
 
 const serviceSchema = {
@@ -38,7 +39,7 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Full Relocation Support',
           description:
-            'Everything in Essential plus in-person accompaniment for health card, SIM and utilities setup, health insurance setup, banking setup, orientation walk',
+            'Everything in Essential plus in-person accompaniment for health card, SIM and utilities setup, health insurance setup, banking setup, rental search and accompaniment, orientation walk',
         },
         price: '1800',
         priceCurrency: 'USD',
@@ -49,7 +50,7 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Family Package',
           description:
-            'Everything in Full Relocation Support plus school or childcare support, pet relocation guidance, title revalidation, $950 per extra person',
+            'Everything in Full Relocation Support plus school or childcare support, pet relocation guidance, title revalidation (degree recognition for regulated professions), $950 per extra person',
         },
         price: '6500',
         priceCurrency: 'USD',
@@ -67,7 +68,7 @@ export default function Pricing() {
         <title>Relocation Packages & Pricing | Uruguay Relocation Companion</title>
         <meta
           name="description"
-          content="Three relocation packages for Americans moving to Uruguay — from Essential Residency support at $850 to full Family Relocation at $5,000. See what's included."
+          content="Three relocation packages for Americans moving to Uruguay — from Essential Residency support at $850 to full Family Relocation at $6,500. See what's included."
         />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
@@ -89,6 +90,10 @@ export default function Pricing() {
             />
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
+          {sanitizeText(packagesNotIncluded)}
+        </p>
 
         <div className="mt-12">
           <div className="card border border-sky/10 bg-base-100 shadow-xl">
