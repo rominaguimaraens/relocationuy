@@ -37,7 +37,7 @@ const introParagraphs = [
   "That's exactly why we started Uruguay Relocation Companion.",
   "We're not a law firm. We're the people who literally sit with you at appointments, translate everything so you actually understand what's happening, walk neighborhoods with you, connect you with trusted translators and landlords, and text you back when you're stressed.",
   "Our goal is simple: take the bureaucratic nightmare out of the process, so you can focus on building your new life instead of drowning in confusion.",
-  "Because relocation isn't just about paperwork — it's about people, comfort, and feeling like you actually belong here. 🌿",
+  "Because relocation isn't just about paperwork — it's about people, comfort, and feeling like you actually belong here.",
   "Whether you're moving alone, as a couple, with kids, with pets, fleeing something, or just ready for something new — we're here to make sure you always feel supported, understood, and at home.",
 ];
 
@@ -54,12 +54,19 @@ const valuesParagraphs = [
 ];
 
 const rominaParagraphs = [
-  "Hi! I'm Romina, one of the co-founders of Uruguay Relocation Companion.",
-  "I was born and raised in Uruguay, and over the years I've met many people who came here hoping to build a new chapter of their lives — often full of excitement, but also a bit overwhelmed by the process. Seeing that inspired me to start helping others make their move easier and less stressful.",
-  "I began by assisting foreign friends with their residency paperwork, appointments, and translations — and quickly realized how much of a difference it makes to have someone local who can explain things clearly, go along to in-person visits, and handle the little details that make life smoother here.",
-  "I'm fluent in English and Spanish, detail-oriented, and genuinely enjoy helping people feel cared for, informed, and supported as they settle into their new life in Uruguay. My approach is calm, organized, and personal — because moving to a new country should feel like a fresh start, not a mountain of paperwork.",
+  'I was born in Artigas and raised in Montevideo. I speak English and Spanish.',
+  'This started when friends from abroad needed help with their residency. I went with them to appointments, translated, and helped with forms and paperwork. It turned out to be the part that mattered most. Having someone local next to you makes everything less stressful.',
+  "Now I do that for my clients. I book your appointments early, because the good slots fill up for months ahead. I come with you and translate. I tell you which documents to get and when to get them. And I'm around on WhatsApp whenever you have a question.",
 ];
 
+
+const mechiParagraphs = [
+  'Mechi was born in Mendoza, Argentina, and now lives in Uruguay, so she knows what it is like to arrive here as a newcomer.',
+  "She arranges airport pickups and gets clients to wherever they're staying. She comes along to appointments with me. When a client needs someone to go with them and translate and I'm with someone else, Mechi goes.",
+];
+
+// When Mechi sends her photo, put it in /public and set this to e.g. '/mechi.jpg'.
+const MECHI_PHOTO: string | null = null;
 
 export default function About() {
   const [current, setCurrent] = useState(0);
@@ -70,10 +77,10 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Romina | Born & Raised in Montevideo | Uruguay Relocation Companion</title>
+        <title>About Romina and Mechi | Uruguay Relocation Companion</title>
         <meta
           name="description"
-          content="Romina is a Montevideo-born relocation specialist who guides American expats through Uruguay's residency process — in-person, start to finish."
+          content="Romina and Mechi guide American expats through Uruguay's residency process in person, from the airport to the last appointment."
         />
       </Helmet>
 
@@ -82,7 +89,7 @@ export default function About() {
           <Section>
             <div className="mx-auto max-w-4xl px-4">
               <div className="rounded-xl bg-white bg-opacity-95 p-10 shadow-lg">
-                <h1 className="mb-10 text-center text-4xl font-display">Born in Montevideo. Here to Walk You Through Every Step.</h1>
+                <h1 className="mb-10 text-center text-4xl font-display">Here to Walk You Through Every Step.</h1>
                 <div className="space-y-6 text-center text-lg leading-relaxed text-ink">
                   {introParagraphs.map((paragraph) => (
                     <p key={paragraph}>{sanitizeText(paragraph)}</p>
@@ -115,19 +122,43 @@ export default function About() {
             <div className="mx-auto max-w-6xl px-4">
               <h2 className="mb-12 text-center text-3xl font-display">Meet the Team</h2>
               <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-ink">
-                {sanitizeText("We're locals who love guiding newcomers as they settle into Uruguayan life.")}
+                {sanitizeText("Two people who live here and help newcomers settle in.")}
               </p>
 
-              <div className="grid gap-12 md:grid-cols-2">
-                <div className="card flex flex-col items-center gap-4 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
+              <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
+                <div className="card flex flex-col items-center gap-2 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
                   <img
                     src="/romina.jpg"
-                    alt="Romina, founder of Uruguay Relocation Companion, born and raised in Montevideo"
+                    alt="Romina Guimaraens, founder of Uruguay Relocation Companion"
                     className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
                   />
-                  <h3 className="text-2xl font-display">Romina Guimaraens</h3>
-                  <div className="space-y-4 text-left text-lg leading-relaxed text-ink">
+                  <h3 className="mt-2 text-2xl font-display">Romina Guimaraens</h3>
+                  <p className="text-sm font-semibold uppercase tracking-widest text-ink/60">Founder</p>
+                  <div className="mt-4 space-y-4 text-left text-lg leading-relaxed text-ink">
                     {rominaParagraphs.map((paragraph) => (
+                      <p key={paragraph}>{sanitizeText(paragraph)}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="card flex flex-col items-center gap-2 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
+                  {MECHI_PHOTO ? (
+                    <img
+                      src={MECHI_PHOTO}
+                      alt="Mechi, assistant at Uruguay Relocation Companion"
+                      className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="flex h-40 w-40 items-center justify-center rounded-full bg-sky/10 font-display text-5xl text-sky shadow-md sm:h-32 sm:w-32"
+                    >
+                      M
+                    </div>
+                  )}
+                  <h3 className="mt-2 text-2xl font-display">Mechi</h3>
+                  <p className="text-sm font-semibold uppercase tracking-widest text-ink/60">Assistant</p>
+                  <div className="mt-4 space-y-4 text-left text-lg leading-relaxed text-ink">
+                    {mechiParagraphs.map((paragraph) => (
                       <p key={paragraph}>{sanitizeText(paragraph)}</p>
                     ))}
                   </div>
@@ -140,7 +171,7 @@ export default function About() {
             <div className="mx-auto max-w-3xl px-4">
               <h2 className="mb-10 text-center text-3xl font-display">Client Experiences</h2>
               <p className="mb-10 text-center text-lg text-ink">
-                {sanitizeText("A few words from people we've helped make Uruguay home 🌿")}
+                {sanitizeText("A few words from people we've helped make Uruguay home")}
               </p>
 
               <div className="flex flex-col items-center justify-center">

@@ -119,7 +119,7 @@ export default function Home() {
             </span>
             <h1 className="mt-6 text-4xl leading-tight md:text-5xl">Your In-Person Guide to Moving to Uruguay</h1>
             <p className="mt-5 max-w-xl text-lg font-medium text-ink/90 leading-relaxed">
-              Uruguay Relocation Companion is a bilingual, in-person relocation service based in Montevideo, Uruguay. We physically accompany American expats to DNM residency appointments, carné de salud, banking setup, housing viewings, and every step of the settlement process — providing real-time translation and local expertise from someone born and raised here.
+              Uruguay Relocation Companion is a bilingual, in-person relocation service based in Montevideo, Uruguay. We physically accompany American expats to DNM residency appointments, carné de salud, banking setup, housing viewings, and every step of the settlement process — providing real-time translation and local knowledge from people who live here.
             </p>
             <p className="mt-3 max-w-xl text-ink/80">
               Whether you're fleeing, exploring, or just ready for something new — you deserve support that feels human, not transactional.
@@ -201,7 +201,7 @@ export default function Home() {
 
             <div>
               <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">
-                🗣️ We're bilingual locals who speak <em>your</em> language
+                We're bilingual and we live here
               </h3>
               <p className="text-ink/80 leading-relaxed">
                 Fluent in English and Spanish, we translate not just words but culture — the unspoken rules, the
@@ -213,11 +213,11 @@ export default function Home() {
 
             <div>
               <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">
-                🏠 We're born-and-raised Montevideanos with deep roots here
+                One of us grew up here, one of us moved here
               </h3>
               <p className="text-ink/80 leading-relaxed">
-                We're not expats who moved here recently. We grew up here. We know every shortcut, every government
-                office quirk, every <em>"this is how it actually works"</em> insider detail.
+                Romina was raised in Montevideo and knows how the offices, the paperwork and the neighborhoods really
+                work. Mechi came from Argentina, so she knows what the first months feel like. Between us you get both.
               </p>
             </div>
 
@@ -225,7 +225,7 @@ export default function Home() {
 
             <div>
               <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">
-                💙 We treat you like a person, not a transaction
+                We treat you like a person, not a transaction
               </h3>
               <p className="text-ink/80 leading-relaxed">
                 You're not Client #247. You're someone making one of the biggest decisions of your life. We don't rush

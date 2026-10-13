@@ -25,7 +25,7 @@ export const packages: PackageInfo[] = [
       'Ongoing support throughout your process',
     ],
     footer:
-      "💙 This package is priced with accessibility in mind. If you're relocating due to safety concerns or financial hardship, please mention this during your free consultation. We offer flexible options and payment plans.",
+      "This package is priced with accessibility in mind. If you're relocating due to safety concerns or financial hardship, please mention this during your free consultation. We offer flexible options and payment plans.",
   },
   {
     id: 'full',

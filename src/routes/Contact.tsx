@@ -71,21 +71,7 @@ export default function Contact() {
     setSubmitting(true);
     setStatus('idle');
 
-    // The extra details are also folded into the message text, so they show up in
-    // the email even if the EmailJS template doesn't have fields for them yet.
-    const details: [string, string][] = [
-      ['Planning to move', get('timeline')],
-      ["Who's moving", get('travelers')],
-      ['Stage', get('stage')],
-      ['Heard about us from', get('source')],
-    ];
-    const detailLines = details
-      .filter(([, value]) => value)
-      .map(([label, value]) => `${label}: ${value}`);
-    const message =
-      [get('message'), detailLines.length ? `---\n${detailLines.join('\n')}` : '']
-        .filter(Boolean)
-        .join('\n\n') || '(No message left)';
+    const message = get('message') || '(No message left)';
 
     const packageLabel =
       contact.packages.find((option) => option.value === get('package'))?.label ?? 'Not specified';

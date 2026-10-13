@@ -14,7 +14,6 @@ export const siteCopy = {
     scouting: 'Scouting Trips',
     resources: 'Resources',
     blog: 'Blog',
-    tracking: 'Tracking',
     contact: 'Contact',
   },
   cta: {
@@ -25,8 +24,6 @@ export const siteCopy = {
   },
   home: {
     heroEyebrowSegments: ['Relocation planning', 'Residency', 'Settling in'],
-    heroTagline: `Moving to Uruguay shouldn't feel like solving a bureaucratic puzzle in a language you don't speak. We're Romina and Tomas — two Montevideo locals who handle the confusing parts (paperwork, appointments, translations, the "wait what document do they need?" moments) so you can actually breathe and start building your new life.
-Whether you're fleeing, exploring, or just ready for something new — you deserve support that feels human, not transactional.`,
     heroSecondaryButton: 'Explore scouting trips',
     packagesTitle: 'Packages Overview',
     packagesIntro:
@@ -34,39 +31,6 @@ Whether you're fleeing, exploring, or just ready for something new — you deser
     packagesNote: 'All prices shown in USD.',
     packages,
     whyTitle: 'Why work with Uruguay Relocation Companion?',
-    whyBody: `**Because we're not just processing your paperwork — we're actually *with* you.**
-
-Most relocation services send you a checklist and wish you luck.  
-**We show up.**  
-We go to your appointments.  
-We translate in real-time so you understand what's being asked.  
-We walk you through neighborhoods and tell you which caf?s have the best medialunas and which streets feel safest at night.
-
----
-
-### ??? We're bilingual locals who speak *your* language
-
-Fluent in English and Spanish, we translate not just words but culture ?  
-the unspoken rules, the neighborhood personalities, and the  
-*?why does it work this way??* questions Google will never answer.
-
----
-
-### ?? We're born-and-raised Montevideanos with deep roots here
-
-We're not expats who moved here recently.  
-We grew up here.  
-We know every shortcut, every government office quirk, every  
-?this is how it actually works? insider detail.
-
----
-
-### ?? We treat you like a person, not a transaction
-
-You're not Client #247.  
-You're someone making one of the biggest decisions of your life.  
-We don't rush you. We don?t judge you.  
-**We just help.**`,
     miniCtaCopy:
       "Share a few details about your move and we'll build a personalized relocation roadmap for you.",
   },
