@@ -2,12 +2,17 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
+import { scoutingPayment } from '../content/packages';
 
 const faqItems = [
   {
     question: 'How much do scouting trips cost?',
     answer:
       'The Uruguay 101 Day is $700, Settle & Explore (3 days) is $1,200, and Live Like a Local (7 days) is $1,800. Prices are in USD and are per group, not per person.',
+  },
+  {
+    question: 'How do I pay for a scouting trip?',
+    answer: scoutingPayment,
   },
   {
     question: 'Does the price include flights, a place to stay or airport pickup?',
@@ -137,6 +142,7 @@ export default function ScoutingTrips() {
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
           Flights, accommodation and airport pickup are not included.
         </p>
+        <p className="mx-auto mt-2 max-w-2xl text-center text-sm text-ink/70">{scoutingPayment}</p>
 
         <div className="mx-auto mt-16 max-w-3xl">
           <h2 className="mb-8 text-center text-3xl font-display">Questions about scouting trips</h2>

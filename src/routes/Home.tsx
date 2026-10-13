@@ -5,7 +5,7 @@ import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
 import Separator from '../components/Separator';
 import { siteCopy } from '../content/siteCopy';
-import { packagesNotIncluded } from '../content/packages';
+import { packagesNotIncluded, packagesPayment } from '../content/packages';
 import { sanitizeText } from '../utils/sanitize';
 
 const faqItems = [
@@ -18,6 +18,11 @@ const faqItems = [
     question: 'How much does your service cost?',
     answer:
       'Essential is $850, Full is $1,800, and the Family Package is $6,500 for four people, plus $950 for each extra person. Essential covers residency. Full adds the health card, SIM and utilities, health insurance, banking and rental search. Family adds school or childcare, pet relocation and title revalidation.',
+  },
+  {
+    question: 'How do I pay?',
+    answer:
+      'You pay 50% when you book and the other 50% at your first appointment. We accept Wise, Western Union and bank transfer. Scouting trips work the same way, except the second half is due on the first day of the trip.',
   },
   {
     question: 'What happens at the DNM appointment?',
@@ -198,6 +203,7 @@ export default function Home() {
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
           {sanitizeText(packagesNotIncluded)}
         </p>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-ink/70">{packagesPayment}</p>
         <p className="mt-2 text-center text-xs text-ink/50">Prices last updated October 2026.</p>
       </Section>
 
