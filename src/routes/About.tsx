@@ -37,7 +37,7 @@ const introParagraphs = [
   "That's exactly why we started Uruguay Relocation Companion.",
   "We're not a law firm. We're the people who literally sit with you at appointments, translate everything so you actually understand what's happening, walk neighborhoods with you, connect you with trusted translators and landlords, and text you back when you're stressed.",
   "Our goal is simple: take the bureaucratic nightmare out of the process, so you can focus on building your new life instead of drowning in confusion.",
-  "Because relocation isn't just about paperwork — it's about people, comfort, and feeling like you actually belong here. 🌿",
+  "Because relocation isn't just about paperwork — it's about people, comfort, and feeling like you actually belong here.",
   "Whether you're moving alone, as a couple, with kids, with pets, fleeing something, or just ready for something new — we're here to make sure you always feel supported, understood, and at home.",
 ];
 
@@ -77,10 +77,10 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Romina | Born & Raised in Montevideo | Uruguay Relocation Companion</title>
+        <title>About Romina and Mechi | Uruguay Relocation Companion</title>
         <meta
           name="description"
-          content="Romina is a Montevideo-born relocation specialist who guides American expats through Uruguay's residency process — in-person, start to finish."
+          content="Romina and Mechi guide American expats through Uruguay's residency process in person, from the airport to the last appointment."
         />
       </Helmet>
 
@@ -89,7 +89,7 @@ export default function About() {
           <Section>
             <div className="mx-auto max-w-4xl px-4">
               <div className="rounded-xl bg-white bg-opacity-95 p-10 shadow-lg">
-                <h1 className="mb-10 text-center text-4xl font-display">Born in Montevideo. Here to Walk You Through Every Step.</h1>
+                <h1 className="mb-10 text-center text-4xl font-display">Here to Walk You Through Every Step.</h1>
                 <div className="space-y-6 text-center text-lg leading-relaxed text-ink">
                   {introParagraphs.map((paragraph) => (
                     <p key={paragraph}>{sanitizeText(paragraph)}</p>
@@ -122,7 +122,7 @@ export default function About() {
             <div className="mx-auto max-w-6xl px-4">
               <h2 className="mb-12 text-center text-3xl font-display">Meet the Team</h2>
               <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-ink">
-                {sanitizeText("We're locals who love guiding newcomers as they settle into Uruguayan life.")}
+                {sanitizeText("Two people who live here and help newcomers settle in.")}
               </p>
 
               <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
@@ -171,7 +171,7 @@ export default function About() {
             <div className="mx-auto max-w-3xl px-4">
               <h2 className="mb-10 text-center text-3xl font-display">Client Experiences</h2>
               <p className="mb-10 text-center text-lg text-ink">
-                {sanitizeText("A few words from people we've helped make Uruguay home 🌿")}
+                {sanitizeText("A few words from people we've helped make Uruguay home")}
               </p>
 
               <div className="flex flex-col items-center justify-center">

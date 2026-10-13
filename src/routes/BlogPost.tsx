@@ -434,13 +434,13 @@ export default function BlogPost() {
             <div className="mt-10 flex flex-col items-center gap-5 rounded-2xl border border-blush/20 bg-base-100/80 p-6 text-center shadow-lg sm:flex-row sm:text-left md:p-8">
               <img
                 src="/romina.jpg"
-                alt="Romina, founder of Uruguay Relocation Companion, born and raised in Montevideo"
+                alt="Romina, founder of Uruguay Relocation Companion"
                 className="h-20 w-20 shrink-0 rounded-full object-cover shadow-md"
               />
               <div>
                 <h3 className="text-lg font-display text-ink">About Romina</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink/70">
-                  <strong>Romina</strong> is a Montevideo-born relocation specialist and founder of Uruguay Relocation Companion. Having lived in Montevideo her entire life, she provides American expats with bilingual, in-person guidance through Uruguay's DNM residency process, carné de salud, housing, and settlement — walking in with every client, every step of the way.
+                  <strong>Romina</strong> founded Uruguay Relocation Companion after helping friends from abroad with their residency. She was born in Artigas, grew up in Montevideo, and now guides American expats in person through the DNM residency process, the carné de salud, housing and settling in.
                 </p>
                 <p className="mt-2 text-xs text-ink/50">
                   Published: <time dateTime={post.date}>{formatDate(post.date)}</time> · Last updated: <time dateTime={post.date}>{formatDate(post.date)}</time>
