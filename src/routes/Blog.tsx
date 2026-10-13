@@ -24,6 +24,7 @@ function coverFor(slug: string) {
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
   return d.toLocaleDateString('en-US', {
+    timeZone: 'UTC',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -93,26 +94,28 @@ function PostCard({ post }: { post: CategorizedPost }) {
   const cover = coverFor(post.slug);
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-blush/20 bg-base-100 shadow-xl shadow-sky/5 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-sky/15">
-      {/* Cover */}
-      <Link to={`/blog/${post.slug}`} className="relative block h-48 overflow-hidden">
-        {cover ? (
-          <img
-            src={cover}
-            alt={post.title}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-        ) : (
-          <div className="h-full w-full bg-gradient-to-br from-blush/40 via-sky/20 to-lavender/30" />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+      {/* Cover. The category link sits next to the cover link, not inside it, because links can't be nested. */}
+      <div className="relative h-48 overflow-hidden">
+        <Link to={`/blog/${post.slug}`} className="block h-full">
+          {cover ? (
+            <img
+              src={cover}
+              alt={post.title}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          ) : (
+            <div className="h-full w-full bg-gradient-to-br from-blush/40 via-sky/20 to-lavender/30" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+        </Link>
         <Link
           to={`/blog/categories/${categoryLabelToSlug(post.category)}`}
           className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-sky shadow-sm backdrop-blur-sm"
         >
           {post.category}
         </Link>
-      </Link>
+      </div>
 
       {/* Body */}
       <div className="flex flex-1 flex-col p-6">
