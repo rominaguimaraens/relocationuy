@@ -22,8 +22,10 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
         <NavLink to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt="Uruguay Relocation Companion logo"
+            width={640}
+            height={640}
             className="h-12 w-auto rounded-full border border-blush/40 bg-base-100 object-contain p-1 shadow-sm"
           />
           <div className="hidden flex-col leading-tight text-sm text-ink md:flex">

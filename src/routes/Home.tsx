@@ -168,8 +168,10 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute inset-0 -rotate-6 rounded-3xl bg-lavender/20 blur-3xl" />
             <img
-              src="/logo.png"
+              src="/logo.webp"
               alt="Uruguay Relocation Companion logo"
+              width={640}
+              height={640}
               className="relative w-full rounded-3xl border border-blush/40 bg-base-100 shadow-2xl shadow-sky/10"
             />
           </div>

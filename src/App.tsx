@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SiteHeader from './components/SiteHeader';
 import Footer from './components/Footer';
@@ -11,31 +12,36 @@ import BlogCategory from './routes/BlogCategory';
 import BlogPost from './routes/BlogPost';
 import ScoutingTrips from './routes/ScoutingTrips';
 import Contact from './routes/Contact';
-import ResourceArticle from './routes/ResourceArticle';
-import Tracking from './routes/Tracking';
 import Privacy from './routes/Privacy';
 import NotFound from './routes/NotFound';
+
+// These two pages are never prerendered (they only run in the browser), so visitors
+// to the rest of the site don't need to download their code.
+const ResourceArticle = lazy(() => import('./routes/ResourceArticle'));
+const Tracking = lazy(() => import('./routes/Tracking'));
 
 function App() {
   return (
     <div className="flex min-h-screen flex-col bg-base-100 text-ink">
       <SiteHeader />
       <main id="main-content" className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/scouting-trips" element={<ScoutingTrips />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/resources/:slug" element={<ResourceArticle />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/categories/:category" element={<BlogCategory />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/tracking" element={<Tracking />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/scouting-trips" element={<ScoutingTrips />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/:slug" element={<ResourceArticle />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/categories/:category" element={<BlogCategory />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/tracking" element={<Tracking />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
       <FloatingCTA />
