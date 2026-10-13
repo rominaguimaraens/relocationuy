@@ -60,6 +60,14 @@ const rominaParagraphs = [
 ];
 
 
+const mechiParagraphs = [
+  'Mechi was born in Mendoza, Argentina, and now lives in Uruguay, so she knows what it is like to arrive here as a newcomer.',
+  "She arranges airport pickups and gets clients to wherever they're staying. She comes along to appointments with me. When a client needs someone to go with them and translate and I'm with someone else, Mechi goes.",
+];
+
+// When Mechi sends her photo, put it in /public and set this to e.g. '/mechi.jpg'.
+const MECHI_PHOTO: string | null = null;
+
 export default function About() {
   const [current, setCurrent] = useState(0);
 
@@ -117,7 +125,7 @@ export default function About() {
                 {sanitizeText("We're locals who love guiding newcomers as they settle into Uruguayan life.")}
               </p>
 
-              <div className="mx-auto max-w-2xl">
+              <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
                 <div className="card flex flex-col items-center gap-2 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
                   <img
                     src="/romina.jpg"
@@ -128,6 +136,29 @@ export default function About() {
                   <p className="text-sm font-semibold uppercase tracking-widest text-ink/60">Founder</p>
                   <div className="mt-4 space-y-4 text-left text-lg leading-relaxed text-ink">
                     {rominaParagraphs.map((paragraph) => (
+                      <p key={paragraph}>{sanitizeText(paragraph)}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="card flex flex-col items-center gap-2 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
+                  {MECHI_PHOTO ? (
+                    <img
+                      src={MECHI_PHOTO}
+                      alt="Mechi, assistant at Uruguay Relocation Companion"
+                      className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="flex h-40 w-40 items-center justify-center rounded-full bg-sky/10 font-display text-5xl text-sky shadow-md sm:h-32 sm:w-32"
+                    >
+                      M
+                    </div>
+                  )}
+                  <h3 className="mt-2 text-2xl font-display">Mechi</h3>
+                  <p className="text-sm font-semibold uppercase tracking-widest text-ink/60">Assistant</p>
+                  <div className="mt-4 space-y-4 text-left text-lg leading-relaxed text-ink">
+                    {mechiParagraphs.map((paragraph) => (
                       <p key={paragraph}>{sanitizeText(paragraph)}</p>
                     ))}
                   </div>
