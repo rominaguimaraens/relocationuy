@@ -15,10 +15,12 @@ import ResourceArticle from './routes/ResourceArticle';
 import Tracking from './routes/Tracking';
 import Privacy from './routes/Privacy';
 import NotFound from './routes/NotFound';
+import OrganizationSchema from './components/OrganizationSchema';
 
 function App() {
   return (
     <div className="flex min-h-screen flex-col bg-base-100 text-ink">
+      <OrganizationSchema />
       <SiteHeader />
       <main id="main-content" className="flex-1">
         <Routes>

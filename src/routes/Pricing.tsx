@@ -6,6 +6,7 @@ import PackageCard from '../components/PackageCard';
 import { siteCopy } from '../content/siteCopy';
 import { packagesNotIncluded, packagesPayment } from '../content/packages';
 import { sanitizeText } from '../utils/sanitize';
+import { BUSINESS_ID } from '../lib/site';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -13,6 +14,7 @@ const serviceSchema = {
   serviceType: 'Relocation Companion Service',
   provider: {
     '@type': 'Organization',
+    '@id': BUSINESS_ID,
     name: 'Uruguay Relocation Companion',
   },
   areaServed: {

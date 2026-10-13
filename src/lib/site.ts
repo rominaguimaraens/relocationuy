@@ -3,6 +3,7 @@ import { siteCopy } from '../content/siteCopy';
 // The address search engines and link previews should use. It comes from
 // siteCopy.site.domain, so changing the domain there changes it everywhere.
 export const SITE_URL = `https://${siteCopy.site.domain}`;
+export const BUSINESS_ID = `${SITE_URL}/#business`;
 export const SHARE_IMAGE = `${SITE_URL}/share.jpg`;
 
 // Netlify serves these pages without a trailing slash (/about, not /about/), so that
