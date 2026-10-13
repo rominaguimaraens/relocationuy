@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Section from '../components/Section';
 import Seo from '../components/Seo';
-import { SITE_URL, pageUrl } from '../lib/site';
+import { BUSINESS_ID, SITE_URL, pageUrl } from '../lib/site';
 import {
   categoryLabelToSlug,
   getCategorizedPost,
@@ -263,6 +263,7 @@ export default function BlogPost() {
     },
     publisher: {
       '@type': 'Organization',
+      '@id': BUSINESS_ID,
       name: 'Uruguay Relocation Companion',
       url: SITE_URL,
     },
