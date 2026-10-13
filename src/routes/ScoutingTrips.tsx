@@ -15,7 +15,23 @@ export default function ScoutingTrips() {
       </Helmet>
 
       <Section className="bg-hero-muted pt-24 md:pt-28">
-        <div className="mx-auto max-w-4xl">
+        <div className="flex flex-col gap-8 text-center md:text-left md:gap-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h1 className="text-4xl md:text-5xl">Scouting Trips</h1>
+              <p className="mt-4 max-w-2xl text-ink/80">
+                Come experience daily life in Uruguay before you commit — neighborhoods, buses, ferias, and real
+                conversations with locals.
+              </p>
+            </div>
+            <span className="badge badge-lg rounded-full bg-base-100 px-4 py-4 text-sm text-ink/70">
+              All prices are in USD
+            </span>
+          </div>
+
+        </div>
+
+        <div className="mx-auto mt-12 max-w-4xl">
           <div className="card border border-sky/10 bg-base-100 shadow-xl">
             <div className="card-body space-y-4 text-left">
               <h2 className="text-3xl font-display text-ink md:text-4xl">
@@ -39,22 +55,6 @@ export default function ScoutingTrips() {
               <p className="text-ink/80">No pressure. No sales pitch. Just real insight so you can make an informed decision.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mt-12 flex flex-col gap-8 text-center md:text-left md:gap-10">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <h1 className="text-4xl md:text-5xl">Scouting Trips</h1>
-              <p className="mt-4 max-w-2xl text-ink/80">
-                Come experience daily life in Uruguay before you commit — neighborhoods, buses, ferias, and real
-                conversations with locals.
-              </p>
-            </div>
-            <span className="badge badge-lg rounded-full bg-base-100 px-4 py-4 text-sm text-ink/70">
-              All prices are in USD
-            </span>
-          </div>
-
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
