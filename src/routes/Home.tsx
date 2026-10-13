@@ -139,7 +139,7 @@ export default function Home() {
             </span>
             <h1 className="mt-6 text-4xl leading-tight md:text-5xl">Moving to Uruguay? We go with you to every appointment.</h1>
             <p className="mt-5 max-w-xl text-lg font-medium text-ink/90 leading-relaxed">
-              Uruguay Relocation Companion is a residency and relocation service in Montevideo, run by Romina and Mechi.
+              Uruguay Relocation Companion is a residency and relocation service in Montevideo, run by Romina.
               We go with you to your immigration appointment, the health card exam, the bank and apartment viewings, and
               we translate as it happens. We also pick you up at the airport. Packages start at $850.
             </p>
