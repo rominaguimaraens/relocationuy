@@ -119,6 +119,10 @@ export default function About() {
                   <img
                     src="/romina.jpg"
                     alt="Romina Guimaraens, founder of Uruguay Relocation Companion"
+                    width={160}
+                    height={160}
+                    loading="lazy"
+                    decoding="async"
                     className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
                   />
                   <h3 className="mt-2 text-2xl font-display">Romina Guimaraens</h3>
@@ -134,7 +138,11 @@ export default function About() {
                     <img
                       src={MECHI_PHOTO}
                       alt="Mechi, assistant at Uruguay Relocation Companion"
-                      className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
+                      width={160}
+                    height={160}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
                     />
                   ) : (
                     <div

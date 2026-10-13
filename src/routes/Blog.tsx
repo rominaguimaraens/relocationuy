@@ -11,9 +11,9 @@ import type { CategorizedPost } from '../lib/blogCategories';
 
 /* ───────── cover image map ───────── */
 const COVER_IMAGES: Record<string, string> = {
-  'is-uruguay-right-for-me': '/blog-cover-is-uruguay-right-for-me.png',
-  'cost-of-living-uruguay': '/blog-cover-cost-of-living-uruguay.png',
-  'residency-uruguay-guide': '/blog-cover-residency-uruguay-guide.png',
+  'is-uruguay-right-for-me': '/blog-cover-is-uruguay-right-for-me.jpg',
+  'cost-of-living-uruguay': '/blog-cover-cost-of-living-uruguay.jpg',
+  'residency-uruguay-guide': '/blog-cover-residency-uruguay-guide.jpg',
 };
 
 function coverFor(slug: string) {
