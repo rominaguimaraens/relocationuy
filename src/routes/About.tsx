@@ -57,8 +57,7 @@ const mechiParagraphs = [
   "She arranges airport pickups and gets clients to wherever they're staying. She comes along to appointments with me. When a client needs someone to go with them and translate and I'm with someone else, Mechi goes.",
 ];
 
-// When Mechi sends her photo, put it in /public and set this to e.g. '/mechi.jpg'.
-const MECHI_PHOTO: string | null = null;
+const MECHI_PHOTO: string | null = '/mechi.jpg';
 
 export default function About() {
   const [current, setCurrent] = useState(0);
