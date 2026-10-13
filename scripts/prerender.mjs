@@ -13,7 +13,7 @@ if (!template.includes('<div id="root"></div>')) {
   throw new Error('prerender: could not find the empty #root div in dist/index.html');
 }
 
-const { render, routes } = await import(pathToFileURL(path.join(ssrDir, 'entry-server.js')).href);
+const { render, routes, sitemapEntries } = await import(pathToFileURL(path.join(ssrDir, 'entry-server.js')).href);
 
 // Pages that are not prerendered (like /tracking and unknown URLs) are served this
 // empty shell, and the browser renders them. Netlify points to it in netlify.toml.
@@ -51,6 +51,12 @@ for (const route of routes()) {
     }
   }
 
+  // If a page's title or description is still inside the body, something is rendering
+  // them in the wrong place and search engines may miss them.
+  if (/<title|<meta name="description"/.test(body)) {
+    throw new Error(`prerender: ${route} has head tags left in the page body`);
+  }
+
   out = out.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
   out = out.replace('</head>', `    ${tags.join('\n    ')}\n  </head>`);
 
@@ -59,6 +65,14 @@ for (const route of routes()) {
   await writeFile(file, out);
   count += 1;
 }
+
+const urls = sitemapEntries()
+  .map(({ url, lastmod }) => `  <url><loc>${url}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`)
+  .join('\n');
+await writeFile(
+  path.join(dist, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
+);
 
 await rm(ssrDir, { recursive: true, force: true });
 console.log(`prerendered ${count} pages`);

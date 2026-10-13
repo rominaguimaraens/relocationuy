@@ -15,6 +15,7 @@ export default function ResourceArticle() {
       <Helmet>
         <title>{`${pageTitle} | ${site.title}`}</title>
         <meta name="description" content={resources.placeholderBody} />
+        <meta name="robots" content="noindex" />
       </Helmet>
 
       <Section className="bg-hero-muted pt-24 md:pt-28">

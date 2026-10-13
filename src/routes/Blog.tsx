@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Section from '../components/Section';
+import Seo from '../components/Seo';
 import {
   BLOG_CATEGORIES,
   categoryLabelToSlug,
@@ -178,30 +178,11 @@ export default function Blog({ initialCategory = 'All' }: BlogProps) {
 
   return (
     <>
-      <Helmet>
-        <title>Uruguay Expat Blog | Relocation Guides & Tips | Uruguay Relocation Companion</title>
-        <meta
-          name="description"
-          content="Articles and guides about moving to and living in Uruguay — written by locals who guide you through the real process."
-        />
-        {/* Open Graph */}
-        <meta property="og:type" content="blog" />
-        <meta property="og:title" content="Blog — Uruguay Relocation Companion" />
-        <meta
-          property="og:description"
-          content="Deep dives, honest guides, and practical advice about moving to Uruguay — from people who actually live here."
-        />
-        <meta property="og:url" content="https://relocationuy.com/blog" />
-        <meta property="og:site_name" content="Uruguay Relocation Companion" />
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Blog — Uruguay Relocation Companion" />
-        <meta
-          name="twitter:description"
-          content="Deep dives, honest guides, and practical advice about moving to Uruguay."
-        />
-        <link rel="canonical" href="https://relocationuy.com/blog" />
-      </Helmet>
+      <Seo
+        title="Uruguay Expat Blog | Relocation Guides & Tips | Uruguay Relocation Companion"
+        description="Guides to moving to and living in Uruguay, written by Romina Guimaraens of Uruguay Relocation Companion."
+        path="/blog"
+      />
 
       <Section className="bg-beige-gradient pt-24 md:pt-28">
         {/* ── Header ── */}

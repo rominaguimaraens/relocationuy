@@ -4,6 +4,8 @@ import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Section from '../components/Section';
+import Seo from '../components/Seo';
+import { SITE_URL, pageUrl } from '../lib/site';
 import {
   categoryLabelToSlug,
   getCategorizedPost,
@@ -262,13 +264,13 @@ export default function BlogPost() {
     publisher: {
       '@type': 'Organization',
       name: 'Uruguay Relocation Companion',
-      url: 'https://relocationuy.com',
+      url: SITE_URL,
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://relocationuy.com/blog/${post.slug}`,
+      '@id': pageUrl(`/blog/${post.slug}`),
     },
-    ...(cover ? { image: `https://relocationuy.com${cover}` } : {}),
+    ...(cover ? { image: `${SITE_URL}${cover}` } : {}),
     wordCount: post.content.split(/\s+/).length,
     articleSection: post.category,
     keywords: post.tags.join(', '),
@@ -276,48 +278,19 @@ export default function BlogPost() {
 
   return (
     <>
+      <Seo
+        title={`${post.title} | Uruguay Relocation Companion`}
+        description={post.summary || post.title}
+        path={`/blog/${post.slug}`}
+        type="article"
+        {...(cover ? { image: `${SITE_URL}${cover}` } : {})}
+      />
       <Helmet>
-        <title>{`${post.title} | Uruguay Relocation Companion`}</title>
-        <meta name="description" content={post.summary || post.title} />
-        {/* Open Graph */}
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.summary} />
-        <meta
-          property="og:url"
-          content={`https://relocationuy.com/blog/${post.slug}`}
-        />
-        <meta property="og:site_name" content="Uruguay Relocation Companion" />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:section" content={post.category} />
         {post.tags.map((tag) => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
-        {cover && (
-          <meta
-            property="og:image"
-            content={`https://relocationuy.com${cover}`}
-          />
-        )}
-        {/* Twitter */}
-        <meta
-          name="twitter:card"
-          content={cover ? 'summary_large_image' : 'summary'}
-        />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.summary} />
-        {cover && (
-          <meta
-            name="twitter:image"
-            content={`https://relocationuy.com${cover}`}
-          />
-        )}
-        {/* Canonical */}
-        <link
-          rel="canonical"
-          href={`https://relocationuy.com/blog/${post.slug}`}
-        />
-        {/* JSON-LD */}
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

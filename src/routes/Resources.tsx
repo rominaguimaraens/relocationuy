@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet-async';
 import Section from '../components/Section';
+import Seo from '../components/Seo';
 import AlertCallout from '../components/resources/AlertCallout';
 import AnchorNav from '../components/resources/AnchorNav';
 import Checklist from '../components/resources/Checklist';
@@ -77,13 +77,11 @@ const FINANCE_TIPS = [
 export default function Resources() {
   return (
     <>
-      <Helmet>
-        <title>Move to Uruguay Guide | Uruguay Relocation Companion</title>
-        <meta
-          name="description"
-          content="Comprehensive move-to-Uruguay roadmap covering residency, documents, practical setup, logistics, and life on the ground."
-        />
-      </Helmet>
+      <Seo
+        title="Move to Uruguay Guide | Uruguay Relocation Companion"
+        description="A move-to-Uruguay roadmap covering residency, documents, practical setup, logistics, and life on the ground."
+        path="/resources"
+      />
 
       <Section className="bg-hero-muted pb-12 pt-24 md:pt-28">
         <div className="mx-auto max-w-3xl text-center">

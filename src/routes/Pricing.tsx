@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Section from '../components/Section';
+import Seo from '../components/Seo';
 import PackageCard from '../components/PackageCard';
 import { siteCopy } from '../content/siteCopy';
 import { packagesNotIncluded, packagesPayment } from '../content/packages';
@@ -64,12 +65,12 @@ export default function Pricing() {
 
   return (
     <>
+      <Seo
+        title="Relocation Packages & Pricing | Uruguay Relocation Companion"
+        description="Three relocation packages for Americans moving to Uruguay, from Essential Residency support at $850 to full Family Relocation at $6,500. See what's included."
+        path="/pricing"
+      />
       <Helmet>
-        <title>Relocation Packages & Pricing | Uruguay Relocation Companion</title>
-        <meta
-          name="description"
-          content="Three relocation packages for Americans moving to Uruguay — from Essential Residency support at $850 to full Family Relocation at $6,500. See what's included."
-        />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
 

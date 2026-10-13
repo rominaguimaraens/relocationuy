@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Section from "../components/Section";
+import Seo from "../components/Seo";
 import { sanitizeText } from "../utils/sanitize";
 
 const reviews = [
@@ -68,13 +68,11 @@ export default function About() {
 
   return (
     <>
-      <Helmet>
-        <title>About Romina and Mechi | Uruguay Relocation Companion</title>
-        <meta
-          name="description"
-          content="Romina and Mechi guide American expats through Uruguay's residency process in person, from the airport to the last appointment."
-        />
-      </Helmet>
+      <Seo
+        title="About Romina and Mechi | Uruguay Relocation Companion"
+        description="Romina and Mechi guide American expats through Uruguay's residency process in person, from the airport to the last appointment."
+        path="/about"
+      />
 
       <div className="min-h-screen bg-gradient-to-b from-[#FFDCE3] to-[#F7C6D7]">
         <main className="space-y-24">

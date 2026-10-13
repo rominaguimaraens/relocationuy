@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Seo from '../components/Seo';
 import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
 import Separator from '../components/Separator';
@@ -122,12 +123,12 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        title="Uruguay Relocation Help in Montevideo | Uruguay Relocation Companion"
+        description="Romina and Mechi go with you to your Uruguay residency appointment, translate, and help you settle in Montevideo. Packages from $850. Book a free 30-minute call."
+        path="/"
+      />
       <Helmet>
-        <title>Uruguay Relocation Help in Montevideo | Uruguay Relocation Companion</title>
-        <meta
-          name="description"
-          content="Romina and Mechi go with you to your Uruguay residency appointment, translate, and help you settle in Montevideo. Packages from $850. Book a free 30-minute call."
-        />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 

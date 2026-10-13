@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet-async';
 import Section from '../components/Section';
+import Seo from '../components/Seo';
 import { siteCopy } from '../content/siteCopy';
 
 // All the text for this page lives here so it is easy to edit.
@@ -58,14 +58,11 @@ export default function Privacy() {
 
   return (
     <>
-      <Helmet>
-        <title>Privacy | Uruguay Relocation Companion</title>
-        <meta
-          name="description"
-          content="What information Uruguay Relocation Companion collects through this website, what we do with it, and how to ask us to delete it."
-        />
-        <link rel="canonical" href={`https://${site.domain}/privacy`} />
-      </Helmet>
+      <Seo
+        title="Privacy | Uruguay Relocation Companion"
+        description="What information Uruguay Relocation Companion collects through this website, what we do with it, and how to ask us to delete it."
+        path="/privacy"
+      />
 
       <Section className="bg-beige-gradient">
         <div className="mx-auto max-w-3xl">
