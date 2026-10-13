@@ -5,9 +5,9 @@ import { siteCopy } from '../content/siteCopy';
 export const SITE_URL = `https://${siteCopy.site.domain}`;
 export const SHARE_IMAGE = `${SITE_URL}/share.jpg`;
 
-// Pages are served with a trailing slash (Netlify redirects /about to /about/),
-// so that is the address we declare.
+// Netlify serves these pages without a trailing slash (/about, not /about/), so that
+// is the address we declare. The homepage is just the domain with a slash.
 export function pageUrl(path: string) {
-  const withSlash = path.endsWith('/') ? path : `${path}/`;
-  return `${SITE_URL}${withSlash}`;
+  const trimmed = path.replace(/\/+$/, '');
+  return `${SITE_URL}${trimmed || '/'}`;
 }
