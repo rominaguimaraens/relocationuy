@@ -7,7 +7,7 @@ Marketing site for [relocationuy.com](https://relocationuy.com). React 19, Vite,
 ```bash
 npm install
 npm run dev      # local dev server
-npm run build    # typecheck and production build into dist/
+npm run build    # typecheck, build and prerender every page into dist/
 npm run lint
 ```
 
@@ -37,4 +37,6 @@ Set these in Netlify under Site configuration, Environment variables. They are r
 
 ## Notes
 
-- The site is a client-side app, so page titles and descriptions are set in the browser with `react-helmet-async`. Link previews on WhatsApp and similar apps only see the tags in `index.html`.
+- Pages are built ahead of time. `npm run build` builds the site twice (browser version and a server version), then `scripts/prerender.mjs` writes a finished HTML file for every page into `dist/`. Visitors, search engines and link scrapers get real content straight away, and React takes over in the browser. The list of pages is `routes()` in `src/entry-server.tsx`. Add new pages there.
+- `/tracking` and unknown URLs are not prerendered. Netlify serves them `spa.html` (see `public/_redirects`) and the browser renders them.
+- Anything that reads the browser (localStorage, window, today's date, the visitor's timezone) must wait until after the first render, or the prebuilt HTML and the browser will disagree.
