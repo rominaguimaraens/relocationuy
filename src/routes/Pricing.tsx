@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import PackageCard from '../components/PackageCard';
 import { siteCopy } from '../content/siteCopy';
-import { packagesNotIncluded } from '../content/packages';
+import { packagesNotIncluded, packagesPayment } from '../content/packages';
 import { sanitizeText } from '../utils/sanitize';
 
 const serviceSchema = {
@@ -94,6 +94,7 @@ export default function Pricing() {
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
           {sanitizeText(packagesNotIncluded)}
         </p>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-ink/70">{packagesPayment}</p>
 
         <div className="mt-12">
           <div className="card border border-sky/10 bg-base-100 shadow-xl">

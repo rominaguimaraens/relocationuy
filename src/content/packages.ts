@@ -60,6 +60,12 @@ export const packages: PackageInfo[] = [
   },
 ];
 
+// How payment works. Shown under the package cards on Home and Pricing, and on Scouting Trips.
+export const packagesPayment =
+  'You pay 50% when you book and the other 50% at your first appointment. We accept Wise, Western Union and bank transfer.';
+export const scoutingPayment =
+  'You pay 50% when you book and the other 50% on the first day of the trip. We accept Wise, Western Union and bank transfer.';
+
 // Shown under the package cards on Home and Pricing.
 export const packagesNotIncluded =
   'Apostilles and document preparation in your home country are not included. We tell you what you need and when, and you order it yourself.';
