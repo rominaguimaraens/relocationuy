@@ -54,10 +54,9 @@ const valuesParagraphs = [
 ];
 
 const rominaParagraphs = [
-  "Hi! I'm Romina, one of the co-founders of Uruguay Relocation Companion.",
-  "I was born and raised in Uruguay, and over the years I've met many people who came here hoping to build a new chapter of their lives — often full of excitement, but also a bit overwhelmed by the process. Seeing that inspired me to start helping others make their move easier and less stressful.",
-  "I began by assisting foreign friends with their residency paperwork, appointments, and translations — and quickly realized how much of a difference it makes to have someone local who can explain things clearly, go along to in-person visits, and handle the little details that make life smoother here.",
-  "I'm fluent in English and Spanish, detail-oriented, and genuinely enjoy helping people feel cared for, informed, and supported as they settle into their new life in Uruguay. My approach is calm, organized, and personal — because moving to a new country should feel like a fresh start, not a mountain of paperwork.",
+  'I was born in Artigas and raised in Montevideo. I speak English and Spanish.',
+  'This started when friends from abroad needed help with their residency. I went with them to appointments, translated, and helped with forms and paperwork. It turned out to be the part that mattered most. Having someone local next to you makes everything less stressful.',
+  "Now I do that for my clients. I book your appointments early, because the good slots fill up for months ahead. I come with you and translate. I tell you which documents to get and when to get them. And I'm around on WhatsApp whenever you have a question.",
 ];
 
 
@@ -118,15 +117,16 @@ export default function About() {
                 {sanitizeText("We're locals who love guiding newcomers as they settle into Uruguayan life.")}
               </p>
 
-              <div className="grid gap-12 md:grid-cols-2">
-                <div className="card flex flex-col items-center gap-4 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
+              <div className="mx-auto max-w-2xl">
+                <div className="card flex flex-col items-center gap-2 rounded-2xl bg-base-100 p-8 text-center shadow-lg">
                   <img
                     src="/romina.jpg"
-                    alt="Romina, founder of Uruguay Relocation Companion, born and raised in Montevideo"
+                    alt="Romina Guimaraens, founder of Uruguay Relocation Companion"
                     className="h-40 w-40 rounded-full object-cover shadow-md sm:h-32 sm:w-32"
                   />
-                  <h3 className="text-2xl font-display">Romina Guimaraens</h3>
-                  <div className="space-y-4 text-left text-lg leading-relaxed text-ink">
+                  <h3 className="mt-2 text-2xl font-display">Romina Guimaraens</h3>
+                  <p className="text-sm font-semibold uppercase tracking-widest text-ink/60">Founder</p>
+                  <div className="mt-4 space-y-4 text-left text-lg leading-relaxed text-ink">
                     {rominaParagraphs.map((paragraph) => (
                       <p key={paragraph}>{sanitizeText(paragraph)}</p>
                     ))}
