@@ -1,52 +1,40 @@
-## Uruguay Relocation Companion
+# Uruguay Relocation Companion
 
-This repository contains a bilingual marketing site for Uruguay Relocation Companion, built with **React + Vite**, **Tailwind CSS** (with daisyUI), and **React Router**. It highlights relocation packages, services, resources, and a Netlify-backed contact form while keeping a floating call-to-action visible across the site.
+Marketing site for [relocationuy.com](https://relocationuy.com). React 19, Vite, TypeScript, Tailwind CSS with daisyUI, React Router. Hosted on Netlify.
 
-### Getting Started
+## Run it
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
-3. Build for production:
-   ```bash
-   npm run build
-   ```
-
-### Key Features
-
-- Bilingual content (EN/ES) with language preference persisted in `localStorage`.
-- Responsive layout components (`SiteHeader`, `FloatingCTA`, `Section`, etc.) styled with Tailwind CSS, daisyUI, and a custom gradient theme.
-- React Router pages for Home, About, Pricing & Services, Resources (with placeholder articles), and Contact.
-- Netlify-ready contact form (`form-name="contact"`) featuring honeypot spam protection and custom success/error handling.
-- SEO/meta tags managed via `react-helmet-async`, with OpenGraph defaults provided in `index.html`.
-- Floating CTA linking to the contact page, respecting safe-area insets for mobile devices.
-
-### Deploying to Netlify
-
-1. Push this repository to GitHub (or another Git provider).
-2. In Netlify, create a new site from your repository.
-3. Use the default build settings:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-4. Deploy. Netlify will automatically detect and process the `contact` form thanks to the `data-netlify` attributes.
-5. (Optional) Enable form notifications or automations from the Netlify dashboard under **Forms** → **contact**.
-
-### Project Structure
-
-```
-src/
-  components/    Shared UI components and layout helpers
-  routes/        React Router pages
-  i18n/          Language dictionaries and context provider
-  styles/        Tailwind entry point and custom layers
-public/
-  icon.png
-  logo.png
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # typecheck and production build into dist/
+npm run lint
 ```
 
-Feel free to adjust copy, add new resources, or expand services in the i18n dictionaries (`src/i18n/index.tsx`). The Tailwind theme lives in `tailwind.config.cjs`; update it if you need additional colors or typography choices.
+Netlify runs `npm run build` and publishes `dist` (see `netlify.toml`, Node 22).
+
+## Where things live
+
+- `src/content/siteCopy.ts` has most of the site text: nav, home, pricing, contact form labels and options.
+- `src/content/packages.ts` is the one place the three packages, prices and features are written. Home, Pricing and the contact form dropdown all read from it.
+- `src/content/blog/*.md` are the blog posts.
+- `src/content/resourcesData.ts` is the Resources guides.
+- `src/routes/` has one file per page. `src/components/` has the shared pieces.
+- `src/lib/trackingData.ts` loads the client progress page data.
+
+## Contact form
+
+The form sends through [EmailJS](https://www.emailjs.com/). The service ID, template ID and public key are set at the top of `src/routes/Contact.tsx`. The public key is meant to be public. In the EmailJS dashboard, restrict allowed domains to relocationuy.com.
+
+The template can use these variables: `{{name}}`, `{{email}}`, `{{whatsapp}}`, `{{package}}`, `{{timeline}}`, `{{travelers}}`, `{{stage}}`, `{{source}}`, `{{message}}`.
+
+## Environment variables
+
+Set these in Netlify under Site configuration, Environment variables. They are read at build time, so redeploy after changing them. See `.env.example`.
+
+- `VITE_SCHEDULER_URL`: link to the booking page for the free call. Leave empty to hide the "Pick a time" card.
+- `VITE_SHEET_CSV_URL`: published CSV of the client tracking sheet.
+
+## Notes
+
+- The site is a client-side app, so page titles and descriptions are set in the browser with `react-helmet-async`. Link previews on WhatsApp and similar apps only see the tags in `index.html`.
