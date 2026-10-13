@@ -66,6 +66,22 @@ for (const route of routes()) {
   count += 1;
 }
 
+// The "page not found" page. Netlify shows it, with a 404 status, for any address
+// that doesn't exist (see public/_redirects for the pages that are exceptions).
+{
+  const page = render('/page-not-found');
+  const prelude = page.html.match(PRELUDE)?.[0] ?? '';
+  const body = page.html.slice(prelude.length);
+  const tags = prelude.match(/<title>[\s\S]*?<\/title>|<(?:link|meta)\b[^>]*\/>/g) ?? [];
+  let out = template
+    .replace(/<title>[\s\S]*?<\/title>\s*/, '')
+    .replace(/<link\s+rel="canonical"[^>]*\/>\s*/, '')
+    .replace(/<meta\s+property="og:url"[\s\S]*?\/>\s*/, '');
+  out = out.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+  out = out.replace('</head>', `    ${tags.join('\n    ')}\n  </head>`);
+  await writeFile(path.join(dist, '404.html'), out);
+}
+
 const urls = sitemapEntries()
   .map(({ url, lastmod }) => `  <url><loc>${url}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`)
   .join('\n');

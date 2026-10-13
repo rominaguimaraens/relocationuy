@@ -14,6 +14,7 @@ import Contact from './routes/Contact';
 import ResourceArticle from './routes/ResourceArticle';
 import Tracking from './routes/Tracking';
 import Privacy from './routes/Privacy';
+import NotFound from './routes/NotFound';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/tracking" element={<Tracking />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
