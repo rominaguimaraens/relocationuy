@@ -1,8 +1,8 @@
 import type { FormEvent } from 'react';
 import { useRef, useMemo, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { Helmet } from 'react-helmet-async';
 import Section from '../components/Section';
+import Seo from '../components/Seo';
 import { siteCopy } from '../content/siteCopy';
 import { sanitizeText } from '../utils/sanitize';
 
@@ -103,13 +103,11 @@ export default function Contact() {
 
   return (
     <>
-      <Helmet>
-        <title>Book a Free Consultation | Uruguay Relocation Companion</title>
-        <meta
-          name="description"
-          content="Ready to move to Uruguay? Book a free 30-minute consultation with Uruguay Relocation Companion. No pressure — just honest guidance and real answers."
-        />
-      </Helmet>
+      <Seo
+        title="Book a Free 30-Minute Call | Uruguay Relocation Companion"
+        description="Tell us about your move to Uruguay and book a free 30-minute call with Uruguay Relocation Companion. We reply within 48 hours."
+        path="/contact"
+      />
 
       <Section className="bg-hero-muted pt-24 md:pt-28">
         <div className="mx-auto max-w-3xl text-center">

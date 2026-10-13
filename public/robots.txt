@@ -22,4 +22,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.relocationuy.com/sitemap.xml
+Sitemap: https://relocationuy.com/sitemap.xml

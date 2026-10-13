@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Section from '../components/Section';
+import Seo from '../components/Seo';
 import PackageCard from '../components/PackageCard';
 import { scoutingPayment } from '../content/packages';
 
@@ -44,12 +45,12 @@ const faqSchema = {
 export default function ScoutingTrips() {
   return (
     <>
+      <Seo
+        title="Uruguay Scouting Trips in Montevideo | Uruguay Relocation Companion"
+        description="Visit Montevideo with a local guide before you decide to move. One-day, three-day and seven-day scouting trips from $700 cover neighborhoods, buses, markets and your questions."
+        path="/scouting-trips"
+      />
       <Helmet>
-        <title>Uruguay Scouting Trips in Montevideo | Uruguay Relocation Companion</title>
-        <meta
-          name="description"
-          content="Visit Montevideo with a local guide before you decide to move. One-day, three-day and seven-day scouting trips from $700 cover neighborhoods, buses, markets and your questions."
-        />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
