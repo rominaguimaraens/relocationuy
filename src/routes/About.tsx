@@ -32,25 +32,17 @@ const reviews = [
 ];
 
 const introParagraphs = [
-  "Moving to Uruguay can be exciting — the fresh start, the slower pace, the ocean breeze, the mate in the mornings, the promise of finally breathing.",
-  "But we also know the other side: the 3am Google spiral trying to understand what documents you need. The anxiety walking into a government office where no one speaks English. The loneliness of being new in a place where you don't know who to ask for help. The weight of \"I just spent my life savings on this move — what if I mess something up?\"",
-  "That's exactly why we started Uruguay Relocation Companion.",
-  "We're not a law firm. We're the people who literally sit with you at appointments, translate everything so you actually understand what's happening, walk neighborhoods with you, connect you with trusted translators and landlords, and text you back when you're stressed.",
-  "Our goal is simple: take the bureaucratic nightmare out of the process, so you can focus on building your new life instead of drowning in confusion.",
-  "Because relocation isn't just about paperwork — it's about people, comfort, and feeling like you actually belong here.",
-  "Whether you're moving alone, as a couple, with kids, with pets, fleeing something, or just ready for something new — we're here to make sure you always feel supported, understood, and at home.",
+  'Uruguay Relocation Companion is run by Romina Guimaraens in Montevideo, with help from her assistant, Mechi. We help foreigners get Uruguayan residency and settle in, mostly Americans and also people from all over the world. We go to your appointments with you, translate, and tell you what to do next.',
+  "Moving is exciting, and it's a lot. You have to work out which documents you need, which office to go to, and what happens if you get something wrong after you've already spent your savings on the move.",
+  "We're not a law firm. We sit next to you at appointments, translate what's being said, walk neighborhoods with you, put you in touch with trusted sworn translators and notaries, and answer when you're stressed.",
+  'We work with people moving alone, as couples, and with kids or pets. Some are moving for the lifestyle, and some are leaving something behind.',
 ];
 
 const valuesParagraphs = [
-  'We started this business because we believe everyone deserves a safe, welcoming place to call home — and nobody should have to navigate foreign bureaucracy alone just to get there.',
-  'We know why people are moving to Uruguay right now.',
-  "Some of you are chasing adventure — the beach, the slower pace, the mate culture. And that's beautiful.",
-  "But some of you are fleeing. You're LGBTQ+ and your home country is criminalizing your existence. You're a woman who's lost access to reproductive healthcare. You're a person of color facing increased violence. You're a parent terrified about what your kids are growing up in.",
-  "We see you. And we're here for you.",
-  "That's why our Essential Residency Companion package ($850) is priced with accessibility in mind. It's designed to support people who need reliable, compassionate guidance without financial barriers.",
-  'Our other packages are priced to reflect the comprehensive, hands-on nature of the work — and to allow us to keep offering accessible options to the people who need them most.',
-  "If you're relocating due to safety concerns, political instability, or financial hardship, please tell us during your free consultation. We offer need-based discounts and flexible payment plans on a case-by-case basis.",
-  "Because at the end of the day, we're not here to get rich off people's suffering. We're here because we believe Uruguay should be accessible to anyone who needs it.",
+  'We started this because everyone should be able to find a safe place to live, and nobody should have to deal with foreign bureaucracy alone to get there.',
+  'Some of our clients move for the beach and the slower pace. Others are leaving because home is no longer safe for them. They might be LGBTQ+, or a woman who lost access to reproductive healthcare, or a person of color facing more violence, or a parent worried about what their kids are growing up in. We take those reasons seriously.',
+  "That's why Essential is $850. It's priced so more people can afford it. The other packages cost more because they involve more hands-on work, and that helps us keep Essential low.",
+  "If you're moving because of safety or financial hardship, tell us on your free call. We offer need-based discounts and payment plans, case by case.",
 ];
 
 const rominaParagraphs = [
@@ -102,12 +94,12 @@ export default function About() {
           <Section>
             <div className="mx-auto max-w-4xl px-4">
               <div className="rounded-xl bg-white bg-opacity-95 p-10 shadow-lg">
-                <h2 className="mb-8 text-center text-3xl font-display">Our Values</h2>
+                <h2 className="mb-8 text-center text-3xl font-display">Who we help and why</h2>
                 <div className="space-y-5 text-lg leading-relaxed text-ink">
                   {valuesParagraphs.map((paragraph) => {
                     const sanitized = sanitizeText(paragraph);
                     const emphasize = sanitized.startsWith(
-                      "If you're relocating due to safety concerns, political instability, or financial hardship",
+                      "If you're moving because of safety or financial hardship",
                     );
                     return (
                       <p key={paragraph}>{emphasize ? <strong>{sanitized}</strong> : sanitized}</p>
@@ -171,7 +163,7 @@ export default function About() {
             <div className="mx-auto max-w-3xl px-4">
               <h2 className="mb-10 text-center text-3xl font-display">Client Experiences</h2>
               <p className="mb-10 text-center text-lg text-ink">
-                {sanitizeText("A few words from people we've helped make Uruguay home")}
+                {sanitizeText("What clients say")}
               </p>
 
               <div className="flex flex-col items-center justify-center">
@@ -213,9 +205,9 @@ export default function About() {
           {/* CTA Section */}
           <Section>
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-display mb-4">Ready to Start Your Uruguay Journey?</h2>
+              <h2 className="text-3xl font-display mb-4">Book a free 30-minute call</h2>
               <p className="text-lg text-ink/80 mb-6">
-                Book a free 30-minute consultation to talk through your move, ask questions, and see if we're the right fit.
+                Tell us about your move, ask us anything, and see if we're a good fit.
               </p>
               <Link to="/contact" className="btn btn-primary btn-soft btn-lg">
                 Book Your Free 30-Min Call

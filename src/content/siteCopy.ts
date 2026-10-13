@@ -19,20 +19,20 @@ export const siteCopy = {
   cta: {
     primary: 'Book free consultation',
     floating: 'Book your free 30-min call',
-    mini: "Let's plan your move together",
+    mini: 'Tell us about your move',
     pricing: 'Talk to us',
   },
   home: {
     heroEyebrowSegments: ['Relocation planning', 'Residency', 'Settling in'],
     heroSecondaryButton: 'Explore scouting trips',
-    packagesTitle: 'Packages Overview',
+    packagesTitle: 'Packages and prices',
     packagesIntro:
-      'Choose the level of support that fits your relocation. Every package comes with bilingual guidance, clear timelines, and a calm, organized approach.',
+      'Three packages. Pick the one that matches how much you want handled for you.',
     packagesNote: 'All prices shown in USD.',
     packages,
-    whyTitle: 'Why work with Uruguay Relocation Companion?',
+    whyTitle: 'Why work with us',
     miniCtaCopy:
-      "Share a few details about your move and we'll build a personalized relocation roadmap for you.",
+      "Tell us when you're moving and who's coming. We'll reply within 48 hours with what to do first.",
   },
   pricing: {
     title: 'Packages & Services',

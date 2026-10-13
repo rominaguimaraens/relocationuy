@@ -10,39 +10,59 @@ import { sanitizeText } from '../utils/sanitize';
 
 const faqItems = [
   {
-    question: 'What does a Uruguay relocation companion actually do?',
+    question: 'What does a relocation companion do in Uruguay?',
     answer:
-      'A relocation companion physically accompanies you to every appointment — DNM residency, carné de salud, banking, housing viewings, and more. We provide in-person translation, document guidance, and step-by-step support so you\u2019re never navigating Uruguay\u2019s bureaucracy alone.',
+      'A relocation companion goes with you to your appointments and translates on the spot. For us that means your immigration (DNM) appointment, the health card exam, opening a bank account and apartment viewings. We also tell you which documents to get and when.',
   },
   {
-    question: 'What happens at a DNM appointment in Uruguay?',
+    question: 'How much does your service cost?',
     answer:
-      'The DNM (Dirección Nacional de Migración) appointment is where you submit your residency application and present your documents. The process takes 30\u201390 minutes. Most applicants receive residency within 4\u20138 months of this appointment.',
+      'Essential is $850, Full is $1,800, and the Family Package is $6,500 for four people, plus $950 for each extra person. Essential covers residency. Full adds the health card, SIM and utilities, health insurance, banking and rental search. Family adds school or childcare, pet relocation and title revalidation.',
+  },
+  {
+    question: 'What happens at the DNM appointment?',
+    answer:
+      'You hand in your residency application and your documents. It takes 30 to 90 minutes. We book it, go with you, and translate.',
   },
   {
     question: 'How long does Uruguay residency take?',
     answer:
-      'Most applicants receive residency within 4\u20138 months of their DNM appointment. Timelines vary depending on document completeness and DNM processing volumes at the time of application.',
+      'Most people get residency 4 to 8 months after the DNM appointment. It depends on how complete your documents are and how busy DNM is.',
   },
   {
     question: 'What documents do Americans need to move to Uruguay?',
     answer:
-      'The core documents for Uruguay residency include a valid passport, apostilled birth certificate, apostilled criminal background check (FBI or state-level), proof of income or funds, and passport-style photos. All foreign documents must be officially translated by a sworn translator in Uruguay.',
+      'You need a passport, an apostilled birth certificate, an apostilled criminal background check (FBI or state), proof of income or funds, and passport-style photos. Foreign documents need a sworn translation in Uruguay. Adult birth certificates and marriage certificates don\u2019t expire. A minor\u2019s birth certificate expires after a year, and the background check expires after 6 months, so get it close to your appointment. You can request the background check in Uruguay too, but it takes a long time, so most people do it in the US first.',
   },
   {
-    question: 'Which Montevideo neighborhoods do you recommend for expats?',
+    question: 'Do I need to speak Spanish?',
     answer:
-      'The most popular neighborhoods for American expats are Pocitos (walkable, coastal, vibrant), Punta Carretas (quieter, upscale, family-friendly), Buceo (more local feel, good value), Carrasco (suburban, premium), and Malvín (underrated, relaxed, beachside). We help you assess each based on your lifestyle and budget.',
+      'No. We translate at every appointment we go to with you. You\u2019ll want to learn some over time, because daily life happens in Spanish, but you don\u2019t need it to get your residency done.',
+  },
+  {
+    question: 'Do you pick me up at the airport?',
+    answer:
+      'Yes. Mechi arranges your airport pickup and gets you to wherever you\u2019re staying. It\u2019s included in our packages.',
   },
   {
     question: 'Do I need a lawyer to get Uruguay residency?',
     answer:
-      'No. Uruguay residency does not require a lawyer. A relocation companion service handles the guidance, appointment support, and translator coordination at a fraction of legal fees.',
+      'No. You can apply without a lawyer. We handle the guidance, the appointments and the translator, so you\u2019re not doing it alone.',
   },
   {
-    question: 'What is the carné de salud and do I need one?',
+    question: 'What is the carn\u00e9 de salud?',
     answer:
-      'The carné de salud is Uruguay\u2019s health card — a basic health check required as part of the residency process. It involves a short medical exam at a health center and costs around $15\u2013$20 USD.',
+      'It\u2019s Uruguay\u2019s health card, a basic health check that\u2019s part of the residency process. It\u2019s a short exam at a health center and costs around $15 to $20.',
+  },
+  {
+    question: 'Which neighborhoods do you recommend in Montevideo?',
+    answer:
+      'Most Americans we work with look at Pocitos, Punta Carretas, Buceo, Carrasco and Malv\u00edn. Pocitos is walkable and by the beach. Punta Carretas is quieter and good for families. Buceo has a more local feel and good value. Carrasco is suburban and premium. Malv\u00edn is relaxed and beachside. We help you choose based on your budget and how you live.',
+  },
+  {
+    question: 'Can you help families with kids or pets?',
+    answer:
+      'Yes. The Family Package covers up to four people and includes school or childcare support, pet relocation guidance and title revalidation. Extra people are $950 each.',
   },
 ];
 
@@ -98,10 +118,10 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Uruguay Relocation Companion | In-Person Expat Relocation Service in Montevideo</title>
+        <title>Uruguay Relocation Help in Montevideo | Uruguay Relocation Companion</title>
         <meta
           name="description"
-          content="Moving to Uruguay? We accompany you in person to every appointment, translate, and handle the details so you don't have to. Book your free 30-min call."
+          content="Romina and Mechi go with you to your Uruguay residency appointment, translate, and help you settle in Montevideo. Packages from $850. Book a free 30-minute call."
         />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
@@ -117,12 +137,15 @@ export default function Home() {
                 </span>
               ))}
             </span>
-            <h1 className="mt-6 text-4xl leading-tight md:text-5xl">Your In-Person Guide to Moving to Uruguay</h1>
+            <h1 className="mt-6 text-4xl leading-tight md:text-5xl">Moving to Uruguay? We go with you to every appointment.</h1>
             <p className="mt-5 max-w-xl text-lg font-medium text-ink/90 leading-relaxed">
-              Uruguay Relocation Companion is a bilingual, in-person relocation service based in Montevideo, Uruguay. We physically accompany American expats to DNM residency appointments, carné de salud, banking setup, housing viewings, and every step of the settlement process — providing real-time translation and local knowledge from people who live here.
+              Uruguay Relocation Companion is a residency and relocation service in Montevideo, run by Romina.
+              We go with you to your immigration appointment, the health card exam, the bank and apartment viewings, and
+              we translate as it happens. We also pick you up at the airport. Packages start at $850.
             </p>
             <p className="mt-3 max-w-xl text-ink/80">
-              Whether you're fleeing, exploring, or just ready for something new — you deserve support that feels human, not transactional.
+              Most of our clients are Americans. Some move for the lifestyle, some because home stopped feeling safe. We
+              help either way.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link to="/contact" className="btn btn-primary btn-soft btn-lg min-w-[200px]">
@@ -175,37 +198,25 @@ export default function Home() {
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-ink/70">
           {sanitizeText(packagesNotIncluded)}
         </p>
+        <p className="mt-2 text-center text-xs text-ink/50">Prices last updated October 2026.</p>
       </Section>
 
       <Section className="bg-hero-muted">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl">{home.whyTitle}</h2>
           <div className="mt-12 space-y-8 text-left">
-            <p className="text-ink/80 text-lg leading-relaxed font-medium">
-              <strong>
-                Because we're not just processing your paperwork — we're actually <em>with</em> you.
-              </strong>
-            </p>
-
-            <p className="text-ink/80 leading-relaxed">
-              Most relocation services send you a checklist and wish you luck.
-              <br />
-              <strong>We show up.</strong>
-              <br />
-              We go to your appointments. We translate in real-time so you understand what's being asked. We walk you
-              through neighborhoods and tell you which cafés have the best medialunas and which streets feel safest at
-              night.
+            <p className="text-ink/80 text-lg leading-relaxed">
+              Most relocation services send you a checklist. We come to the appointment, sit next to you, and translate
+              while it&apos;s happening, so you know what you&apos;re agreeing to.
             </p>
 
             <hr className="opacity-30" />
 
             <div>
-              <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">
-                We're bilingual and we live here
-              </h3>
+              <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">We&apos;re bilingual and we live here</h3>
               <p className="text-ink/80 leading-relaxed">
-                Fluent in English and Spanish, we translate not just words but culture — the unspoken rules, the
-                neighborhood personalities, and the <em>"why does it work this way?"</em> questions Google can't answer.
+                We speak English and Spanish, and we explain how things work here. Why an office closes for lunch, why one
+                official says yes and the next says no, what to bring so you don&apos;t have to go back.
               </p>
             </div>
 
@@ -224,12 +235,10 @@ export default function Home() {
             <hr className="opacity-30" />
 
             <div>
-              <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">
-                We treat you like a person, not a transaction
-              </h3>
+              <h3 className="text-2xl md:text-3xl font-display text-ink mb-3">You get a person, not a ticket number</h3>
               <p className="text-ink/80 leading-relaxed">
-                You're not Client #247. You're someone making one of the biggest decisions of your life. We don't rush
-                you. We don't judge you. <strong>We just help.</strong>
+                You message us on WhatsApp and one of us answers. We don&apos;t rush you, and we don&apos;t judge your
+                reasons for moving.
               </p>
             </div>
           </div>
