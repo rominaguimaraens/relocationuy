@@ -25,6 +25,7 @@ function coverFor(slug: string) {
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
   return d.toLocaleDateString('en-US', {
+    timeZone: 'UTC',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -276,7 +277,7 @@ export default function BlogPost() {
   return (
     <>
       <Helmet>
-        <title>{post.title} | Uruguay Relocation Companion</title>
+        <title>{`${post.title} | Uruguay Relocation Companion`}</title>
         <meta name="description" content={post.summary || post.title} />
         {/* Open Graph */}
         <meta property="og:type" content="article" />

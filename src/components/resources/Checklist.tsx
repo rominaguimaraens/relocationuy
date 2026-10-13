@@ -27,19 +27,27 @@ const readFromStorage = (storageKey: string, items: ChecklistItem[]): ChecklistS
 };
 
 export default function Checklist({ title, items, storageKey }: ChecklistProps) {
-  const [state, setState] = useState<ChecklistState>(() => readFromStorage(storageKey, items));
+  // Start empty so the server-rendered HTML and the first browser render match,
+  // then load whatever this visitor ticked before.
+  const [state, setState] = useState<ChecklistState>({});
+  const [loaded, setLoaded] = useState(false);
 
   const isComplete = useMemo(() => items.every((item) => state[item.id]), [items, state]);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    setState(readFromStorage(storageKey, items));
+    setLoaded(true);
+  }, [storageKey, items]);
+
+  useEffect(() => {
+    if (!loaded || typeof window === 'undefined') return;
     if (Object.keys(state).length === 0) {
       window.localStorage.removeItem(storageKey);
       return;
     }
 
     window.localStorage.setItem(storageKey, JSON.stringify(state));
-  }, [state, storageKey]);
+  }, [state, storageKey, loaded]);
 
   const toggle = (id: string) => {
     setState((prev) => {
