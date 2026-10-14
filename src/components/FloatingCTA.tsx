@@ -8,7 +8,9 @@ export function FloatingCTA() {
 
   // The button links to /contact, so it has no job on the contact page itself,
   // and the tracker is a client-only page.
-  if (pathname === '/contact' || pathname === '/tracking') return null;
+  // A trailing slash (/contact/) is the same page, so ignore it.
+  const path = pathname.replace(/\/+$/, '') || '/';
+  if (path === '/contact' || path === '/tracking') return null;
 
   return (
     <div
