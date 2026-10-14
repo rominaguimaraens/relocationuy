@@ -20,7 +20,7 @@ Netlify runs `npm run build` and publishes `dist` (see `netlify.toml`, Node 22).
 - `src/content/blog/*.md` are the blog posts.
 - `src/content/resourcesData.ts` is the Resources guides.
 - `src/routes/` has one file per page. `src/components/` has the shared pieces.
-- `src/lib/trackingData.ts` loads the client progress page data.
+- `src/routes/Tracking.tsx` is the client progress page. It asks `netlify/functions/tracking.ts` for one client's row. The sheet layout and parsing are in `src/lib/trackingTemplate.ts`.
 
 ## Contact form
 
@@ -33,10 +33,15 @@ The template can use these variables: `{{name}}`, `{{email}}`, `{{whatsapp}}`, `
 Set these in Netlify under Site configuration, Environment variables. They are read at build time, so redeploy after changing them. See `.env.example`.
 
 - `VITE_SCHEDULER_URL`: link to the booking page for the free call. Leave empty to hide the "Pick a time" card.
-- `VITE_SHEET_CSV_URL`: published CSV of the client tracking sheet.
+
+### Client tracking sheet (secret)
+
+- `TRACKING_SHEET_CSV_URL`: link to the published CSV of the client tracking sheet. It is read only by the Netlify function and never reaches the browser. Do NOT name it with a `VITE_` prefix, because Vite puts every `VITE_` variable into the public JavaScript. If the link ever leaks, in Google Sheets go to File, Share, Publish to web, stop publishing, then publish again to get a new link and update this variable. Netlify only applies a changed variable on the next deploy, so trigger a redeploy after changing it.
+- Reference codes in column A are the only thing protecting a client's page, so make them long and random (for example `URC-7K4M-9QXD-2TWB`), never sequential like `URC-2025-001`.
 
 ## Notes
 
 - Pages are built ahead of time. `npm run build` builds the site twice (browser version and a server version), then `scripts/prerender.mjs` writes a finished HTML file for every page into `dist/`. Visitors, search engines and link scrapers get real content straight away, and React takes over in the browser. The list of pages is `routes()` in `src/entry-server.tsx`. Add new pages there.
+- To try the tracking page locally you need Netlify's dev server (`npx netlify dev`) with `TRACKING_SHEET_CSV_URL` in a local `.env`. `npm run dev` alone does not run the function.
 - `/tracking` and unknown URLs are not prerendered. Netlify serves them `spa.html` (see `public/_redirects`) and the browser renders them.
 - Anything that reads the browser (localStorage, window, today's date, the visitor's timezone) must wait until after the first render, or the prebuilt HTML and the browser will disagree.
