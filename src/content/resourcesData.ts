@@ -177,7 +177,7 @@ export const banking = {
   finance: [
     `Keep your foreign or remote income coming in. The national minimum wage is ${MINIMUM_WAGE_PESOS} pesos a month, so most newcomers do not rely on a local salary.`,
     'Dollars and pesos are both used day to day. The exchange rate has been steady at roughly 37 to 42 pesos per dollar, and property is always bought in dollars.',
-    'Foreign income is tax-free for the first 11 years of residency. A flat 7% option also exists, and an accountant can tell you which one fits your situation.',
+    'Foreign income is tax-free for the first 11 years of residency. An accountant can tell you how this applies to your situation.',
     'US citizens still file US tax returns and should keep their Social Security letters handy for notaries.',
   ],
 };
