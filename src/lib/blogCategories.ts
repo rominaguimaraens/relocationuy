@@ -5,6 +5,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   'is-uruguay-right-for-me': 'Before You Move',
   'cost-of-living-uruguay': 'Cost of Living',
   'residency-uruguay-guide': 'Residency & Paperwork',
+  'how-to-choose-a-relocation-company-in-uruguay': 'Before You Move',
 };
 
 const DEFAULT_CATEGORY = 'Daily Life';
