@@ -49,13 +49,11 @@ Ask who the translator is, whether you deal with them directly, and who pays the
 
 ### 4. What happens if something is filed incorrectly?
 
-This is the question most people skip, and it is the one that matters most.
-
 An application is a stack of names, dates and spellings. If one of them is wrong, it can follow you onto your cédula, and correcting it afterwards takes time and more appointments. It matters especially if your name has changed. Trans clients whose legal name was updated before the move need that update to actually be submitted. If it isn't, the cédula can come out with the old name on it.
 
-Ask who checks the application before it goes in, how you confirm that what was submitted matches your documents, and who fixes a mistake and at whose expense.
+Ask who checks the application before it goes in, and who fixes a mistake and at whose expense.
 
-A good answer: a clear process for checking, a copy of what was submitted for you to review, and a straight statement that the company corrects its own errors at its own cost.
+A good answer: a clear account of who checks the application before it goes in, and a straight statement that the company corrects its own errors at its own cost.
 
 ### 5. How will I know where my process stands?
 
@@ -67,13 +65,11 @@ Ask whether there is a place you can check your status, how often they update yo
 
 Ask how the payment is split, what each payment is for, and what is refundable if you change your mind or the company can't deliver. Splitting the payment is common and reasonable, for example half when you book and half at the first appointment. Paying everything months in advance for a service that hasn't started deserves a second look.
 
-Ask which payment methods they accept too. If the only option is something hard to trace or reverse, you should think about why.
-
 ### 7. Have you worked with people in my situation?
 
-Your situation might be a family with children, a retiree, a solo traveler, someone with a passport that is not from the US, an older person who isn't comfortable with technology, or an LGBTQ+ person whose documents need extra care. The process is the same on paper, but the details differ. Document requirements vary by country, and some of the most common delays come from a requirement that was never mentioned because the company mostly works with one nationality.
+The residency process is the same for everyone, but some situations call for more care from the person helping you. That might be a family traveling with children, an older client who isn't comfortable with technology, or an LGBTQ+ person whose documents need extra attention.
 
-Ask for an example of someone like you, and ask whether past clients are willing to speak with you. A company that has done this well will often be able to arrange it. If it can't, that tells you something.
+Ask whether the company has worked with people in your situation and what that looked like. A specific answer is better than "yes, of course."
 
 ### 8. Does the person recommending you get paid for it?
 
@@ -100,7 +96,7 @@ Since we are one of the companies you might be comparing, here is how we would a
 
 We go with you. Romina or Mechi will be at your appointments, translating as it happens, and you will know which of us it is before the day. We book your DNM appointment, tell you which documents you need and when, and put you in direct contact with the sworn translator and the notary. In the Full package we also come with you for the health card, set up your SIM, utilities, health insurance and bank account, and go with you to rental viewings.
 
-We don't do apostilles or prepare documents in your home country. We tell you exactly what you need and by when, and you order those yourself. The sworn translator is paid separately from our fee. You pay us half when you book and half at your first appointment.
+We don't do apostilles or prepare documents in your home country. We tell you exactly what you need and by when, and you order those yourself. The sworn translator, the notary and the government fees are paid separately from our fee. You pay us half when you book and half at your first appointment.
 
 You can see the full list for each package on the [pricing page](/pricing).
 
