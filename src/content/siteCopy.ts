@@ -49,48 +49,6 @@ export const siteCopy = {
       { name: "Driver's License Conversion", price: '$125' },
     ],
   },
-  resources: {
-    heroTitle: 'Resources',
-    intro:
-      "Guides and bite-sized explainers to help you understand Uruguay's residency process and everyday logistics.",
-    cards: [
-      {
-        title: 'Residency (DNM)',
-        description:
-          'Documentation, timelines, and what to expect at the Dirección Nacional de Migración.',
-        to: '/resources/residency-basics',
-      },
-      {
-        title: 'Carné de salud',
-        description: 'Where to schedule, which exams are required, and how to prepare for the appointment.',
-        to: '/resources/health-card',
-      },
-      {
-        title: 'Obtaining your cédula',
-        description: 'Step-by-step guide to securing your Uruguayan ID after residency approval.',
-        to: '/resources/cedula-guide',
-      },
-      {
-        title: 'Certified translations',
-        description: 'When you need them, typical turnaround times, and trusted providers.',
-        to: '/resources/certified-translations',
-      },
-      {
-        title: 'Phone service & banks',
-        description: 'Stay connected and open accounts quickly with our practical tips.',
-        to: '/resources/sim-and-banks',
-      },
-      {
-        title: 'Housing & rentals',
-        description: 'Neighborhood insights, how contracts work, and common pitfalls to avoid.',
-        to: '/resources/rentals',
-      },
-    ],
-    note: 'We update these guides as regulations change.',
-    placeholderTitle: 'Guide coming soon',
-    placeholderBody:
-      "We're expanding this resource right now. Need help sooner? Book a consultation and we'll walk you through the process personally.",
-  },
   contact: {
     heroTitle: 'Contact',
     intro: "Ready to talk about your move? Share a few details and we'll reply with next steps.",

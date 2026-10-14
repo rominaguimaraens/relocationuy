@@ -1,85 +1,131 @@
+import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import Section from '../components/Section';
 import Seo from '../components/Seo';
 import AlertCallout from '../components/resources/AlertCallout';
 import AnchorNav from '../components/resources/AnchorNav';
 import Checklist from '../components/resources/Checklist';
 import {
+  banking,
   contacts,
   docs,
+  education,
   faqs,
   glossary,
+  healthcare,
+  housing,
+  incomeBullets,
   life,
   logistics,
-  residency,
-  setup,
+  otherResidencyFacts,
+  policeClearanceExamples,
+  residencyPathways,
+  residencySteps,
 } from '../content/resourcesData';
-import { sanitizeText } from '../utils/sanitize';
 
 const NAV_ITEMS = [
   { href: '#before-you-move', label: 'Before You Move' },
-  { href: '#residency', label: 'Residency & Immigration' },
-  { href: '#documents', label: 'Documents & Apostilles' },
+  { href: '#residency', label: 'Residency' },
+  { href: '#documents', label: 'Documents' },
   { href: '#setup', label: 'Housing & Utilities' },
-  { href: '#banking', label: 'Banking & Finance' },
-  { href: '#healthcare', label: 'Healthcare & Education' },
-  { href: '#logistics', label: 'Logistics (Shipping & Pets)' },
+  { href: '#banking', label: 'Banking & Money' },
+  { href: '#healthcare', label: 'Healthcare & Schools' },
+  { href: '#logistics', label: 'Shipping & Pets' },
   { href: '#life', label: 'Life in Uruguay' },
-  { href: '#contacts', label: 'Government Contacts' },
-  { href: '#glossary', label: 'Glossary / FAQ' },
+  { href: '#contacts', label: 'Government Offices' },
+  { href: '#glossary', label: 'Glossary & FAQ' },
 ];
 
-const PREMOVE_PLANNING = [
-  'Build a realistic budget (USD 1,500-2,500 per person) plus a 3-6 month cushion so Uruguay\'s higher prices never stall your plan.',
-  'Remember seasons are flipped: pack proper winter layers, a dehumidifier pack, and plan for breezy summers.',
-  'Study neighborhoods, transport, and how stable tap water and infrastructure simplify daily life.',
+const PLAN_AND_BUDGET = [
+  'A realistic starting budget for one person in Montevideo is around USD 1,550 a month: about 750 for rent and about 800 for everything else. Keep a cushion of a few months on top.',
+  'The seasons are reversed. Winter is damp and runs about 5 to 15°C, so bring real layers. Summer is 21 to 28°C, with the occasional heatwave.',
+  'Choose a neighborhood by how you want to live. Most of our clients look at Pocitos, Punta Carretas, Buceo, Malvín and Carrasco.',
 ];
 
-const PAPERWORK_STEPS = [
-  'Request apostilled birth, marriage, divorce, and name-change documents before you fly.',
-  'Secure national police certificates for every country lived in during the last five years and note their short validity windows.',
-  'Store digital and paper copies of every certificate so local translators and notaries can work quickly.',
+const PAPERWORK_RUNWAY = [
+  'Order your apostilled birth certificate and, if they apply, your marriage or divorce certificate.',
+  'Time your police clearance well, because it is only valid for 6 months.',
+  'Do not translate anything at home. Translations are done in Uruguay by a sworn translator.',
+  'Scan everything, and keep the originals with you in your carry-on.',
 ];
 
 const PACKING_AND_PETS = [
-  'Bring 90 days of prescriptions plus specialty clothing or shoe sizes that are hard to find locally.',
-  'Only move electronics that handle 220V or plan to buy appliances once you arrive.',
-  'Pets need ISO microchips, rabies shots (21+ days old), parasite treatment, and a government health certificate timed to travel.',
+  'Bring your prescriptions, and clothing and shoes in sizes that are hard to find locally.',
+  'Buy laptops and phones before you move. Electronics cost a lot more in Uruguay.',
+  'Moving with a pet? Start early. The Shipping & Pets section below lists what your vet and the ministry require.',
 ];
 
-const UTILITY_STEPS = [
-  'Book UTE (electric), OSE (water), and Antel (internet) visits as soon as the lease is signed; technicians often schedule a week out.',
-  'Have the lease, passport or cedula, and a phone number ready when crews arrive.',
-  'Keep every utility receipt because banks, schools, and notaries accept them as proof of address.',
-  'Uruguay\'s tap water is drinkable, so reusable bottles beat shipping bulky filters.',
-];
+function BulletCard({
+  title,
+  eyebrow,
+  items,
+  children,
+  className = '',
+}: {
+  title: string;
+  eyebrow?: string;
+  items?: string[];
+  children?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10 ${className}`}
+    >
+      <div className="card-body space-y-4">
+        <div>
+          <h3 className="font-display text-xl text-ink">{title}</h3>
+          {eyebrow && <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">{eyebrow}</p>}
+        </div>
+        {items && (
+          <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
+            {items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        )}
+        {children}
+      </div>
+    </div>
+  );
+}
 
-const HEALTHCARE_POINTS = [
-  'ASSE covers everyone, but lines can be long, so schedule non-urgent visits early in the day.',
-  'Private mutualistas usually stay under USD 100 per adult monthly and include clinics, specialists, and emergency care.',
-  'British Hospital, CASMU, and MUCAM have multilingual staff and onboarding teams comfortable with foreign paperwork.',
-  'Carry vaccine records and current prescriptions; pharmacies accept most international scripts.',
-];
+function SectionIntro({ eyebrow, title, children }: { eyebrow: string; title: string; children?: ReactNode }) {
+  return (
+    <>
+      <p className="text-sm uppercase tracking-[0.35em] text-sky/70">{eyebrow}</p>
+      <div className="max-w-3xl space-y-4">
+        <h2 className="font-display text-3xl text-ink md:text-4xl">{title}</h2>
+        {children}
+      </div>
+    </>
+  );
+}
 
-const EDUCATION_POINTS = [
-  'Public schools are free, compulsory, and secular, so expect formal attendance tracking once you hold a cédula.',
-  'Homeschooling is not recognized; enroll in a registered school or accredited distance program.',
-  'International campuses (American, British, Ivy Thomas) cluster in Carrasco and fill quickly, especially for lower grades.',
-  'Bring apostilled transcripts plus translated immunization cards to speed up placement interviews.',
-];
-
-const FINANCE_TIPS = [
-  'Keep remote or foreign income flowing-local wages average around USD 400 per month and seldom cover rent.',
-  'Use dual-currency accounts so you can pay rent or school fees in USD while handling groceries and utilities in pesos.',
-  'Document every deposit to choose between Uruguay\'s 11-year foreign-income holiday or the 7 percent flat tax on passive earnings.',
-  'U.S. citizens must complete FATCA forms, file IRS returns on time, and keep Social Security letters handy for notaries.',
-];
+// A short note that points to the call first and the quiz second.
+function HelpNote({ title, body }: { title: string; body: string }) {
+  return (
+    <div className="rounded-3xl border border-lavender/40 bg-base-100 p-8 text-center shadow-xl shadow-lavender/10">
+      <h3 className="font-display text-2xl text-ink">{title}</h3>
+      <p className="mx-auto mt-3 max-w-2xl text-ink/80">{body}</p>
+      <div className="mt-6 flex flex-col items-center gap-3">
+        <Link to="/contact" className="btn btn-primary text-white">
+          Book a free 30-minute call
+        </Link>
+        <Link to="/quiz" className="link link-primary text-sm font-medium">
+          Not sure which package fits you? Take the 4-question quiz.
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export default function Resources() {
   return (
     <>
       <Seo
         title="Move to Uruguay Guide | Uruguay Relocation Companion"
-        description="A move-to-Uruguay roadmap covering residency, documents, practical setup, logistics, and life on the ground."
+        description="Residency step by step, the documents you need, housing, banking, healthcare, shipping and pets, from a relocation service based in Montevideo."
         path="/resources"
       />
 
@@ -87,14 +133,11 @@ export default function Resources() {
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-display text-ink md:text-5xl">Move to Uruguay Guide</h1>
           <p className="mt-5 text-lg text-ink/80 md:text-xl">
-            {sanitizeText(
-              'Your personalized roadmap to navigate residency, paperwork, and everyday logistics with confidence. Follow each block to stay on top of legal requirements while building your new life in Uruguay.'
-            )}
+            Everything we tell clients about moving to Uruguay, in one place: the residency steps in
+            order, the documents you need, and what setting up a life in Montevideo involves.
           </p>
           <p className="mt-4 text-lg text-ink/70 md:text-xl">
-            {sanitizeText(
-              'Keep this page handy during your move - each section links to checklists, provider tips, and the agencies you will work with.'
-            )}
+            Come back to it as you go. The checklists remember your ticks on this device.
           </p>
         </div>
       </Section>
@@ -103,187 +146,133 @@ export default function Resources() {
 
       <Section className="bg-base-100">
         <div id="before-you-move" className="scroll-mt-32 space-y-8">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Before You Move</p>
-          <div className="max-w-3xl space-y-4">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">Lay the groundwork from home</h2>
+          <SectionIntro eyebrow="Before You Move" title="Get the groundwork done at home">
             <p className="text-base text-ink/80">
-              {sanitizeText(
-                'Uruguay\'s small population, steady democracy, and reliable utilities make settling in predictable, but success still hinges on the preparation you do while abroad.'
-              )}
+              Most of the work happens before you land. Sort out your budget, your documents and your
+              timeline at home, and your first months in Montevideo go much more smoothly.
             </p>
-            <p className="text-base text-ink/80">
-              {sanitizeText(
-                'Treat this stage as your safety net: confirm budgets, line up paperwork, and understand that the culture values calm, respectful interactions-especially when you need help from officials.'
-              )}
-            </p>
-          </div>
+          </SectionIntro>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Plan & budget</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Stability first</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {PREMOVE_PLANNING.map((tip) => (
-                    <li key={tip}>{tip}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Paperwork runway</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Before you fly</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {PAPERWORK_STEPS.map((tip) => (
-                    <li key={tip}>{tip}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Packing & pets</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Logistics</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {PACKING_AND_PETS.map((tip) => (
-                    <li key={tip}>{tip}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <BulletCard title="Plan and budget" eyebrow="Money and weather" items={PLAN_AND_BUDGET} />
+            <BulletCard title="Paperwork" eyebrow="Before you fly" items={PAPERWORK_RUNWAY} />
+            <BulletCard title="Packing and pets" eyebrow="Logistics" items={PACKING_AND_PETS} />
           </div>
-
-          <AlertCallout type="tip" title="Line up support">
-            {sanitizeText(
-              'Book exploratory calls, speak with expat groups, and consider hired help for complex steps like shipments or school placement-it keeps surprises to a minimum once you land.'
-            )}
-          </AlertCallout>
         </div>
       </Section>
 
       <Section className="bg-base-100">
         <div id="residency" className="scroll-mt-32 space-y-8">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Residency</p>
-          <div className="max-w-3xl">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
-              Legal Residency & Immigration
-            </h2>
-            <p className="mt-4 text-base text-ink/80">
-              {sanitizeText(
-                'Most visitors arrive visa-free, file their residency in-country, and remain at least half the year while the case moves forward. Map out the route that matches your passport, income source, and desired timeline before you book appointments.'
-              )}
+          <SectionIntro eyebrow="Residency" title="Residency, step by step">
+            <p className="text-base text-ink/80">
+              You apply for residency in Uruguay, at the DNM (Dirección Nacional de Migración), the
+              immigration office. You do not need an immigration lawyer, and a tourist visa is enough
+              to start. Here is the order things happen in.
             </p>
-          </div>
+          </SectionIntro>
 
-          <div className="grid gap-4 md:grid-cols-3">
-            {residency.options.map((option) => (
-              <div
-                key={option.title}
-                className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10"
+          <ol className="grid gap-4 md:grid-cols-2">
+            {residencySteps.map((step, index) => (
+              <li
+                key={step.title}
+                className="flex gap-4 rounded-2xl border border-sky/15 bg-base-100/95 p-5 shadow-sm shadow-sky/10"
               >
-                <div className="card-body">
-                  <h3 className="font-display text-xl text-ink">{option.title}</h3>
-                  <p className="mt-3 text-sm text-ink/75">{option.body}</p>
+                <span
+                  aria-hidden="true"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sky/20 font-display text-ink"
+                >
+                  {index + 1}
+                </span>
+                <div>
+                  <h3 className="font-display text-lg text-ink">{step.title}</h3>
+                  <p className="mt-1 text-sm text-ink/80">{step.body}</p>
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
+
+          <AlertCallout type="tip" title="Book early">
+            Good DNM appointment slots fill up months ahead. The most avoidable delay in the whole
+            process is not having your documents ready, so most of the work is done before you book.
+          </AlertCallout>
 
           <div className="space-y-4">
             <div className="collapse collapse-arrow border border-sky/15 bg-base-100/95">
               <input type="checkbox" defaultChecked />
-              <div className="collapse-title font-display text-lg text-ink">
-                Residency Options
-              </div>
-              <div className="collapse-content text-sm text-ink/80 space-y-4">
-                <p>
-                  {sanitizeText(
-                    'Permanent residency is the standard finish line, but there are stepping stones: mercosur filings for regional nationals, family-based cases for spouses or children of Uruguayans, and a digital nomad permit that grants 180 days (renewable once) before transitioning into a full file.'
-                  )}
-                </p>
-                <p>
-                  {sanitizeText(
-                    'Every applicant receives a provisional ID card while they wait, so keep it handy for banking, healthcare, and travel inside the region.'
-                  )}
-                </p>
+              <div className="collapse-title font-display text-lg text-ink">Which residency fits you</div>
+              <div className="collapse-content space-y-4 text-sm text-ink/80">
+                <div className="grid gap-4 md:grid-cols-2">
+                  {residencyPathways.map((option) => (
+                    <div key={option.title} className="rounded-2xl border border-sky/10 bg-base-100 p-4">
+                      <h3 className="font-display text-base text-ink">{option.title}</h3>
+                      <p className="mt-2">{option.body}</p>
+                    </div>
+                  ))}
+                </div>
+                <p>We help with all of these.</p>
               </div>
             </div>
 
             <div className="collapse collapse-arrow border border-sky/15 bg-base-100/95">
               <input type="checkbox" />
-              <div className="collapse-title font-display text-lg text-ink">
-                {residency.income.title}
-              </div>
+              <div className="collapse-title font-display text-lg text-ink">Income requirement</div>
               <div className="collapse-content space-y-4 text-sm text-ink/80">
                 <ul className="list-disc space-y-2 pl-5">
-                  {residency.income.bullets.map((bullet) => (
+                  {incomeBullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
-                <AlertCallout type="tip" title="Work with an Escribano early">
-                  {sanitizeText(
-                    'A trusted notary (Escribano) will certify your income letter, pull foreign statements, and document 90 days of local fund usage-the backbone of every Rentista-style case.'
-                  )}
+                <AlertCallout type="tip" title="Book your notary early">
+                  An escribano is a public notary who certifies your income documents. We send our
+                  clients the contact of a notary we trust.
                 </AlertCallout>
               </div>
             </div>
 
             <div className="collapse collapse-arrow border border-sky/15 bg-base-100/95">
               <input type="checkbox" />
-              <div className="collapse-title font-display text-lg text-ink">Physical Presence</div>
+              <div className="collapse-title font-display text-lg text-ink">Time in Uruguay</div>
               <div className="collapse-content space-y-4 text-sm text-ink/80">
-                <p>{residency.presence}</p>
-                <AlertCallout type="warning" title="Avoid long absences">
-                  {sanitizeText(
-                    'Travel breaks are fine, but prolonged time outside Uruguay can reset momentum. Track entries and exits so you can show six or more months on the ground each year.'
-                  )}
-                </AlertCallout>
+                <p>
+                  Permanent residency needs roughly 6 months a year in Uruguay. While your application
+                  is being processed you can leave the country with a travel permit, which costs about
+                  USD 30. Citizenship is available 5 years after the date you filed.
+                </p>
               </div>
             </div>
 
             <div className="collapse collapse-arrow border border-sky/15 bg-base-100/95">
               <input type="checkbox" />
-              <div className="collapse-title font-display text-lg text-ink">Timeline</div>
-              <div className="collapse-content space-y-4 text-sm text-ink/80">
-                <p>{residency.timeline}</p>
-                <AlertCallout type="tip" title="Secure appointments ahead of time">
-                  {sanitizeText(
-                    'Dirección Nacional de Migración slots disappear fast-reserve one to two months ahead, especially around holidays, and carry printed confirmations to every visit.'
-                  )}
-                </AlertCallout>
+              <div className="collapse-title font-display text-lg text-ink">Other things clients ask</div>
+              <div className="collapse-content text-sm text-ink/80">
+                <ul className="list-disc space-y-2 pl-5">
+                  {otherResidencyFacts.map((fact) => (
+                    <li key={fact}>{fact}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
+
+          <HelpNote
+            title="Want someone with you at the DNM?"
+            body="We book your appointment, go with you, translate on the spot, and tell you which document you need and when. You can also do everything on this page yourself."
+          />
         </div>
       </Section>
 
       <Section className="bg-beige-gradient">
         <div id="documents" className="scroll-mt-32 space-y-8">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Documents & Apostilles</p>
-          <div className="max-w-3xl">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
-              Document Checklist & Apostilles
-            </h2>
-            <p className="mt-4 text-base text-ink/80">
-              {sanitizeText(
-                'Tackle the "before" list while you are still abroad, then use the "after" list once you land. Each checklist remembers your progress on this device so nothing slips through the cracks.'
-              )}
+          <SectionIntro eyebrow="Documents" title="Your document checklist">
+            <p className="text-base text-ink/80">
+              Do the "before" list while you are still at home, and the "after" list once you land.
+              Each checklist remembers your ticks on this device.
             </p>
-          </div>
+          </SectionIntro>
 
-          <AlertCallout type="warning" title="Start apostilles immediately">
-            {sanitizeText(
-              'Foreign ministries can take weeks to issue apostilles, and replacing a missing document from Uruguay often means courier delays or even a return trip. Start now.'
-            )}
+          <AlertCallout type="warning" title="Start your apostilles early">
+            Your home country's apostille office can take weeks, and fixing a missing one from Uruguay
+            means courier delays or even a trip back. {policeClearanceExamples}
           </AlertCallout>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -291,294 +280,142 @@ export default function Resources() {
             <Checklist title="Do this after you arrive" items={docs.after} storageKey="docs-after-v1" />
           </div>
 
-          <AlertCallout type="warning" title="Translate locally in Uruguay">
-            {sanitizeText(
-              'Uruguayan authorities expect translations from a locally licensed traductor público. Save time by translating everything once you arrive.'
-            )}
+          <AlertCallout type="warning" title="Translate in Uruguay">
+            The DNM only accepts translations done in Uruguay by a Uruguayan sworn translator
+            (traductor público). A translation done in your home country will not be accepted, however
+            good it is.
           </AlertCallout>
         </div>
       </Section>
 
       <Section className="bg-base-100">
         <div id="setup" className="scroll-mt-32 space-y-10">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Housing & Utilities</p>
-          <div className="max-w-3xl">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
-              Secure your base and switch everything on
-            </h2>
-            <p className="mt-4 text-base text-ink/80">
-              {sanitizeText(
-                'Plan to spend your first weeks in Montevideo while you hunt for a 12-month lease, line up a garantía (renter insurance), and schedule utilities. A short-term Airbnb gives you breathing room while you compare neighborhoods and commute times.'
-              )}
+          <SectionIntro eyebrow="Housing & Utilities" title="Find a home and switch everything on">
+            <p className="text-base text-ink/80">
+              Most people spend their first weeks in a short-term rental while they look for a 12-month
+              lease. That gives you time to compare neighborhoods and to see how long your commute
+              would really be.
             </p>
-          </div>
+          </SectionIntro>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Housing & rentals</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Start first</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-ink">Search portals</h4>
-                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink/80">
-                    {setup.housing.search.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {setup.housing.notes.map((note) => (
-                    <li key={note}>{note}</li>
+            <BulletCard title="Housing and rentals" eyebrow="Start here" items={housing.notes}>
+              <div>
+                <h4 className="text-sm font-semibold text-ink">Where to search</h4>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink/80">
+                  {housing.portals.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
-            </div>
-
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Utilities & services</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Switch on</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {UTILITY_STEPS.map((step) => (
-                    <li key={step}>{step}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Communication</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Day-one task</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {setup.comms.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-                <AlertCallout type="tip" title="Proof of address shortcut">
-                  {sanitizeText(
-                    'Once your Antel SIM and utilities are active, use the receipts as proof of address for banks, schools, and health plans.'
-                  )}
-                </AlertCallout>
-              </div>
-            </div>
+            </BulletCard>
+            <BulletCard title="Utilities" eyebrow="Switch on" items={housing.utilities} />
+            <BulletCard title="Phone and internet" eyebrow="Day one" items={housing.comms}>
+              <AlertCallout type="tip" title="Proof of address">
+                Once your SIM and utilities are active, use the receipts as proof of address for banks,
+                schools and health plans.
+              </AlertCallout>
+            </BulletCard>
           </div>
         </div>
       </Section>
 
       <Section className="bg-beige-gradient">
         <div id="banking" className="scroll-mt-32 space-y-8">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Banking & Finance</p>
-          <div className="max-w-3xl space-y-4">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">Open accounts & prove income</h2>
-            <p className="text-base text-ink/80">
-              {sanitizeText(
-                'Uruguay\'s banking system is conservative, bilingual at the branch level, and expects tidy paperwork. Bring originals, notarized translations, and patience for multi-visit onboarding.'
-              )}
-            </p>
-          </div>
+          <SectionIntro eyebrow="Banking & Money" title="Open an account and sort out your money">
+            <p className="text-base text-ink/80">{banking.intro}</p>
+          </SectionIntro>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Banking ({setup.banking.bank})</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Expect return visits</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {setup.banking.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Finance strategy</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Think long game</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {FINANCE_TIPS.map((tip) => (
-                    <li key={tip}>{tip}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <BulletCard title={banking.bank} eyebrow="Expect return visits" items={banking.bullets} />
+            <BulletCard title="Money and tax" eyebrow="The long game" items={banking.finance} />
           </div>
-
-          <AlertCallout type="warning" title="Carry originals">
-            {sanitizeText(
-              'Banks rarely accept scans. Bring physical statements, tax letters, leases, and proof of income every time-you may be asked to show them more than once.'
-            )}
-          </AlertCallout>
         </div>
       </Section>
 
       <Section className="bg-base-100">
         <div id="healthcare" className="scroll-mt-32 space-y-8">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Healthcare & Education</p>
-          <div className="max-w-3xl space-y-4">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">Keep your family covered</h2>
+          <SectionIntro eyebrow="Healthcare & Schools" title="Health plans and schools">
             <p className="text-base text-ink/80">
-              {sanitizeText(
-                'Blend public guarantees with private speed: enroll in a mutualista for everyday care, keep ASSE for backstop services, and file school paperwork early so the academic calendar stays on track.'
-              )}
+              Choose a private health plan for everyday care, and start your school search early if you
+              have children.
             </p>
-          </div>
+          </SectionIntro>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Healthcare</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">ASSE + mutualistas</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {HEALTHCARE_POINTS.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sky/10">
-              <div className="card-body space-y-4">
-                <div>
-                  <h3 className="font-display text-xl text-ink">Education</h3>
-                  <p className="mt-1 text-xs uppercase tracking-[0.28em] text-sky/60">Primary to Bachillerato</p>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {EDUCATION_POINTS.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <BulletCard title="Healthcare" eyebrow="ASSE and mutualistas" items={healthcare} />
+            <BulletCard title="Schools" eyebrow="Public and international" items={education} />
           </div>
 
-          <AlertCallout type="tip" title="Keep records handy">
-            {sanitizeText(
-              'Carry paper and digital copies of medical histories, immunization cards, and school transcripts-officials often ask for originals plus a spare set.'
-            )}
-          </AlertCallout>
+          <HelpNote
+            title="Need an interpreter at the clinic?"
+            body="We offer hourly interpretation for doctor visits, and in the Full package we come with you for your health card."
+          />
         </div>
       </Section>
 
       <Section className="bg-sage/15">
         <div id="logistics" className="scroll-mt-32 space-y-10">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Logistics</p>
-          <div className="max-w-3xl">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
-              Packing, Shipping & Pets
-            </h2>
-            <p className="mt-4 text-base text-ink/80">
-              {sanitizeText(
-                'Containers can cost USD 20,000-30,000, parcels crawl through customs, and airlines cap pet slots-so plan every shipment with Uruguay\'s timelines and limits in mind.'
-              )}
+          <SectionIntro eyebrow="Shipping & Pets" title="Packing, shipping and pets">
+            <p className="text-base text-ink/80">
+              Shipping rules changed in 2026, containers are expensive, and moving a pet comes with a
+              list of vet requirements. Plan each one before you buy a ticket.
             </p>
-          </div>
+          </SectionIntro>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sage/20">
-              <div className="card-body space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-display text-xl text-ink">Packing Essentials</h3>
-                  <span className="badge badge-outline text-xs uppercase">Prep</span>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {logistics.packing.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <AlertCallout type="warning" title="Mind the voltage">
-                  {logistics.voltage}
-                </AlertCallout>
-              </div>
-            </div>
-
-            <div className="card h-full border border-amber-200/60 bg-base-100/95 shadow-md shadow-amber-100">
-              <div className="card-body space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-display text-xl text-ink">Shipping & Imports</h3>
-                  <span className="badge badge-warning text-xs uppercase">Warning</span>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-ink">Small parcels</h4>
-                  <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-ink/80">
-                    {logistics.mail.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <AlertCallout type="warning" title="Containers are costly">
-                  {logistics.containers.join(' ')}
-                </AlertCallout>
-              </div>
-            </div>
-
-            <div className="card h-full border border-sky/15 bg-base-100/95 shadow-md shadow-sage/20">
-              <div className="card-body space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-display text-xl text-ink">Moving with Pets</h3>
-                  <span className="badge badge-warning text-xs uppercase">Warning</span>
-                </div>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-                  {logistics.pets.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <AlertCallout type="tip" title="Talk to your airline early">
-                  Reserve cargo or in-cabin space as soon as tickets are booked - airlines limit the
-                  number of pets per flight.
-                </AlertCallout>
-              </div>
-            </div>
+            <BulletCard title="Packing essentials" eyebrow="Prep" items={logistics.packing}>
+              <AlertCallout type="warning" title="Mind the voltage">
+                {logistics.voltage}
+              </AlertCallout>
+            </BulletCard>
+            <BulletCard title="Shipping and imports" eyebrow="Rules from 2026" items={logistics.mail}>
+              <AlertCallout type="warning" title="Containers are costly">
+                {logistics.containers}
+              </AlertCallout>
+            </BulletCard>
+            <BulletCard title="Moving with pets" eyebrow="Dogs and cats" items={logistics.pets}>
+              <p className="text-sm text-ink/70">{logistics.petsNote}</p>
+              <a
+                href={logistics.petsLink}
+                target="_blank"
+                rel="noreferrer"
+                className="link link-primary text-sm font-medium"
+              >
+                Official MGAP page
+              </a>
+              <AlertCallout type="tip" title="Talk to your airline early">
+                Reserve cargo or in-cabin space as soon as you book tickets. Airlines limit the number of
+                pets on each flight.
+              </AlertCallout>
+            </BulletCard>
           </div>
         </div>
       </Section>
 
       <Section className="bg-base-100">
         <div id="life" className="scroll-mt-32 space-y-10">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Life in Uruguay</p>
-          <div className="max-w-3xl">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">Culture & Integration</h2>
-            <p className="mt-4 text-base text-ink/80">
-              {sanitizeText(
-                'Uruguay pairs low crime rates with progressive laws and a live-and-let-live vibe. Accept the tranquilo pace, invest in Spanish, and you\'ll plug into community faster.'
-              )}
-            </p>
-          </div>
+          <SectionIntro eyebrow="Life in Uruguay" title="Culture and daily life">
+            <p className="text-base text-ink/80">{life.intro}</p>
+          </SectionIntro>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <LifeColumn title="Language" items={life.language} />
-            <LifeColumn title="Job Market" items={life.jobs} />
-            <LifeColumn title="Pace & Culture" items={life.culture} />
-            <LifeColumn title="Food & Goods" items={life.goods} />
-            <LifeColumn title="Community" items={life.community} className="md:col-span-2" />
+            <BulletCard title="Language" items={life.language} />
+            <BulletCard title="Work and wages" items={life.jobs} />
+            <BulletCard title="Pace and culture" items={life.culture} />
+            <BulletCard title="Goods and safety" items={life.goods} />
+            <BulletCard title="Community" items={life.community} className="md:col-span-2" />
           </div>
         </div>
       </Section>
 
       <Section className="bg-beige-gradient">
         <div id="contacts" className="scroll-mt-32 space-y-10">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Government Contacts</p>
-          <div className="max-w-3xl">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
-              Key Offices & What They Handle
-            </h2>
-            <p className="mt-4 text-base text-ink/80">
-              Save this roster of agencies you\'ll encounter throughout the residency process. Bring
-              original IDs and certified copies to every visit.
+          <SectionIntro eyebrow="Government Offices" title="The offices you will deal with">
+            <p className="text-base text-ink/80">
+              Save this list. Bring your original ID and your documents to every visit.
             </p>
-          </div>
+          </SectionIntro>
 
           <div className="rounded-3xl border border-sky/15 bg-base-100/95 shadow-lg shadow-sky/10">
             <div className="grid gap-4 p-6 md:grid-cols-2">
@@ -592,12 +429,12 @@ export default function Resources() {
                     <p className="text-sm text-ink/70">{contact.purpose}</p>
                   </div>
                   <a
-                    href="https://www.gub.uy"
+                    href={contact.href}
                     target="_blank"
                     rel="noreferrer"
                     className="btn btn-ghost btn-sm self-start border border-transparent text-sky hover:border-sky/40 hover:bg-sky/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky"
                   >
-                    Open on gub.uy
+                    {contact.linkLabel}
                   </a>
                 </div>
               ))}
@@ -608,16 +445,7 @@ export default function Resources() {
 
       <Section className="bg-base-100">
         <div id="glossary" className="scroll-mt-32 space-y-10">
-          <p className="text-sm uppercase tracking-[0.35em] text-sky/70">Glossary / FAQ</p>
-          <div className="max-w-3xl">
-            <h2 className="font-display text-3xl text-ink md:text-4xl">
-              Quick Definitions & Mini-FAQ
-            </h2>
-            <p className="mt-4 text-base text-ink/80">
-              Brush up on common terms you\'ll hear from notaries, brokers, and new Uruguayan
-              friends, then skim the answers to questions we hear most often.
-            </p>
-          </div>
+          <SectionIntro eyebrow="Glossary & FAQ" title="Words you will hear, and answers to common questions" />
 
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-4">
@@ -631,7 +459,6 @@ export default function Resources() {
                 </div>
               ))}
             </div>
-
             <div className="space-y-3">
               {faqs.map((item) => (
                 <div
@@ -639,9 +466,7 @@ export default function Resources() {
                   className="collapse collapse-plus border border-sky/15 bg-base-100/95 shadow-sm shadow-sky/10"
                 >
                   <input type="checkbox" />
-                  <div className="collapse-title font-display text-base text-ink">
-                    {item.q}
-                  </div>
+                  <div className="collapse-title font-display text-base text-ink">{item.q}</div>
                   <div className="collapse-content text-sm text-ink/80">
                     <p>{item.a}</p>
                   </div>
@@ -649,29 +474,13 @@ export default function Resources() {
               ))}
             </div>
           </div>
+
+          <HelpNote
+            title="Questions about your own move?"
+            body="Book a free 30-minute call and we will go through your situation, step by step."
+          />
         </div>
       </Section>
     </>
-  );
-}
-
-type LifeColumnProps = {
-  title: string;
-  items: string[];
-  className?: string;
-};
-
-function LifeColumn({ title, items, className }: LifeColumnProps) {
-  return (
-    <div
-      className={`space-y-3 rounded-3xl border border-sky/15 bg-base-100/95 p-6 shadow-md shadow-sky/10 ${className ?? ''}`}
-    >
-      <h3 className="font-display text-xl text-ink">{title}</h3>
-      <ul className="list-disc space-y-2 pl-5 text-sm text-ink/80">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </div>
   );
 }

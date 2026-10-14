@@ -17,9 +17,8 @@ import Privacy from './routes/Privacy';
 import NotFound from './routes/NotFound';
 import OrganizationSchema from './components/OrganizationSchema';
 
-// These two pages are never prerendered (they only run in the browser), so visitors
-// to the rest of the site don't need to download their code.
-const ResourceArticle = lazy(() => import('./routes/ResourceArticle'));
+// This page is never prerendered (it only runs in the browser), so visitors
+// to the rest of the site don't need to download its code.
 const Tracking = lazy(() => import('./routes/Tracking'));
 
 function App() {
@@ -35,7 +34,6 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/scouting-trips" element={<ScoutingTrips />} />
             <Route path="/resources" element={<Resources />} />
-            <Route path="/resources/:slug" element={<ResourceArticle />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/categories/:category" element={<BlogCategory />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

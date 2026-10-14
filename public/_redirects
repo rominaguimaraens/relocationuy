@@ -4,5 +4,4 @@
 # Pages that only work in the browser get the empty shell.
 /tracking /spa.html 200
 /tracking/ /spa.html 200
-/resources/* /spa.html 200
 # Any other address that doesn't exist falls through to dist/404.html, with a 404 status.
