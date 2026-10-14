@@ -6,6 +6,13 @@ import { findClient } from '../../src/lib/trackingTemplate';
  * reference code and gets back that one client's progress, nothing else.
  */
 
+// Why a lookup failed, for the Netlify function log and the browser's Network tab. These never
+// include a reference code, a name or anything from the sheet.
+const fail = (reason: string, detail: string, status: number) => {
+    console.error(`tracking: ${reason} - ${detail}`);
+    return json({ error: 'unavailable', reason }, status);
+};
+
 const json = (body: unknown, status = 200) =>
     new Response(JSON.stringify(body), {
         status,
@@ -23,8 +30,15 @@ const REF_PATTERN = /^[A-Za-z0-9-]{4,40}$/;
 export default async (req: Request): Promise<Response> => {
     if (req.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);
 
-    const sheetUrl = process.env.TRACKING_SHEET_CSV_URL;
-    if (!sheetUrl) return json({ error: 'unavailable' }, 503);
+    // Tolerate stray spaces or quotes from pasting the link into Netlify.
+    const sheetUrl = (process.env.TRACKING_SHEET_CSV_URL ?? '').trim().replace(/^["']|["']$/g, '');
+    if (!sheetUrl) {
+        return fail(
+            'not_configured',
+            'TRACKING_SHEET_CSV_URL is empty. Add it in Netlify, then redeploy so this deploy picks it up.',
+            503,
+        );
+    }
 
     let ref = '';
     try {
@@ -45,10 +59,23 @@ export default async (req: Request): Promise<Response> => {
     let csv: string;
     try {
         const res = await fetch(sheetUrl, { signal: AbortSignal.timeout(8000) });
-        if (!res.ok) return json({ error: 'unavailable' }, 502);
+        if (!res.ok) {
+            return fail(
+                'sheet_error',
+                `Google answered ${res.status}. The published link may have been stopped or changed.`,
+                502,
+            );
+        }
+        if ((res.headers.get('content-type') ?? '').includes('text/html')) {
+            return fail(
+                'sheet_not_csv',
+                'The link returned a web page, not a CSV. In Publish to web, choose the sheet tab and "Comma-separated values (.csv)".',
+                502,
+            );
+        }
         csv = await res.text();
-    } catch {
-        return json({ error: 'unavailable' }, 502);
+    } catch (err) {
+        return fail('sheet_unreachable', err instanceof Error ? err.message : 'request failed', 502);
     }
 
     const client = findClient(csv, ref);
