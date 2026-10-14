@@ -21,7 +21,7 @@ export function render(url: string) {
 }
 
 // Every page that gets its own static HTML file. /tracking is left out on purpose:
-// it only works in the browser. The unfinished resource guides are left out too.
+// it only works in the browser.
 export function routes(): string[] {
   return [
     '/',
