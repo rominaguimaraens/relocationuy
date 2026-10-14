@@ -36,7 +36,7 @@ const sections: { title: string; body: string[] }[] = [
   {
     title: 'Client progress page',
     body: [
-      'Clients get a private link to a page that shows where their process stands. It only works with the reference code we give you.',
+      'Clients get a page that shows where their process stands. You type in the reference code we give you, and the page shows only your own progress: your name, a short status note and which steps are done. Nobody can browse other clients, and the sheet we keep this in is never sent to your browser.',
     ],
   },
   {
