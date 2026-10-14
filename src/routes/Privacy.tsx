@@ -30,7 +30,7 @@ const sections: { title: string; body: string[] }[] = [
   {
     title: 'Cookies and tracking',
     body: [
-      'We do not use analytics or advertising cookies. The checklist on our Resources page saves your ticked items in your own browser so they are still there when you come back. That information stays on your device and never reaches us.',
+      'We do not use analytics or advertising cookies. The checklist on our Resources page saves your ticked items in your own browser so they are still there when you come back. That information stays on your device and never reaches us. The package quiz works the same way: your answers stay in your browser while you click through, and nothing is sent unless you choose to contact us.',
     ],
   },
   {

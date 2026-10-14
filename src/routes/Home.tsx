@@ -208,6 +208,11 @@ export default function Home() {
         </p>
         <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-ink/70">{packagesPayment}</p>
         <p className="mt-2 text-center text-xs text-ink/50">Prices last updated October 2026.</p>
+        <p className="mt-6 text-center">
+          <Link to="/quiz" className="link link-primary font-medium">
+            Not sure which one fits? Answer 4 quick questions.
+          </Link>
+        </p>
       </Section>
 
       <Section className="bg-hero-muted">

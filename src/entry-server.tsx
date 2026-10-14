@@ -32,6 +32,7 @@ export function routes(): string[] {
     '/blog',
     ...BLOG_CATEGORIES.slice(1).map((label) => `/blog/categories/${categoryLabelToSlug(label)}`),
     ...getAllPosts().map((post) => `/blog/${post.slug}`),
+    '/quiz',
     '/contact',
     '/privacy',
   ];
@@ -49,6 +50,7 @@ export function sitemapEntries(): { url: string; lastmod?: string }[] {
     { url: pageUrl('/resources') },
     { url: pageUrl('/blog') },
     ...posts.map((post) => ({ url: pageUrl(`/blog/${post.slug}`), lastmod: post.date.slice(0, 10) })),
+    { url: pageUrl('/quiz') },
     { url: pageUrl('/contact') },
     { url: pageUrl('/privacy') },
   ];
