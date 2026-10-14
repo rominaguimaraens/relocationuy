@@ -12,6 +12,7 @@ import BlogCategory from './routes/BlogCategory';
 import BlogPost from './routes/BlogPost';
 import ScoutingTrips from './routes/ScoutingTrips';
 import Contact from './routes/Contact';
+import Quiz from './routes/Quiz';
 import Privacy from './routes/Privacy';
 import NotFound from './routes/NotFound';
 import OrganizationSchema from './components/OrganizationSchema';
@@ -38,6 +39,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/categories/:category" element={<BlogCategory />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/quiz" element={<Quiz />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/tracking" element={<Tracking />} />
             <Route path="/privacy" element={<Privacy />} />

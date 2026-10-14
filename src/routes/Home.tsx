@@ -18,7 +18,7 @@ const faqItems = [
   {
     question: 'How much does your service cost?',
     answer:
-      'Essential is $850, Full is $1,800, and the Family Package is $6,500 for four people, plus $950 for each extra person. Essential covers residency. Full adds the health card, SIM and utilities, health insurance, banking and rental search. Family adds school or childcare, pet relocation and title revalidation.',
+      'Essential is $850 per person, Full is $1,800 per person, and the Family Package is $6,500 for four people, plus $950 for each extra person. Essential covers residency. Full adds the health card, SIM and utilities, health insurance, banking and rental search. Family is the Full package for four people at a slightly lower price, plus help with school search.',
   },
   {
     question: 'How do I pay?',
@@ -68,7 +68,7 @@ const faqItems = [
   {
     question: 'Can you help families with kids or pets?',
     answer:
-      'Yes. The Family Package covers up to four people and includes school or childcare support, pet relocation guidance and title revalidation. Extra people are $950 each.',
+      'Yes. The Family Package covers up to four people and is the Full package for four people at a slightly lower price, plus help with school search. We also point you to where to get help with pets and moving logistics. Extra people are $950 each.',
   },
 ];
 
@@ -208,6 +208,11 @@ export default function Home() {
         </p>
         <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-ink/70">{packagesPayment}</p>
         <p className="mt-2 text-center text-xs text-ink/50">Prices last updated October 2026.</p>
+        <p className="mt-6 text-center">
+          <Link to="/quiz" className="link link-primary font-medium">
+            Not sure which one fits? Answer 4 quick questions.
+          </Link>
+        </p>
       </Section>
 
       <Section className="bg-hero-muted">

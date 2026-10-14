@@ -1,5 +1,6 @@
 import type { FormEvent } from 'react';
-import { useRef, useMemo, useState } from 'react';
+import { useEffect, useRef, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import Section from '../components/Section';
 import Seo from '../components/Seo';
@@ -47,6 +48,24 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitting, setSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const [searchParams] = useSearchParams();
+
+  // The quiz sends people here with their answers in the address. Fill the matching
+  // dropdowns, but only with values the form actually offers. Done in an effect so
+  // the first render matches the prerendered page.
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form) return;
+    for (const field of ['package', 'timeline', 'travelers', 'stage']) {
+      const value = searchParams.get(field);
+      const select = form.elements.namedItem(field);
+      if (value && select instanceof HTMLSelectElement) {
+        if (Array.from(select.options).some((option) => option.value === value)) {
+          select.value = value;
+        }
+      }
+    }
+  }, [searchParams]);
 
   const whatsappHref = useMemo(() => {
     const text = encodeURIComponent(contact.whatsappText);

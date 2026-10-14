@@ -15,7 +15,7 @@ export const packages: PackageInfo[] = [
   {
     id: 'essential',
     name: 'Essential Residency Companion',
-    price: '$850',
+    price: '$850 per person',
     summary: 'Step-by-step residency guidance with in-person support and translations.',
     features: [
       'Step-by-step residency guidance',
@@ -30,7 +30,7 @@ export const packages: PackageInfo[] = [
   {
     id: 'full',
     name: 'Full Relocation Support',
-    price: '$1,800',
+    price: '$1,800 per person',
     summary:
       'For people who want comprehensive support without the stress of coordinating everything themselves. Everything in Essential plus setup and orientation.',
     features: [
@@ -49,12 +49,11 @@ export const packages: PackageInfo[] = [
     name: 'Family Package',
     price: '$6,500 (for 4 people)',
     summary:
-      'For families who need everything handled — from school placement to pet paperwork to shipping logistics. Everything in Full plus family, pet, and logistics support.',
+      'For families of four who want the full package at a slightly lower price. Everything in Full, plus help with school search.',
     features: [
       'Includes everything in Full plus',
-      'School or childcare support',
-      'Pet relocation guidance',
-      'Title revalidation (degree recognition for regulated professions like medicine or psychology)',
+      'School search',
+      'Guidance on where to get help with pets and moving logistics',
       'Extra person for $950',
     ],
   },

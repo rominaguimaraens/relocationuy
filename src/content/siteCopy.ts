@@ -137,6 +137,7 @@ export const siteCopy = {
     travelersOptions: ['Just me', 'Me and a partner', 'A family with children', 'Something else'],
     stageOptions: [
       'Still researching',
+      'Decided, but not started yet',
       'Gathering documents',
       'Documents mostly ready',
       'Already in Uruguay',

@@ -53,7 +53,7 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Family Package',
           description:
-            'Everything in Full Relocation Support plus school or childcare support, pet relocation guidance, title revalidation (degree recognition for regulated professions), $950 per extra person',
+            'Everything in Full Relocation Support for four people at a slightly lower price, plus school search and guidance on where to get help with pets and moving logistics, $950 per extra person',
         },
         price: '6500',
         priceCurrency: 'USD',
