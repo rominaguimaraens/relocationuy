@@ -3,7 +3,7 @@ import { packages } from './packages';
 export const siteCopy = {
   site: {
     title: 'Uruguay Relocation Companion',
-    tagline: 'Personalized bilingual support for a smooth, stress-free move to Uruguay.',
+    tagline: 'Bilingual help with every step of your move to Uruguay.',
     email: 'contact@relocationuy.com',
     domain: 'relocationuy.com',
   },
