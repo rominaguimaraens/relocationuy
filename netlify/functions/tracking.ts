@@ -1,4 +1,4 @@
-import { findClient } from '../../src/lib/trackingTemplate';
+import { findClient, sheetCsvUrl } from '../../src/lib/trackingTemplate';
 
 /*
  * Client progress lookup. The tracking sheet's link lives only in the TRACKING_SHEET_CSV_URL
@@ -58,18 +58,26 @@ export default async (req: Request): Promise<Response> => {
 
     let csv: string;
     try {
-        const res = await fetch(sheetUrl, { signal: AbortSignal.timeout(8000) });
+        // A throwaway query value and no-store make sure we ask Google for the current copy
+        // of the sheet instead of one kept by a cache along the way.
+        const csvUrl = sheetCsvUrl(sheetUrl);
+        const freshUrl = `${csvUrl}${csvUrl.includes('?') ? '&' : '?'}_=${Date.now()}`;
+        const res = await fetch(freshUrl, {
+            cache: 'no-store',
+            headers: { 'cache-control': 'no-cache' },
+            signal: AbortSignal.timeout(8000),
+        });
         if (!res.ok) {
             return fail(
                 'sheet_error',
-                `Google answered ${res.status}. The published link may have been stopped or changed.`,
+                `Google answered ${res.status}. The link may have been changed, or the sheet is no longer shared.`,
                 502,
             );
         }
         if ((res.headers.get('content-type') ?? '').includes('text/html')) {
             return fail(
                 'sheet_not_csv',
-                'The link returned a web page, not a CSV. In Publish to web, choose the sheet tab and "Comma-separated values (.csv)".',
+                'The link returned a web page, not a CSV. Share the sheet as "Anyone with the link: Viewer", or in Publish to web choose the sheet tab and "Comma-separated values (.csv)".',
                 502,
             );
         }

@@ -36,7 +36,7 @@ Set these in Netlify under Site configuration, Environment variables. They are r
 
 ### Client tracking sheet (secret)
 
-- `TRACKING_SHEET_CSV_URL`: link to the published CSV of the client tracking sheet. It is read only by the Netlify function and never reaches the browser. Do NOT name it with a `VITE_` prefix, because Vite puts every `VITE_` variable into the public JavaScript. If the link ever leaks, in Google Sheets go to File, Share, Publish to web, stop publishing, then publish again to get a new link and update this variable. Netlify only applies a changed variable on the next deploy, so trigger a redeploy after changing it.
+- `TRACKING_SHEET_CSV_URL`: link to the client tracking sheet. Best: the normal sheet link from the browser's address bar (open the right tab first so the link ends in `gid=...`), with sharing set to "Anyone with the link: Viewer". Edits then show within seconds. A "Publish to web" CSV link also works but updates a few minutes late. It is read only by the Netlify function and never reaches the browser. Do NOT name it with a `VITE_` prefix, because Vite puts every `VITE_` variable into the public JavaScript. If the link ever leaks, turn off "Anyone with the link" in Share (or stop publishing, if you use Publish to web), then turn it back on or republish, and update this variable. Netlify only applies a changed variable on the next deploy, so trigger a redeploy after changing it.
 - Reference codes in column A are the only thing protecting a client's page, so make them long and random (for example `URC-7K4M-9QXD-2TWB`), never sequential like `URC-2025-001`.
 
 ## Notes
