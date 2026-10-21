@@ -192,3 +192,20 @@ export function findClient(csvText: string, refNumber: string): TrackedClient | 
     }
     return found ? rowToClient(found) : null;
 }
+
+/*
+ * Turns the link saved in Netlify into the address the function reads.
+ * A normal sheet link (the one in the browser's address bar, shared as "Anyone with the link
+ * can view") becomes Google's live CSV address, which shows edits within seconds. A "Publish
+ * to web" link, or a live CSV address, is used exactly as given.
+ */
+export function sheetCsvUrl(link: string): string {
+    if (link.includes('/spreadsheets/d/e/') || link.includes('/gviz/')) return link;
+    const id = link.match(/\/spreadsheets\/d\/([A-Za-z0-9_-]+)/)?.[1];
+    if (!id) return link;
+    const gid = link.match(/[#?&]gid=(\d+)/)?.[1];
+    return (
+        `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&headers=1` +
+        (gid ? `&gid=${gid}` : '')
+    );
+}
