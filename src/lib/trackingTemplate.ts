@@ -47,8 +47,7 @@ const STEP_TEMPLATE: StepTemplate[] = [
         title: 'DNM Appointment Booked',
         documents: [
             'DNM account created on gub.uy',
-            'Residency pathway confirmed',
-            'Application fee paid',
+            'Application form submitted',
             'Arrival date confirmed',
             'Appointment date confirmed',
         ],
@@ -56,6 +55,7 @@ const STEP_TEMPLATE: StepTemplate[] = [
     {
         title: 'In-Country Parallel Tasks',
         documents: [
+            'Proof of income notarized',
             'Certified translations completed',
             'Carné de salud completed',
             'Vaccine records validated / new vaccines obtained',
