@@ -58,7 +58,14 @@ export default async (req: Request): Promise<Response> => {
 
     let csv: string;
     try {
-        const res = await fetch(sheetUrl, { signal: AbortSignal.timeout(8000) });
+        // A throwaway query value and no-store make sure we ask Google for the current copy
+        // of the sheet instead of one kept by a cache along the way.
+        const freshUrl = `${sheetUrl}${sheetUrl.includes('?') ? '&' : '?'}_=${Date.now()}`;
+        const res = await fetch(freshUrl, {
+            cache: 'no-store',
+            headers: { 'cache-control': 'no-cache' },
+            signal: AbortSignal.timeout(8000),
+        });
         if (!res.ok) {
             return fail(
                 'sheet_error',
